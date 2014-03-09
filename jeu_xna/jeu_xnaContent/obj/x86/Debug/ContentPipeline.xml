@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\player.xnb</Output>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\player.xnb</Output>
       <Time>2014-01-05T23:20:35.2392932+01:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\personnage_jeu.xnb</Output>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\personnage_jeu.xnb</Output>
       <Time>2014-01-06T22:36:10.5542159+01:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\image 142.xnb</Output>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\image 142.xnb</Output>
       <Time>2014-02-05T23:18:39.1304454+01:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump1.xnb</Output>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump1.xnb</Output>
       <Time>2014-02-12T23:21:09.5100249+01:00</Time>
     </Item>
     <Item>
@@ -43,18 +43,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\step1.xnb</Output>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\step1.xnb</Output>
       <Time>2014-02-12T23:30:59.6327125+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Son Game 1.mp3</Source>
-      <Name>Sounds\Son Game 1</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.xnb</Output>
-      <Extra>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.wma</Extra>
-      <Time>2014-02-27T18:04:30.0042261+01:00</Time>
     </Item>
     <Item>
       <Source>Sounds\jump_end.wav</Source>
@@ -62,8 +52,18 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump_end.xnb</Output>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump_end.xnb</Output>
       <Time>2014-02-27T18:17:47.8728202+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Son Game 1.mp3</Source>
+      <Name>Sounds\Son Game 1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.xnb</Output>
+      <Extra>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.wma</Extra>
+      <Time>2014-02-27T18:04:30.0042261+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -71,10 +71,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\</RootDirectory>
-      <LoggerRootDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\</LoggerRootDirectory>
-      <IntermediateDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xnaContent\</RootDirectory>
+      <LoggerRootDirectory>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\</LoggerRootDirectory>
+      <IntermediateDirectory>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xnaContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

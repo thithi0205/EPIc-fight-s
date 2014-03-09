@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace jeu_xna
+namespace jeu_xna //CECI EST UN TEST DE GITHUB
 {
     /// <summary>
     /// This is the main type for your game
