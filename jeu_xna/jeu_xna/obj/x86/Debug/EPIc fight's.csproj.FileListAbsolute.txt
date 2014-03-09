@@ -1,0 +1,27 @@
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\player.xnb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\personnage_jeu.xnb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\image 142.xnb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump1.xnb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\step1.xnb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.exe
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.pdb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.exe
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.pdb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\player.xnb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\personnage_jeu.xnb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\image 142.xnb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Destruction Madness 1.xnb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump1.xnb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\step1.xnb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Destruction Madness 1.wma
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.exe
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.pdb
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\EPIc fight's.csprojResolveAssemblyReference.cache
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.exe
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.pdb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.xnb
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.wma
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\obj\x86\Debug\EPIc fight's.csprojResolveAssemblyReference.cache
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump_end.xnb

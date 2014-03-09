@@ -1,0 +1,8 @@
+Content\Sprites\player.xnb
+Content\Sprites\personnage_jeu.xnb
+Content\Sprites\image 142.xnb
+Content\Sounds\jump1.xnb
+Content\Sounds\step1.xnb
+Content\Sounds\Son Game 1.xnb
+Content\Sounds\Son Game 1.wma
+Content\Sounds\jump_end.xnb

@@ -1,0 +1,3 @@
+c:\users\thibault\documents\visual studio 2010\Projects\jeu_xna\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache
+E:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache
+I:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache

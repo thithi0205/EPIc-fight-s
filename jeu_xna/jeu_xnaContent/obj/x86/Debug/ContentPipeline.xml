@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Sprites\player.png</Source>
+      <Name>Sprites\player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\player.xnb</Output>
+      <Time>2014-01-05T23:20:35.2392932+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\personnage_jeu.png</Source>
+      <Name>Sprites\personnage_jeu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\personnage_jeu.xnb</Output>
+      <Time>2014-01-06T22:36:10.5542159+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\image 142.jpg</Source>
+      <Name>Sprites\image 142</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\image 142.xnb</Output>
+      <Time>2014-02-05T23:18:39.1304454+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\jump1.wav</Source>
+      <Name>Sounds\jump1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump1.xnb</Output>
+      <Time>2014-02-12T23:21:09.5100249+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\step1.wav</Source>
+      <Name>Sounds\step1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\step1.xnb</Output>
+      <Time>2014-02-12T23:30:59.6327125+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Son Game 1.mp3</Source>
+      <Name>Sounds\Son Game 1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.xnb</Output>
+      <Extra>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.wma</Extra>
+      <Time>2014-02-27T18:04:30.0042261+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\jump_end.wav</Source>
+      <Name>Sounds\jump_end</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump_end.xnb</Output>
+      <Time>2014-02-27T18:17:47.8728202+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\</RootDirectory>
+      <LoggerRootDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\</LoggerRootDirectory>
+      <IntermediateDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>I:\epita\projet\jeu_xna\jeu_xna\jeu_xna\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-12-09T13:20:31.4868081+01:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
