@@ -12,7 +12,7 @@ namespace jeu_xna
     class Ressources
     {
         // STATIC FIELDS
-        public static Texture2D Player, Personnage, Fond;
+        public static Texture2D Fond, personnage;
         public static SoundEffect Pas, Jump, jump_end;
         public static Song Musique;
         public static SoundEffectInstance jump_end_sound;
@@ -20,9 +20,8 @@ namespace jeu_xna
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
         {
-            Player = Content.Load<Texture2D>(@"Sprites\player");
-            Personnage = Content.Load<Texture2D>(@"Sprites\personnage_jeu");
             Fond = Content.Load<Texture2D>(@"Sprites\image 142");
+            personnage = Content.Load<Texture2D>(@"Sprites\personnage_jeu");
         }
 
         public static void LoadContent_Sounds(ContentManager Content)

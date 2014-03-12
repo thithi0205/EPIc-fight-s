@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+//using Microsoft.Xna.Framework.Input.Touch;
 
 namespace jeu_xna
 {
@@ -18,6 +19,20 @@ namespace jeu_xna
     {
         public static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        #region Menu_buttons
+        MenuButton play, option; //menu principal
+
+
+
+        enum GameState
+        {
+            MainMenu,
+            Options,
+            Playing
+        }
+        GameState CurrentGameState = GameState.MainMenu;
+        #endregion
 
         GameMain Main;
 
@@ -40,6 +55,7 @@ namespace jeu_xna
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -49,8 +65,21 @@ namespace jeu_xna
         /// </summary>
         protected override void LoadContent()
         {
+           /* if (CurrentGameState == GameState.Playing)
+            {
+                Ressources.LoadContent_Sprites(Content);
+            }
+
+            Ressources.LoadContent_Sounds(Content);*/
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            #region Load_Button
+            #region MainMenu
+            play = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(300, graphics.GraphicsDevice.Viewport.Height / 2));
+            option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 400));
+            #endregion
+            #endregion
 
             Ressources.LoadContent_Sprites(Content);
             Ressources.LoadContent_Sounds(Content);
@@ -77,10 +106,30 @@ namespace jeu_xna
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            
+            MouseState mouse = Mouse.GetState();
+
+            switch (CurrentGameState)
+            {
+                case GameState.MainMenu:
+                    if (play.isClicked)
+                    {
+                        CurrentGameState = GameState.Playing;
+                    }
+
+                    else if (option.isClicked)
+                    {
+                        CurrentGameState = GameState.Options;
+                    }
+                    play.Update(mouse);
+                    option.Update(mouse);
+                    break;
+
+                case GameState.Playing:
+                    Main.Update(Mouse.GetState(), Keyboard.GetState());
+                    break;
+            }
 
             // TODO: Add your update logic here
-            Main.Update(Mouse.GetState(), Keyboard.GetState());
             base.Update(gameTime);
         }
 
@@ -91,9 +140,25 @@ namespace jeu_xna
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
+
             spriteBatch.Begin();
-            Main.Draw(spriteBatch);
+            switch (CurrentGameState)
+            {
+                case GameState.MainMenu:
+                    spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Main_menu"), Vector2.Zero, Color.White);
+                    option.Draw(spriteBatch);
+                    play.Draw(spriteBatch);
+                    
+                    break;
+
+                case GameState.Playing:
+                    Main.Draw(spriteBatch);
+                    break;
+            }
             spriteBatch.End();
+
+            //Main.Draw(spriteBatch);
+
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

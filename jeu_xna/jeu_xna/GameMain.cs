@@ -17,7 +17,7 @@ namespace jeu_xna
         // CONSTRUCTOR
         public GameMain()
         {
-            LocalPlayer = new Player();
+            LocalPlayer = new Player(Ressources.personnage);
         }
 
         // METHODS

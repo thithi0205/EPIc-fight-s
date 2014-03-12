@@ -19,13 +19,13 @@ namespace jeu_xna
     {
         // FIELDS
         Rectangle Hitbox;
+        Texture2D Joueur;
 
         Direction Direction;
         int Frame;
         SpriteEffects Effect; // effet miroir
         
         bool Animation;
-        bool Sound;
         bool KeyDown_up;
         int Timer;
         int Timer_sound;
@@ -39,8 +39,9 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         // CONSTRUCTOR
-        public Player()
+        public Player(Texture2D Joueur)
         {
+            this.Joueur = Joueur;
             Hitbox = new Rectangle(300, 230, 95, 200);
             temp_hitbox_y = Hitbox.Y;
             Frame = 1;
@@ -48,7 +49,6 @@ namespace jeu_xna
             Direction = Direction.Right;
 
             Animation = true;
-            Sound = true;
 
             Timer = 0;
             Timer_sound = 0;
@@ -96,15 +96,7 @@ namespace jeu_xna
             if (Timer_sound == AnimationSound)
             {
                 Timer_sound = 0;
-                if (Sound)
-                {
-                    Ressources.Pas.Play();
-                }
-
-                else
-                {
-                    Ressources.Pas.Play();
-                }
+                Ressources.Pas.Play();
             }
             
         }
@@ -116,14 +108,22 @@ namespace jeu_xna
             {
                 Hitbox.X -= Speed;
                 Direction = Direction.Left;
-                Animate();
+
+                if (!is_jumping)
+                {
+                    Animate();
+                }
             }
 
             else if (keyboard.IsKeyDown(Keys.Right))
             {
                 Hitbox.X += Speed;
                 Direction = Direction.Right;
-                Animate();
+
+                if (!is_jumping)
+                {
+                    Animate();
+                }
             }
 
             if (keyboard.IsKeyDown(Keys.Up))
@@ -211,7 +211,7 @@ namespace jeu_xna
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Ressources.Personnage, Hitbox,
+            spriteBatch.Draw(Joueur, Hitbox,
                 new Rectangle((Frame - 1) * 95, 0, 95, 200), 
                 Color.White, 0f, Vector2.Zero, Effect, 0f);
         }

@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Sprites\player.png</Source>
-      <Name>Sprites\player</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\player.xnb</Output>
-      <Time>2014-01-05T23:20:35.2392932+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\personnage_jeu.png</Source>
       <Name>Sprites\personnage_jeu</Name>
       <Importer>TextureImporter</Importer>
@@ -64,6 +55,33 @@
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.xnb</Output>
       <Extra>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.wma</Extra>
       <Time>2014-02-27T18:04:30.0042261+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Main_menu.png</Source>
+      <Name>Sprites\MainMenu\Main_menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Main_menu.xnb</Output>
+      <Time>2014-03-12T16:47:08.4715979+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\button_jouer.jpg</Source>
+      <Name>Sprites\MainMenu\button_jouer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_jouer.xnb</Output>
+      <Time>2014-03-12T16:39:19.0443044+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\button_options.jpg</Source>
+      <Name>Sprites\MainMenu\button_options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_options.xnb</Output>
+      <Time>2014-03-12T17:24:39.1980923+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
