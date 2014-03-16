@@ -16,7 +16,6 @@ namespace jeu_xna
         public static SoundEffect Pas, Jump, jump_end;
         public static Song Musique;
         public static SoundEffectInstance jump_end_sound;
-        //public static int mediaplayer_volume = 50;
 
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
@@ -27,7 +26,7 @@ namespace jeu_xna
 
         public static void LoadContent_Sounds(ContentManager Content)
         {
-            SoundEffect.MasterVolume = 0.25f;
+            SoundEffect.MasterVolume = MainMenu.bruitage_volume;
             Musique = Content.Load<Song>(@"Sounds\Musique\Son Game 1"); //Musique d'ambiance
 
             Pas = Content.Load<SoundEffect>(@"Sounds\Personnage\step1");

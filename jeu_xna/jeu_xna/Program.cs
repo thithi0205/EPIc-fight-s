@@ -6,9 +6,6 @@ namespace jeu_xna
 #if WINDOWS || XBOX
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         public static void Main(string[] args)
         {
             Thread thread_menu = new Thread(new ThreadStart(Menu));
@@ -20,11 +17,8 @@ namespace jeu_xna
 
             else if (MainMenu.CurrentGameState == GameState.Playing)
             {
-                //Menu();
                 thread_menu.Abort();
                 thread_jeu.Start();
-                //Thread.Sleep(500);
-                //thread_jeu.Suspend();
             }
         }
 

@@ -18,7 +18,7 @@ namespace jeu_xna
     class Player
     {
         // FIELDS
-        Rectangle Hitbox;
+        public Rectangle Hitbox;
         Texture2D Joueur;
 
         Direction Direction;
@@ -35,7 +35,7 @@ namespace jeu_xna
         int AnimationSound = 20;
 
         //saut
-        int jump_speed, jump_speed_initial, temp_hitbox_y;
+        int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
         // CONSTRUCTOR
@@ -43,27 +43,26 @@ namespace jeu_xna
         {
             this.Joueur = Joueur;
             Hitbox = new Rectangle(300, 230, 95, 200);
-            temp_hitbox_y = Hitbox.Y;
-            Frame = 1;
+            Frame = 1; //texture affichée lorsque toutes les touches sont relachées
             Effect = SpriteEffects.None;
             Direction = Direction.Right;
 
-            Animation = true;
+            Animation = true; //utilisé pour le retour à la première image lors de l'animation de la texture du personnage
 
-            Timer = 0;
-            Timer_sound = 0;
+            Timer = 0; //timer pour la texture du personnage
+            Timer_sound = 0; //timer pour les bruitages
 
             jump_speed_initial = 25;
             jump_speed = 1;
-            KeyDown_up = false;
-            jump = false;
-            is_jumping = false;
+            KeyDown_up = false; //indique si la touche précédement enfoncée est la touche du saut
+            jump = false; //indique si la hauteur maximale du saut a déjà été atteinte
+            is_jumping = false; //est en train de sauter
         }
 
         // METHODS
         public void Animate()
         {
-            //animation personnage
+            //animation texture personnage
             Timer++;
             if (Timer == AnimationSpeed)
             {
@@ -102,6 +101,7 @@ namespace jeu_xna
         }
 
         // UPDATE & DRAW
+        //DEPLACEMENT DU PERSONNAGE
         public void Update(MouseState MouseState, KeyboardState keyboard)
         {
             if (keyboard.IsKeyDown(Keys.Left))
@@ -167,11 +167,12 @@ namespace jeu_xna
             Saut(); //gestion du saut
         }
 
+        //GESTION DU SAUT
         private void Saut()
         {
-            if(is_jumping) //is_jumping initialisé à false
+            if(is_jumping) //est en train de sauter
             {
-                if (!jump) //jump initialisé à false
+                if (!jump) //n'a pas atteint la hauteur maximale du saut
                 {
                     if (Hitbox.Y > 20)
                     {

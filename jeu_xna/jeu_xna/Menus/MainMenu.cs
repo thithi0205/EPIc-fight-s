@@ -17,9 +17,8 @@ namespace jeu_xna
         Options,
         Playing
     }
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
+
+
     public class MainMenu : Microsoft.Xna.Framework.Game
     {
         public static GraphicsDeviceManager graphics;
@@ -31,12 +30,10 @@ namespace jeu_xna
         public static float mediaplayer_volume, bruitage_volume;
         #endregion
 
-        //MouseState cliqued;
-
         #region Menu_buttons
-        MenuButton play, option, plus_musique, moins_musique, plus_bruitages, moins_bruitages; //menu principal
-        public static GameState CurrentGameState = GameState.MainMenu;
-        bool was_cliqued = false;
+        MenuButton play, option, plus_musique, moins_musique, plus_bruitages, moins_bruitages, bouton_retour; //menu principal
+        public static GameState CurrentGameState;
+        bool was_cliqued;
         #endregion
 
         public MainMenu()
@@ -45,30 +42,21 @@ namespace jeu_xna
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
             graphics.ApplyChanges();
-            //graphics.ToggleFullScreen();
             Content.RootDirectory = "Content";
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+        //INITIALIZE
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            CurrentGameState = GameState.MainMenu;
+            was_cliqued = false;
             IsMouseVisible = true;
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
+        //LOADCONTENT
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             musique = Content.Load<Song>(@"Sounds\Musique\Son Game 1");
             MediaPlayer.IsRepeating = true;
@@ -77,54 +65,80 @@ namespace jeu_xna
             MediaPlayer.Play(musique);
             test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\jump1");
 
+            //CHARGEMENT DES BOUTONS
             #region Load_Button
 
+            //BOUTONS DU MENU PRINCIPAL
             #region MainMenu
             play = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(300, graphics.GraphicsDevice.Viewport.Height / 2));
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 400));
             #endregion
 
+            //BOUTONS DU MENU OPTION
             #region OptionsMenu
             plus_musique = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\+"), new Vector2(250, 100));
             moins_musique = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(400, 100));
             plus_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\+"), new Vector2(250, 170));
             moins_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(400, 170));
+            bouton_retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(20, 520));
             #endregion
 
             #endregion
-            // TODO: use this.Content to load your game content here
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
+        //UNLOADCONTENT
         protected override void UnloadContent()
         {
             Content.Unload();
-            // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        //UPDATE
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
             MouseState mouse = Mouse.GetState();
-            //MouseState cliqued = Mouse.GetState();
             mediaplayer_volume = MediaPlayer.Volume;
             bruitage_volume = SoundEffect.MasterVolume;
+
+            //DEBUGgING
+            #region Debugging
             Console.Clear();
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("volume musique : " + mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + bruitage_volume + "\n");
+            if (CurrentGameState == GameState.MainMenu)
+                Console.WriteLine("MainMenu\n");
+            else if (CurrentGameState == GameState.Options)
+                Console.WriteLine("Options\n");
+            else if (CurrentGameState == GameState.Playing)
+                Console.WriteLine("Playing\n");
+            #endregion
+
+            //MISE A JOUR DES BOUTONS
+            #region Buttons update
+
+            //BOUTONS DU MENU PRINCIPAL
+            #region MainMenu buttons
+            play.Update(mouse);
+            option.Update(mouse);
+            #endregion
+
+            //BOUTONS DU MENU OPTIONS
+            #region Options buttons
+            plus_musique.Update(mouse);
+            moins_musique.Update(mouse);
+            plus_bruitages.Update(mouse);
+            moins_bruitages.Update(mouse);
+            bouton_retour.Update(mouse);
+            #endregion
+
+            #endregion
 
             switch (CurrentGameState)
             {
                 case GameState.MainMenu:
+
+                    //MISE A JOUR DU MENU PRINCIPAL
+                    #region MainMenu update
                     if (play.isClicked)
                     {
                         CurrentGameState = GameState.Playing;
@@ -134,28 +148,27 @@ namespace jeu_xna
                     {
                         CurrentGameState = GameState.Options;
                     }
-
-                    
-                    play.Update(mouse);
-                    option.Update(mouse);
+                    #endregion
                     break;
 
                 case GameState.Options:
-                    if (plus_musique.isClicked && !was_cliqued)
+
+                    //MISE A JOUR DU MENU OPTIONS
+                    #region OptionsMenu update
+                    if (bouton_retour.isClicked)
+                    {
+                        CurrentGameState = GameState.MainMenu;
+                    }
+
+                    else if (plus_musique.isClicked && !was_cliqued)
                     {
                         MediaPlayer.Volume = MediaPlayer.Volume + 0.01f;
-                        //mediaplayer_volume = MediaPlayer.Volume;
-                        //Console.Clear();
-                        //Console.WriteLine("volume : " + mediaplayer_volume + "\n");
                         was_cliqued = true;
                     }
 
                     else if (moins_musique.isClicked && !was_cliqued)
                     {
                         MediaPlayer.Volume = MediaPlayer.Volume - 0.01f;
-                        //mediaplayer_volume = MediaPlayer.Volume;
-                        //Console.Clear();
-                        //Console.WriteLine("volume : " + mediaplayer_volume + "\n");
                         was_cliqued = true;
                     }
 
@@ -193,27 +206,21 @@ namespace jeu_xna
                     {
                         was_cliqued = false;
                     }
-
-                    plus_musique.Update(mouse);
-                    moins_musique.Update(mouse);
-                    plus_bruitages.Update(mouse);
-                    moins_bruitages.Update(mouse);
+                    #endregion
                     break;
 
                 case GameState.Playing:
+
+                    //LANCEMENT DU JEU
                     this.Exit();
                     Program.Main(args);
                     break;
             }
 
-            // TODO: Add your update logic here
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        //DRAW
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -222,24 +229,33 @@ namespace jeu_xna
             switch (CurrentGameState)
             {
                 case GameState.MainMenu:
+
+                    //AFFICHAGE DU MENU PRINCIPAL
+                    #region MainMenu draw
                     spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Main_menu"), Vector2.Zero, Color.White);
                     option.Draw(spriteBatch);
                     play.Draw(spriteBatch);
+                    #endregion
                     break;
 
                 case GameState.Options:
+
+                    //AFFICHAGE DU MENU OPTIONS
+                    #region OptionsMenu draw
                     int display_mediaplayer_volume = (int)(mediaplayer_volume * 100);
                     int display_bruitages_volume = (int)(bruitage_volume * 100);
                     spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background"), Vector2.Zero, Color.White);
                     spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume"), new Vector2(30, 30), Color.White);
-                    spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_musique"), new Vector2(30, 100), Color.White);
-                    spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_bruitages"), new Vector2(30, 170), Color.White);
+                    spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_musique"), new Vector2(18, 100), Color.White);
+                    spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_bruitages"), new Vector2(22, 170), Color.White);
                     spriteBatch.DrawString(Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_musique"), string.Format(Convert.ToString(display_mediaplayer_volume)), new Vector2(320, 95), Color.Black);
                     spriteBatch.DrawString(Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_musique"), string.Format(Convert.ToString(display_bruitages_volume)), new Vector2(320, 165), Color.Black);
                     plus_musique.Draw(spriteBatch);
                     moins_musique.Draw(spriteBatch);
                     plus_bruitages.Draw(spriteBatch);
                     moins_bruitages.Draw(spriteBatch);
+                    bouton_retour.Draw(spriteBatch);
+                    #endregion
                     break;
 
                 case GameState.Playing:
@@ -247,8 +263,6 @@ namespace jeu_xna
                     break;
             }
             spriteBatch.End();
-
-            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }

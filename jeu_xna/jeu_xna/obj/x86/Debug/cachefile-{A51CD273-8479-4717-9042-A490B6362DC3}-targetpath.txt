@@ -15,3 +15,4 @@ Content\Sounds\Musique\Son Game 1.xnb
 Content\Sounds\Musique\Son Game 1.wma
 Content\Sprites\MainMenu\Options\background.xnb
 Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+Content\Sprites\MainMenu\Options\bouton_retour.xnb

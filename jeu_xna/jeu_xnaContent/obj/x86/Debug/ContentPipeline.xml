@@ -146,6 +146,15 @@
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb</Output>
       <Time>2014-03-15T18:16:33.5733871+01:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\bouton_retour.jpg</Source>
+      <Name>Sprites\MainMenu\Options\bouton_retour</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb</Output>
+      <Time>2014-03-16T14:05:37.9000079+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -26,6 +26,15 @@ namespace jeu_xna
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
             LocalPlayer.Update(mouse, keyboard);
+
+            //DEBUGGING
+            #region Debuging
+            Console.Clear();
+            Console.WriteLine("personnage : x = " + LocalPlayer.Hitbox.X + " ; y = " + LocalPlayer.Hitbox.Y + "\n");
+            Console.WriteLine("volume musique : " + MainMenu.mediaplayer_volume + "\n");
+            Console.WriteLine("volume bruitages : " + MainMenu.bruitage_volume + "\n");
+            Console.WriteLine("Playing\n");
+            #endregion
         }
 
         public void Draw(SpriteBatch spriteBatch)

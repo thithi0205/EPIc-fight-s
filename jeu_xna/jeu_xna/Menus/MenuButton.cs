@@ -16,8 +16,6 @@ namespace jeu_xna
 
         Color couleur = new Color(195, 195, 195);
 
-        //public Vector2 size;
-
         public MenuButton(Texture2D newTexture, Vector2 newPosition)
         {
             texture = newTexture;

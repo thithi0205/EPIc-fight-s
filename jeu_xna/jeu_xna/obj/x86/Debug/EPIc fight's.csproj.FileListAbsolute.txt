@@ -48,3 +48,4 @@ I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musiq
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.wma
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb
