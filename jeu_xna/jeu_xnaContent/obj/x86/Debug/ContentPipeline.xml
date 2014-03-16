@@ -2,61 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Sprites\personnage_jeu.png</Source>
-      <Name>Sprites\personnage_jeu</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\personnage_jeu.xnb</Output>
-      <Time>2014-01-06T22:36:10.5542159+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\image 142.jpg</Source>
-      <Name>Sprites\image 142</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\image 142.xnb</Output>
-      <Time>2014-02-05T23:18:39.1304454+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\jump1.wav</Source>
-      <Name>Sounds\jump1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump1.xnb</Output>
-      <Time>2014-02-12T23:21:09.5100249+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\step1.wav</Source>
-      <Name>Sounds\step1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\step1.xnb</Output>
-      <Time>2014-02-12T23:30:59.6327125+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\jump_end.wav</Source>
-      <Name>Sounds\jump_end</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\jump_end.xnb</Output>
-      <Time>2014-02-27T18:17:47.8728202+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Son Game 1.mp3</Source>
-      <Name>Sounds\Son Game 1</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.xnb</Output>
-      <Extra>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Son Game 1.wma</Extra>
-      <Time>2014-02-27T18:04:30.0042261+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\MainMenu\Main_menu.png</Source>
       <Name>Sprites\MainMenu\Main_menu</Name>
       <Importer>TextureImporter</Importer>
@@ -82,6 +27,124 @@
       <Options>None</Options>
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_options.xnb</Output>
       <Time>2014-03-12T17:24:39.1980923+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\+.jpg</Source>
+      <Name>Sprites\MainMenu\Options\+</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\+.xnb</Output>
+      <Time>2014-03-13T23:36:56.5313375+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\-.jpg</Source>
+      <Name>Sprites\MainMenu\Options\-</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\-.xnb</Output>
+      <Time>2014-03-13T23:36:56.4935869+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\volume.jpg</Source>
+      <Name>Sprites\MainMenu\Options\volume</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume.xnb</Output>
+      <Time>2014-03-13T23:36:56.5726247+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\volume_bruitages.jpg</Source>
+      <Name>Sprites\MainMenu\Options\volume_bruitages</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume_bruitages.xnb</Output>
+      <Time>2014-03-13T23:36:56.6262737+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\volume_musique.jpg</Source>
+      <Name>Sprites\MainMenu\Options\volume_musique</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume_musique.xnb</Output>
+      <Time>2014-03-13T23:36:56.6922861+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\personnage1.png</Source>
+      <Name>Sprites\Personnages\personnage1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\personnage1.xnb</Output>
+      <Time>2014-01-06T22:36:10.5542159+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Maps\map1.jpg</Source>
+      <Name>Sprites\Maps\map1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Maps\map1.xnb</Output>
+      <Time>2014-02-05T23:18:39.1304454+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\jump1.wav</Source>
+      <Name>Sounds\Personnage\jump1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\jump1.xnb</Output>
+      <Time>2014-02-12T23:21:09.5100249+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\step1.wav</Source>
+      <Name>Sounds\Personnage\step1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\step1.xnb</Output>
+      <Time>2014-02-12T23:30:59.6327125+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\jump_end.wav</Source>
+      <Name>Sounds\Personnage\jump_end</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\jump_end.xnb</Output>
+      <Time>2014-02-27T18:17:47.8728202+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Musique\Son Game 1.mp3</Source>
+      <Name>Sounds\Musique\Son Game 1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.xnb</Output>
+      <Extra>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.wma</Extra>
+      <Time>2014-02-27T18:04:30.0042261+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\background.jpg</Source>
+      <Name>Sprites\MainMenu\Options\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb</Output>
+      <Time>2014-03-15T16:37:59.0336267+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\Font\volume_musique.spritefont</Source>
+      <Name>Sprites\MainMenu\Options\Font\volume_musique</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb</Output>
+      <Time>2014-03-15T18:16:33.5733871+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

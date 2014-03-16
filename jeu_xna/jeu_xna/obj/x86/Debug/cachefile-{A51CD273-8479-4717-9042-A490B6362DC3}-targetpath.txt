@@ -1,10 +1,17 @@
-Content\Sprites\personnage_jeu.xnb
-Content\Sprites\image 142.xnb
-Content\Sounds\jump1.xnb
-Content\Sounds\step1.xnb
-Content\Sounds\jump_end.xnb
-Content\Sounds\Son Game 1.xnb
-Content\Sounds\Son Game 1.wma
 Content\Sprites\MainMenu\Main_menu.xnb
 Content\Sprites\MainMenu\button_jouer.xnb
 Content\Sprites\MainMenu\button_options.xnb
+Content\Sprites\MainMenu\Options\+.xnb
+Content\Sprites\MainMenu\Options\-.xnb
+Content\Sprites\MainMenu\Options\volume.xnb
+Content\Sprites\MainMenu\Options\volume_bruitages.xnb
+Content\Sprites\MainMenu\Options\volume_musique.xnb
+Content\Sprites\Personnages\personnage1.xnb
+Content\Sprites\Maps\map1.xnb
+Content\Sounds\Personnage\jump1.xnb
+Content\Sounds\Personnage\step1.xnb
+Content\Sounds\Personnage\jump_end.xnb
+Content\Sounds\Musique\Son Game 1.xnb
+Content\Sounds\Musique\Son Game 1.wma
+Content\Sprites\MainMenu\Options\background.xnb
+Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
