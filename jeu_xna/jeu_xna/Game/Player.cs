@@ -102,7 +102,7 @@ namespace jeu_xna
         }
 
         // UPDATE & DRAW
-        public void Update(KeyboardState keyboard)
+        public void Update(MouseState MouseState, KeyboardState keyboard)
         {
             if (keyboard.IsKeyDown(Keys.Left))
             {
