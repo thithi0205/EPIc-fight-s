@@ -39,13 +39,13 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         // CONSTRUCTOR
-        public Player(Texture2D Joueur)
+        public Player(Texture2D Joueur, int x, int y, Direction direction)
         {
             this.Joueur = Joueur;
-            Hitbox = new Rectangle(300, 230, 95, 200);
+            Hitbox = new Rectangle(x, y, 95, 200);
             Frame = 1; //texture affichée lorsque toutes les touches sont relachées
             Effect = SpriteEffects.None;
-            Direction = Direction.Right;
+            Direction = direction;
 
             Animation = true; //utilisé pour le retour à la première image lors de l'animation de la texture du personnage
 

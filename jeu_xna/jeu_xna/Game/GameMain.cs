@@ -14,15 +14,15 @@ namespace jeu_xna
     class GameMain : Microsoft.Xna.Framework.Game
     {
         // FIELD
-        Player LocalPlayer;
+        Player LocalPlayer1, LocalPlayer2;
         bool WasKeyDown_Escape = false;
         Texture2D patate;
 
         // CONSTRUCTOR
         public GameMain(ContentManager Content)
         {
-            //Content.RootDirectory = "Content";
-            LocalPlayer = new Player(Ressources.personnage);
+            LocalPlayer1 = new Player(Ressources.personnage, 300, 230, Direction.Right);
+            LocalPlayer2 = new Player(Ressources.personnage, 400, 230, Direction.Left);
             patate = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
         }
 
@@ -51,19 +51,19 @@ namespace jeu_xna
             switch (MainMenu.CurrentGameState)
             {
                 case GameState.Playing:
-                    LocalPlayer.Update(mouse, keyboard);
+                    LocalPlayer1.Update(mouse, keyboard);
+                    LocalPlayer2.Update(mouse, keyboard);
                     break;
 
                 case GameState.Pause:
                     break;
 
             }
-            //LocalPlayer.Update(mouse, keyboard);
 
             //DEBUGGING
             #region Debuging
             Console.Clear();
-            Console.WriteLine("personnage : x = " + LocalPlayer.Hitbox.X + " ; y = " + LocalPlayer.Hitbox.Y + "\n");
+            Console.WriteLine("personnage : x = " + LocalPlayer1.Hitbox.X + " ; y = " + LocalPlayer1.Hitbox.Y + "\n");
             Console.WriteLine("volume musique : " + MainMenu.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + MainMenu.bruitage_volume + "\n");
             if (MainMenu.CurrentGameState == GameState.Playing)
@@ -79,7 +79,8 @@ namespace jeu_xna
             {
                 case GameState.Playing:
                     spriteBatch.Draw(Ressources.Fond, Vector2.Zero, Color.White);
-                    LocalPlayer.Draw(spriteBatch);
+                    LocalPlayer1.Draw(spriteBatch);
+                    LocalPlayer2.Draw(spriteBatch);
                     break;
 
                 case GameState.Pause:
