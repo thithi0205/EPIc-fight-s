@@ -15,7 +15,8 @@ namespace jeu_xna
     {
         MainMenu,
         Options,
-        Playing
+        Playing,
+        Pause
     }
 
 
