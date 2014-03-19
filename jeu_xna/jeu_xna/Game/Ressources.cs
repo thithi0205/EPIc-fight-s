@@ -26,7 +26,7 @@ namespace jeu_xna
 
         public static void LoadContent_Sounds(ContentManager Content)
         {
-            SoundEffect.MasterVolume = MainMenu.bruitage_volume;
+            SoundEffect.MasterVolume = Options.bruitage_volume;
             Musique = Content.Load<Song>(@"Sounds\Musique\Son Game 1"); //Musique d'ambiance
 
             Pas = Content.Load<SoundEffect>(@"Sounds\Personnage\step1");
@@ -36,7 +36,7 @@ namespace jeu_xna
             jump_end_sound.Volume = 0.3f;
 
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = MainMenu.mediaplayer_volume;
+            MediaPlayer.Volume = Options.mediaplayer_volume;
             MediaPlayer.Play(Ressources.Musique); 
         }
     }

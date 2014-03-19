@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace jeu_xna
 {
-    class MenuButton
+    public class MenuButton
     {
         Texture2D texture;
         public Vector2 position; //position du boutton
