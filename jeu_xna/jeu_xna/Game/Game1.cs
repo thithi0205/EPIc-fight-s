@@ -17,7 +17,6 @@ namespace jeu_xna
         public static GraphicsDeviceManager graphics1;
         SpriteBatch spriteBatch;
         GameMain Main;
-        MouseState mouse;
 
         public Game1()
         {
@@ -32,11 +31,9 @@ namespace jeu_xna
         //INITIALIZE
         protected override void Initialize()
         {
-            //Game1.graphics1.GraphicsDevice.Viewport.Width
             IsMouseVisible = true;
             Options.is_mainmenu = false;
             GameMain.Initialize();
-            //Mouse.WindowHandle = Window.Handle;
             base.Initialize();
         }
 
@@ -66,12 +63,13 @@ namespace jeu_xna
             Options.moins_bruitages.Update(MainMenu.mouse);
             Options.bouton_retour.Update(MainMenu.mouse);
             GameMain.option.Update(MainMenu.mouse);
+            GameMain.retour.Update(MainMenu.mouse);
+            GameMain.menu_principal.Update(MainMenu.mouse);
             
             MainMenu.mouse = Mouse.GetState();
             Mouse.WindowHandle = Window.Handle;
 
             Main.Update(MainMenu.mouse, Keyboard.GetState());
-            base.Update(gameTime);
         }
 
         //DRAW

@@ -49,3 +49,30 @@ I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musiq
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\personnage1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Maps\map1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Main_menu.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_jouer.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_options.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\+.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\-.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume_bruitages.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume_musique.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\jump1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\step1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\jump_end.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.wma
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.exe
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.pdb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\EPIc fight's.csprojResolveAssemblyReference.cache
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.exe
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.pdb
+I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\chronomètre.xnb
+I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_quitter.xnb
+I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb

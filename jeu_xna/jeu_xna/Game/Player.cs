@@ -20,6 +20,7 @@ namespace jeu_xna
         // FIELDS
         public Rectangle Hitbox;
         Texture2D Joueur;
+        Keys saut, droite, gauche;
 
         Direction Direction;
         int Frame;
@@ -30,17 +31,20 @@ namespace jeu_xna
         int Timer;
         int Timer_sound;
 
-        int Speed = 2;
-        int AnimationSpeed = 10;
-        int AnimationSound = 20;
+        int Speed = 5;
+        int AnimationSpeed = 14;
+        int AnimationSound = 24;
 
         //saut
         int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
         // CONSTRUCTOR
-        public Player(Texture2D Joueur, int x, int y, Direction direction)
+        public Player(Texture2D Joueur, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche)
         {
+            this.saut = saut;
+            this.gauche = gauche;
+            this.droite = droite;
             this.Joueur = Joueur;
             Hitbox = new Rectangle(x, y, 95, 200);
             Frame = 1; //texture affichée lorsque toutes les touches sont relachées
@@ -52,7 +56,7 @@ namespace jeu_xna
             Timer = 0; //timer pour la texture du personnage
             Timer_sound = 0; //timer pour les bruitages
 
-            jump_speed_initial = 25;
+            jump_speed_initial = 20; //25
             jump_speed = 1;
             KeyDown_up = false; //indique si la touche précédement enfoncée est la touche du saut
             jump = false; //indique si la hauteur maximale du saut a déjà été atteinte
@@ -104,7 +108,17 @@ namespace jeu_xna
         //DEPLACEMENT DU PERSONNAGE
         public void Update(MouseState MouseState, KeyboardState keyboard)
         {
-            if (keyboard.IsKeyDown(Keys.Left))
+            if (is_jumping)
+            {
+                Speed = 10;
+            }
+
+            else
+            {
+                Speed = 5;
+            }
+
+            if (keyboard.IsKeyDown(gauche))
             {
                 Hitbox.X -= Speed;
                 Direction = Direction.Left;
@@ -115,7 +129,7 @@ namespace jeu_xna
                 }
             }
 
-            else if (keyboard.IsKeyDown(Keys.Right))
+            else if (keyboard.IsKeyDown(droite))
             {
                 Hitbox.X += Speed;
                 Direction = Direction.Right;
@@ -126,7 +140,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyDown(Keys.Up))
+            if (keyboard.IsKeyDown(saut))
             {
                 if (KeyDown_up == false)
                 {
@@ -137,7 +151,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyUp(Keys.Left) && keyboard.IsKeyUp(Keys.Right) && keyboard.IsKeyUp(Keys.Up))
+            if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
             {
                 Frame = 1;
                 Timer = 0;
@@ -174,7 +188,7 @@ namespace jeu_xna
             {
                 if (!jump) //n'a pas atteint la hauteur maximale du saut
                 {
-                    if (Hitbox.Y > 20)
+                    if (Hitbox.Y > 20) //20
                     {
                         jump_speed_initial -= jump_speed;
                         Hitbox.Y -= jump_speed_initial;
@@ -188,8 +202,8 @@ namespace jeu_xna
 
                 else if (jump)
                 {
-                    jump_speed_initial = 3;
-                    jump_speed = 16;
+                    jump_speed_initial = 3; //3
+                    jump_speed = 11; //11
 
                     if (Hitbox.Y < 230)
                     {
@@ -201,7 +215,7 @@ namespace jeu_xna
                     {
                         Ressources.jump_end_sound.Play();
                         KeyDown_up = false;
-                        jump_speed_initial = 25;
+                        jump_speed_initial = 20;
                         jump_speed = 1;
                         is_jumping = false;
                         jump = false;

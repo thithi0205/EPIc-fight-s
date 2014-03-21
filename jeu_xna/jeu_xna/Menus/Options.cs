@@ -44,11 +44,6 @@ namespace jeu_xna
         public static void Update()
         {
             mouse = Mouse.GetState();
-            /*plus_musique.Update(mouse);
-            moins_musique.Update(mouse);
-            plus_bruitages.Update(mouse);
-            moins_bruitages.Update(mouse);
-            bouton_retour.Update(mouse);*/
             mediaplayer_volume = MediaPlayer.Volume;
             bruitage_volume = SoundEffect.MasterVolume;
 

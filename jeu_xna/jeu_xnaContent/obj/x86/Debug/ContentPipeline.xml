@@ -2,6 +2,24 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
+      <Source>Sprites\Personnages\personnage1.png</Source>
+      <Name>Sprites\Personnages\personnage1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\personnage1.xnb</Output>
+      <Time>2014-01-06T22:36:10.5542159+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Maps\map1.jpg</Source>
+      <Name>Sprites\Maps\map1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Maps\map1.xnb</Output>
+      <Time>2014-02-05T23:18:39.1304454+01:00</Time>
+    </Item>
+    <Item>
       <Source>Sprites\MainMenu\Main_menu.png</Source>
       <Name>Sprites\MainMenu\Main_menu</Name>
       <Importer>TextureImporter</Importer>
@@ -18,6 +36,15 @@
       <Options>None</Options>
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_jouer.xnb</Output>
       <Time>2014-03-12T16:39:19.0443044+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\background.jpg</Source>
+      <Name>Sprites\MainMenu\Options\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb</Output>
+      <Time>2014-03-15T16:37:59.0336267+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\button_options.jpg</Source>
@@ -74,22 +101,13 @@
       <Time>2014-03-13T23:36:56.6922861+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\Personnages\personnage1.png</Source>
-      <Name>Sprites\Personnages\personnage1</Name>
+      <Source>Sprites\MainMenu\Options\bouton_retour.jpg</Source>
+      <Name>Sprites\MainMenu\Options\bouton_retour</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\personnage1.xnb</Output>
-      <Time>2014-01-06T22:36:10.5542159+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Maps\map1.jpg</Source>
-      <Name>Sprites\Maps\map1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Maps\map1.xnb</Output>
-      <Time>2014-02-05T23:18:39.1304454+01:00</Time>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb</Output>
+      <Time>2014-03-16T14:05:37.9000079+01:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Personnage\jump1.wav</Source>
@@ -129,15 +147,6 @@
       <Time>2014-02-27T18:04:30.0042261+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\MainMenu\Options\background.jpg</Source>
-      <Name>Sprites\MainMenu\Options\background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb</Output>
-      <Time>2014-03-15T16:37:59.0336267+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\MainMenu\Options\Font\volume_musique.spritefont</Source>
       <Name>Sprites\MainMenu\Options\Font\volume_musique</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -147,13 +156,31 @@
       <Time>2014-03-15T18:16:33.5733871+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\MainMenu\Options\bouton_retour.jpg</Source>
-      <Name>Sprites\MainMenu\Options\bouton_retour</Name>
+      <Source>chronomètre.spritefont</Source>
+      <Name>chronomètre</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\chronomètre.xnb</Output>
+      <Time>2014-03-21T20:10:20.9276376+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_quitter.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_quitter</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb</Output>
-      <Time>2014-03-16T14:05:37.9000079+01:00</Time>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_quitter.xnb</Output>
+      <Time>2014-03-21T20:20:11.2918073+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_menu-principal.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_menu-principal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb</Output>
+      <Time>2014-03-21T21:24:58.2192431+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

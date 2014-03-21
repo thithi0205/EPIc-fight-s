@@ -25,14 +25,14 @@ namespace jeu_xna
     {
         public static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Thread thread_jeu = new Thread(jeu);
+        public static Thread thread_jeu;
 
         public static MouseState mouse;
 
         Song musique;
 
         #region Menu_buttons
-        MenuButton play, option; //menu principal
+        MenuButton play, option, quitter; //menu principal
         public static GameState CurrentGameState;
 
         #endregion
@@ -72,6 +72,7 @@ namespace jeu_xna
             #region MainMenu
             play = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(300, graphics.GraphicsDevice.Viewport.Height / 2));
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 400));
+            quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2(300, 500));
             #endregion
 
             Options.LoadContent(Content);
@@ -113,6 +114,7 @@ namespace jeu_xna
             #region MainMenu buttons
             play.Update(mouse);
             option.Update(mouse);
+            quitter.Update(mouse);
             #endregion
 
             switch (CurrentGameState)
@@ -130,6 +132,11 @@ namespace jeu_xna
                     {
                         CurrentGameState = GameState.Options;
                     }
+
+                    else if (quitter.isClicked)
+                    {
+                        this.Exit();
+                    }
                     #endregion
                     break;
 
@@ -141,6 +148,7 @@ namespace jeu_xna
                 case GameState.Playing:
 
                     //LANCEMENT DU JEU
+                    thread_jeu = new Thread(jeu);
                     thread_jeu.Start();
                     IsMouseVisible = false;
                     Program.thread_menu.Abort();
@@ -165,6 +173,7 @@ namespace jeu_xna
                     spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Main_menu"), Vector2.Zero, Color.White);
                     option.Draw(spriteBatch);
                     play.Draw(spriteBatch);
+                    quitter.Draw(spriteBatch);
                     #endregion
                     break;
 
