@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Content;
 
 namespace jeu_xna
 {
@@ -18,6 +19,13 @@ namespace jeu_xna
     class Player
     {
         // FIELDS
+        string name;
+        SpriteFont display_name;
+        int player_number;
+        Texture2D photo_identité;
+
+        public int can_jump = 0;
+
         public Rectangle Hitbox;
         Texture2D Joueur;
         Keys saut, droite, gauche;
@@ -27,7 +35,7 @@ namespace jeu_xna
         SpriteEffects Effect; // effet miroir
         
         bool Animation;
-        bool KeyDown_up;
+        public bool KeyDown_up;
         int Timer;
         int Timer_sound;
 
@@ -40,8 +48,12 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         // CONSTRUCTOR
-        public Player(Texture2D Joueur, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche)
+        public Player(Texture2D Joueur, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content)
         {
+            this.name = name;
+            this.player_number = player_number;
+            display_name = Content.Load<SpriteFont>("display_name");
+            
             this.saut = saut;
             this.gauche = gauche;
             this.droite = droite;
@@ -142,12 +154,28 @@ namespace jeu_xna
 
             if (keyboard.IsKeyDown(saut))
             {
-                if (KeyDown_up == false)
+                if (player_number == 1)
                 {
-                    Ressources.Jump.Play();
-                    KeyDown_up = true;
-                    is_jumping = true;
-                    Hitbox.Y -= jump_speed_initial;
+                    if (KeyDown_up == false && !GameMain.jump1)
+                    {
+                        Ressources.Jump.Play();
+                        KeyDown_up = true;
+                        is_jumping = true;
+                        Hitbox.Y -= jump_speed_initial;
+                        can_jump = 0;
+                    }
+                }
+
+                else if (player_number == 2)
+                {
+                    if (KeyDown_up == false && !GameMain.jump2)
+                    {
+                        Ressources.Jump.Play();
+                        KeyDown_up = true;
+                        is_jumping = true;
+                        Hitbox.Y -= jump_speed_initial;
+                        can_jump = 0;
+                    }
                 }
             }
 
@@ -229,6 +257,16 @@ namespace jeu_xna
             spriteBatch.Draw(Joueur, Hitbox,
                 new Rectangle((Frame - 1) * 95, 0, 95, 200), 
                 Color.White, 0f, Vector2.Zero, Effect, 0f);
+
+            if (player_number == 1)
+            {
+                spriteBatch.DrawString(display_name, name, new Vector2(100, 500), Color.White);
+            }
+
+            else if (player_number == 2)
+            {
+                spriteBatch.DrawString(display_name, name, new Vector2(Game1.graphics1.GraphicsDevice.Viewport.Width - 200, 500), Color.White);
+            }
         }
     }
 }

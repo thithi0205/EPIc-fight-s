@@ -16,10 +16,11 @@ namespace jeu_xna
     {
         // FIELD
         Player LocalPlayer1, LocalPlayer2;
-        bool WasKeyDown_Escape = false;
+        bool WasKeyDown_Escape = false; 
+        public static bool jump1 = false, jump2 = false;
         static int timer_fps, timer_combat;
 
-        public static MenuButton option, retour, menu_principal;
+        public static MenuButton option, retour, menu_principal, quitter;
         static Texture2D background;
         static SpriteFont chrono;
 
@@ -27,8 +28,8 @@ namespace jeu_xna
         public GameMain(ContentManager Content)
         {
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.personnage, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q);
-            LocalPlayer2 = new Player(Ressources.personnage, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left);
+            LocalPlayer1 = new Player(Ressources.personnage, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content);
+            LocalPlayer2 = new Player(Ressources.personnage, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content);
         }
 
         // METHODS
@@ -37,7 +38,7 @@ namespace jeu_xna
             Options.mediaplayer_volume = MediaPlayer.Volume;
             Options.bruitage_volume = SoundEffect.MasterVolume;
             timer_fps = 0;
-            timer_combat = 30;
+            timer_combat = 60;
         }
 
         public static void LoadContent(ContentManager Content)
@@ -46,13 +47,54 @@ namespace jeu_xna
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             chrono = Content.Load<SpriteFont>("chronomètre");
             retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(Game1.graphics1.GraphicsDevice.Viewport.Width - (20 + 145), 520));
-            menu_principal = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(255, 400));
+            menu_principal = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(255, 200));
+            quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2(300, 400));
             Options.LoadContent(Content);
         }
 
         // UPDATE & DRAW
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
+            #region Blocage temporaire des sauts
+            if (LocalPlayer1.KeyDown_up && !jump1)
+            {
+                jump1 = true;
+            }
+
+            if (jump1)
+            {
+                if (LocalPlayer1.can_jump <= 60)
+                {
+                    LocalPlayer1.can_jump++;
+                }
+
+                else
+                {
+                    LocalPlayer1.can_jump = 0;
+                    jump1 = false;
+                }
+            }
+
+            if (LocalPlayer2.KeyDown_up && !jump2)
+            {
+                jump2 = true;
+            }
+
+            if (jump2)
+            {
+                if (LocalPlayer2.can_jump <= 60)
+                {
+                    LocalPlayer2.can_jump++;
+                }
+
+                else
+                {
+                    LocalPlayer2.can_jump = 0;
+                    jump2 = false;
+                }
+            }
+            #endregion
+
             if (keyboard.IsKeyDown(Keys.Escape) && MainMenu.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
             {
                 MainMenu.CurrentGameState = GameState.Pause;
@@ -108,6 +150,11 @@ namespace jeu_xna
                         Program.thread_menu.Start();
                         MainMenu.thread_jeu.Abort();
                     }
+
+                    else if (quitter.isClicked)
+                    {
+                        MainMenu.thread_jeu.Abort();
+                    }
                     break;
 
                 case GameState.Options:
@@ -148,6 +195,7 @@ namespace jeu_xna
                     option.Draw(spriteBatch);
                     retour.Draw(spriteBatch);
                     menu_principal.Draw(spriteBatch);
+                    quitter.Draw(spriteBatch);
                     break;
 
                 case GameState.Options:

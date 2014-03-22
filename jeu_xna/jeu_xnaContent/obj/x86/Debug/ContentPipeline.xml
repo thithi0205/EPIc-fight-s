@@ -182,6 +182,15 @@
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb</Output>
       <Time>2014-03-21T21:24:58.2192431+01:00</Time>
     </Item>
+    <Item>
+      <Source>display_name.spritefont</Source>
+      <Name>display_name</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\display_name.xnb</Output>
+      <Time>2014-03-22T18:02:01.741668+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -62,9 +62,11 @@ namespace jeu_xna
             Options.plus_bruitages.Update(MainMenu.mouse);
             Options.moins_bruitages.Update(MainMenu.mouse);
             Options.bouton_retour.Update(MainMenu.mouse);
+
             GameMain.option.Update(MainMenu.mouse);
             GameMain.retour.Update(MainMenu.mouse);
             GameMain.menu_principal.Update(MainMenu.mouse);
+            GameMain.quitter.Update(MainMenu.mouse);
             
             MainMenu.mouse = Mouse.GetState();
             Mouse.WindowHandle = Window.Handle;
