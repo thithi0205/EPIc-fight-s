@@ -61,8 +61,6 @@ namespace jeu_xna
             spriteBatch = new SpriteBatch(GraphicsDevice);
             musique = Content.Load<Song>(@"Sounds\Musique\Son Game 1");
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = 0.5f;
-            SoundEffect.MasterVolume = 0.5f;
             MediaPlayer.Play(musique);
 
             //CHARGEMENT DES BOUTONS
