@@ -19,10 +19,13 @@ namespace jeu_xna
     class Player
     {
         // FIELDS
+        public int vie;
+
         string name;
         SpriteFont display_name;
         int player_number;
         Texture2D photo_identité;
+        Texture2D BlankTexture; //nécéssaire pour la barre de vie
 
         public int can_jump = 0;
 
@@ -48,12 +51,16 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         // CONSTRUCTOR
-        public Player(Texture2D Joueur, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content)
+        public Player(Texture2D Joueur, Texture2D photo_identité, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content)
         {
+            vie = 100;
+
             this.name = name;
             this.player_number = player_number;
             display_name = Content.Load<SpriteFont>("display_name");
-            
+            BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
+            this.photo_identité = photo_identité;
+
             this.saut = saut;
             this.gauche = gauche;
             this.droite = droite;
@@ -260,12 +267,92 @@ namespace jeu_xna
 
             if (player_number == 1)
             {
-                spriteBatch.DrawString(display_name, name, new Vector2(100, 500), Color.White);
+                spriteBatch.DrawString(display_name, name, new Vector2(295 - display_name.MeasureString(name).X, 500), Color.White);
             }
 
             else if (player_number == 2)
             {
-                spriteBatch.DrawString(display_name, name, new Vector2(Game1.graphics1.GraphicsDevice.Viewport.Width - 200, 500), Color.White);
+                spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X, 500), Color.White);
+            }
+        }
+
+        public void GenerateBar(int Current, int Max, SpriteBatch spriteBatch)
+        {
+            int x = 0;
+            int y = 560;
+            int BarWidth = 250;
+            int BarHeight = 10;
+            int BoarderOffSet = 2;
+            Double PercentToDraw = (Double)Current / Max;
+            Double EachPercentWidth = (Double)BarWidth / Max;
+
+            if (player_number == 1)
+            {
+                x = 40; 
+            }
+
+            else if (player_number == 2)
+            {
+                x = Game1.graphics1.GraphicsDevice.Viewport.Width - BarWidth - 40;
+            }
+
+            //Boarder Rectangle
+            Rectangle RecBoarder = new Rectangle(x, y, BarWidth + (BoarderOffSet * 2), BarHeight + (BoarderOffSet * 2));
+
+
+            //Bar Background Rectangle
+            Rectangle RecBackGround = new Rectangle(x + BoarderOffSet, y + BoarderOffSet, BarWidth, BarHeight);
+
+
+            //Fill Rectangle
+            Rectangle RecFill = new Rectangle(x + BoarderOffSet, y + BoarderOffSet, (int)((PercentToDraw * 100) * EachPercentWidth), BarHeight);
+
+            //GraphicsDevice device = Game1.graphics1.GraphicsDevice;
+
+            spriteBatch.Draw(BlankTexture, RecBoarder, Color.White);
+            spriteBatch.Draw(BlankTexture, RecBackGround, Color.Gray);
+            spriteBatch.Draw(BlankTexture, RecFill, Color.Red);
+        }
+
+        public void GeneratePicture(SpriteBatch spriteBatch)
+        {
+            int x = 0;
+            int y = 500;
+            int BarWidth = 50;
+            int BarHeight = 50;
+            int BoarderOffSet = 2;
+
+            if (player_number == 1)
+            {
+                x = 40;
+            }
+
+            else if (player_number == 2)
+            {
+                x = Game1.graphics1.GraphicsDevice.Viewport.Width - BarWidth - 40;
+            }
+
+            //Boarder Rectangle
+            Rectangle RecBoarder = new Rectangle(x, y, BarWidth + (BoarderOffSet * 2), BarHeight + (BoarderOffSet * 2));
+
+
+            //Bar Background Rectangle
+            Rectangle RecBackGround = new Rectangle(x + BoarderOffSet, y + BoarderOffSet, BarWidth, BarHeight);
+
+            //picture rectangle
+            Rectangle PictureRectangle = new Rectangle(x + BoarderOffSet, y + BoarderOffSet, BarWidth, BarHeight);
+
+            spriteBatch.Draw(BlankTexture, RecBoarder, Color.White);
+            spriteBatch.Draw(BlankTexture, RecBackGround, Color.Gray);
+
+            if (player_number == 1)
+            {
+                spriteBatch.Draw(photo_identité, PictureRectangle, Color.White);
+            }
+
+            else if (player_number == 2)
+            {
+                spriteBatch.Draw(photo_identité, PictureRectangle, new Rectangle(0, 0, 50, 50), Color.White, 0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0f);
             }
         }
     }

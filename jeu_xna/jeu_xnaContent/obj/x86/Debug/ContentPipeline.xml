@@ -191,6 +191,24 @@
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\display_name.xnb</Output>
       <Time>2014-03-22T18:02:01.741668+01:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\Personnages\BlankTexture.jpg</Source>
+      <Name>Sprites\Personnages\BlankTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\BlankTexture.xnb</Output>
+      <Time>2014-03-23T15:11:08.6689332+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\identité1.png</Source>
+      <Name>Sprites\Personnages\identité1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\identité1.xnb</Output>
+      <Time>2014-03-23T19:16:27.4646709+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

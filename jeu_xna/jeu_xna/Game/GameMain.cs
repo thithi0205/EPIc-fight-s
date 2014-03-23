@@ -15,21 +15,18 @@ namespace jeu_xna
     class GameMain : Microsoft.Xna.Framework.Game
     {
         // FIELD
-        Player LocalPlayer1, LocalPlayer2;
+        static Player LocalPlayer1, LocalPlayer2;
         bool WasKeyDown_Escape = false; 
         public static bool jump1 = false, jump2 = false;
         static int timer_fps, timer_combat;
 
         public static MenuButton option, retour, menu_principal, quitter;
-        static Texture2D background;
+        static Texture2D background, picture_identity;
         static SpriteFont chrono;
 
         // CONSTRUCTOR
         public GameMain(ContentManager Content)
         {
-            //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.personnage, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content);
-            LocalPlayer2 = new Player(Ressources.personnage, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content);
         }
 
         // METHODS
@@ -43,6 +40,12 @@ namespace jeu_xna
 
         public static void LoadContent(ContentManager Content)
         {
+            picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
+
+            //CREATION DES JOUEURS
+            LocalPlayer1 = new Player(Ressources.personnage, picture_identity, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content);
+            LocalPlayer2 = new Player(Ressources.personnage, picture_identity, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content);
+
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             chrono = Content.Load<SpriteFont>("chronomètre");
@@ -185,9 +188,24 @@ namespace jeu_xna
             {
                 case GameState.Playing:
                     spriteBatch.Draw(Ressources.Fond, Vector2.Zero, Color.White);
-                    spriteBatch.DrawString(chrono, Convert.ToString(timer_combat), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 30, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                    if (timer_combat >= 10)
+                    {
+                        spriteBatch.DrawString(chrono, Convert.ToString(timer_combat), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 30, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                    }
+
+                    else
+                    {
+                        spriteBatch.DrawString(chrono, Convert.ToString(timer_combat), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 10, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                    }
+
                     LocalPlayer1.Draw(spriteBatch);
                     LocalPlayer2.Draw(spriteBatch);
+
+                    LocalPlayer1.GenerateBar(LocalPlayer1.vie, 100, spriteBatch);
+                    LocalPlayer2.GenerateBar(LocalPlayer2.vie, 100, spriteBatch);
+
+                    LocalPlayer1.GeneratePicture(spriteBatch);
+                    LocalPlayer2.GeneratePicture(spriteBatch);
                     break;
 
                 case GameState.Pause:

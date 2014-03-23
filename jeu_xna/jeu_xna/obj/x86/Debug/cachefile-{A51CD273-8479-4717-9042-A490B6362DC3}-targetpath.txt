@@ -20,3 +20,5 @@ Content\chronomètre.xnb
 Content\Sprites\MainMenu\bouton_quitter.xnb
 Content\Sprites\MainMenu\bouton_menu-principal.xnb
 Content\display_name.xnb
+Content\Sprites\Personnages\BlankTexture.xnb
+Content\Sprites\Personnages\identité1.xnb
