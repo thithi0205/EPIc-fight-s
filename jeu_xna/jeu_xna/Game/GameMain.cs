@@ -18,7 +18,7 @@ namespace jeu_xna
         static Player LocalPlayer1, LocalPlayer2;
         bool WasKeyDown_Escape = false; 
         public static bool jump1 = false, jump2 = false;
-        static int timer_fps, timer_combat;
+        static int timer_fps, timer_combat_secondes, timer_combat_minutes;
 
         public static MenuButton option, retour, menu_principal, quitter;
         static Texture2D background, picture_identity;
@@ -35,7 +35,8 @@ namespace jeu_xna
             Options.mediaplayer_volume = MediaPlayer.Volume;
             Options.bruitage_volume = SoundEffect.MasterVolume;
             timer_fps = 0;
-            timer_combat = 60;
+            timer_combat_secondes = 0;
+            timer_combat_minutes = 0;
         }
 
         public static void LoadContent(ContentManager Content)
@@ -66,7 +67,7 @@ namespace jeu_xna
 
             if (jump1)
             {
-                if (LocalPlayer1.can_jump <= 60)
+                if (LocalPlayer1.can_jump <= 30)
                 {
                     LocalPlayer1.can_jump++;
                 }
@@ -85,7 +86,7 @@ namespace jeu_xna
 
             if (jump2)
             {
-                if (LocalPlayer2.can_jump <= 60)
+                if (LocalPlayer2.can_jump <= 30)
                 {
                     LocalPlayer2.can_jump++;
                 }
@@ -122,17 +123,22 @@ namespace jeu_xna
                     LocalPlayer2.Update(mouse, keyboard);
                     timer_fps++;
 
+                    //CHRONOMETRE
                     if (timer_fps == 60)
                     {
-                        timer_combat--;
+                        if (timer_combat_secondes >= 59)
+                        {
+                            timer_combat_minutes++;
+                            timer_combat_secondes = 0;
+                        }
+
+                        else
+                        {
+                            timer_combat_secondes++;
+                        }
+                        
                         timer_fps = 0;
                     }
-
-                    if (timer_combat < 0)
-                    {
-                        timer_combat = 0;
-                    }
-
                     break;
 
                 case GameState.Pause:
@@ -188,14 +194,15 @@ namespace jeu_xna
             {
                 case GameState.Playing:
                     spriteBatch.Draw(Ressources.Fond, Vector2.Zero, Color.White);
-                    if (timer_combat >= 10)
+
+                    if (timer_combat_secondes < 10)
                     {
-                        spriteBatch.DrawString(chrono, Convert.ToString(timer_combat), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 30, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                        spriteBatch.DrawString(chrono, timer_combat_minutes + " : 0" + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                     }
 
                     else
                     {
-                        spriteBatch.DrawString(chrono, Convert.ToString(timer_combat), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 10, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                        spriteBatch.DrawString(chrono, timer_combat_minutes + " : " + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                     }
 
                     LocalPlayer1.Draw(spriteBatch);

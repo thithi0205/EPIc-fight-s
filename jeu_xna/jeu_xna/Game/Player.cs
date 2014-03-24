@@ -34,13 +34,13 @@ namespace jeu_xna
         Keys saut, droite, gauche;
 
         Direction Direction;
-        int Frame;
+        int Frame; //image du personnage affichée
         SpriteEffects Effect; // effet miroir
         
         bool Animation;
         public bool KeyDown_up;
-        int Timer;
-        int Timer_sound;
+        int Timer; //timer pour l'animation du personnage
+        int Timer_sound; //timer pour les bruitages du personnage
 
         int Speed = 5;
         int AnimationSpeed = 14;
@@ -53,7 +53,7 @@ namespace jeu_xna
         // CONSTRUCTOR
         public Player(Texture2D Joueur, Texture2D photo_identité, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content)
         {
-            vie = 100;
+            vie = 100; //vie initiale du personnage
 
             this.name = name;
             this.player_number = player_number;
@@ -61,10 +61,12 @@ namespace jeu_xna
             BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
             this.photo_identité = photo_identité;
 
+            //DIRECTIONS DU PERSONNAGE
             this.saut = saut;
             this.gauche = gauche;
             this.droite = droite;
-            this.Joueur = Joueur;
+
+            this.Joueur = Joueur; //texture du personnage
             Hitbox = new Rectangle(x, y, 95, 200);
             Frame = 1; //texture affichée lorsque toutes les touches sont relachées
             Effect = SpriteEffects.None;
@@ -75,7 +77,7 @@ namespace jeu_xna
             Timer = 0; //timer pour la texture du personnage
             Timer_sound = 0; //timer pour les bruitages
 
-            jump_speed_initial = 20; //25
+            jump_speed_initial = 20; 
             jump_speed = 1;
             KeyDown_up = false; //indique si la touche précédement enfoncée est la touche du saut
             jump = false; //indique si la hauteur maximale du saut a déjà été atteinte
@@ -306,8 +308,6 @@ namespace jeu_xna
 
             //Fill Rectangle
             Rectangle RecFill = new Rectangle(x + BoarderOffSet, y + BoarderOffSet, (int)((PercentToDraw * 100) * EachPercentWidth), BarHeight);
-
-            //GraphicsDevice device = Game1.graphics1.GraphicsDevice;
 
             spriteBatch.Draw(BlankTexture, RecBoarder, Color.White);
             spriteBatch.Draw(BlankTexture, RecBackGround, Color.Gray);
