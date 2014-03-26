@@ -15,6 +15,7 @@ namespace jeu_xna
     public enum GameState
     {
         MainMenu,
+        ChoiceMenuCaracter,
         Options,
         Playing,
         Pause
@@ -28,6 +29,8 @@ namespace jeu_xna
         public static Thread thread_jeu;
 
         public static MouseState mouse;
+
+        public static int personnage_choisi;
 
         Song musique;
 
@@ -106,6 +109,8 @@ namespace jeu_xna
                 Console.WriteLine("Options\n");
             else if (CurrentGameState == GameState.Playing)
                 Console.WriteLine("Playing\n");
+            else if (CurrentGameState == GameState.ChoiceMenuCaracter)
+                Console.WriteLine("ChoiceMenuCaracter\n");
             #endregion
 
             //BOUTONS DU MENU PRINCIPAL
