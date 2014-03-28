@@ -110,6 +110,42 @@
       <Time>2014-03-16T14:05:37.9000079+01:00</Time>
     </Item>
     <Item>
+      <Source>Sprites\MainMenu\bouton_quitter.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_quitter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_quitter.xnb</Output>
+      <Time>2014-03-21T20:20:11.2918073+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_menu-principal.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_menu-principal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb</Output>
+      <Time>2014-03-21T21:24:58.2192431+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\BlankTexture.jpg</Source>
+      <Name>Sprites\Personnages\BlankTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\BlankTexture.xnb</Output>
+      <Time>2014-03-23T15:11:08.6689332+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\identité1.png</Source>
+      <Name>Sprites\Personnages\identité1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\identité1.xnb</Output>
+      <Time>2014-03-23T19:16:27.4646709+01:00</Time>
+    </Item>
+    <Item>
       <Source>Sounds\Personnage\jump1.wav</Source>
       <Name>Sounds\Personnage\jump1</Name>
       <Importer>WavImporter</Importer>
@@ -165,24 +201,6 @@
       <Time>2014-03-21T20:10:20.9276376+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\MainMenu\bouton_quitter.jpg</Source>
-      <Name>Sprites\MainMenu\bouton_quitter</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_quitter.xnb</Output>
-      <Time>2014-03-21T20:20:11.2918073+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\MainMenu\bouton_menu-principal.jpg</Source>
-      <Name>Sprites\MainMenu\bouton_menu-principal</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb</Output>
-      <Time>2014-03-21T21:24:58.2192431+01:00</Time>
-    </Item>
-    <Item>
       <Source>display_name.spritefont</Source>
       <Name>display_name</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -192,22 +210,13 @@
       <Time>2014-03-22T18:02:01.741668+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\Personnages\BlankTexture.jpg</Source>
-      <Name>Sprites\Personnages\BlankTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Source>choix.spritefont</Source>
+      <Name>choix</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\BlankTexture.xnb</Output>
-      <Time>2014-03-23T15:11:08.6689332+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Personnages\identité1.png</Source>
-      <Name>Sprites\Personnages\identité1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\identité1.xnb</Output>
-      <Time>2014-03-23T19:16:27.4646709+01:00</Time>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\choix.xnb</Output>
+      <Time>2014-03-28T22:51:43.3420908+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

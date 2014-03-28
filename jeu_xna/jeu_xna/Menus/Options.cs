@@ -15,7 +15,7 @@ namespace jeu_xna
     {
         public static MenuButton plus_musique, moins_musique, plus_bruitages, moins_bruitages, bouton_retour;
         public static bool was_cliqued, is_mainmenu;
-        public static MouseState mouse;
+        //public static MouseState mouse;
         public static SoundEffect test_volume_bruitage;
         public static float mediaplayer_volume, bruitage_volume;
         public static Texture2D background, volume, volume_musique, volume_bruitage;
@@ -43,7 +43,7 @@ namespace jeu_xna
 
         public static void Update()
         {
-            mouse = Mouse.GetState();
+            //mouse = Mouse.GetState();
             mediaplayer_volume = MediaPlayer.Volume;
             bruitage_volume = SoundEffect.MasterVolume;
 
@@ -102,7 +102,7 @@ namespace jeu_xna
                 was_cliqued = true;
             }
 
-            else if (mouse.LeftButton == ButtonState.Released && mouse.RightButton == ButtonState.Released)
+            else if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
             {
                 was_cliqued = false;
             }

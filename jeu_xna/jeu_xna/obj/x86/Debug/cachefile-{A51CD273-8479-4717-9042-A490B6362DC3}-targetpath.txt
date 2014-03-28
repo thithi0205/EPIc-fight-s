@@ -10,6 +10,10 @@ Content\Sprites\MainMenu\Options\volume.xnb
 Content\Sprites\MainMenu\Options\volume_bruitages.xnb
 Content\Sprites\MainMenu\Options\volume_musique.xnb
 Content\Sprites\MainMenu\Options\bouton_retour.xnb
+Content\Sprites\MainMenu\bouton_quitter.xnb
+Content\Sprites\MainMenu\bouton_menu-principal.xnb
+Content\Sprites\Personnages\BlankTexture.xnb
+Content\Sprites\Personnages\identité1.xnb
 Content\Sounds\Personnage\jump1.xnb
 Content\Sounds\Personnage\step1.xnb
 Content\Sounds\Personnage\jump_end.xnb
@@ -17,8 +21,5 @@ Content\Sounds\Musique\Son Game 1.xnb
 Content\Sounds\Musique\Son Game 1.wma
 Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
 Content\chronomètre.xnb
-Content\Sprites\MainMenu\bouton_quitter.xnb
-Content\Sprites\MainMenu\bouton_menu-principal.xnb
 Content\display_name.xnb
-Content\Sprites\Personnages\BlankTexture.xnb
-Content\Sprites\Personnages\identité1.xnb
+Content\choix.xnb

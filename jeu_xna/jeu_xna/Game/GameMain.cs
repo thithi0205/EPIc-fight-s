@@ -15,9 +15,10 @@ namespace jeu_xna
     class GameMain : Microsoft.Xna.Framework.Game
     {
         // FIELD
-        static Player LocalPlayer1, LocalPlayer2;
+        public static Player LocalPlayer1, LocalPlayer2;
+        public static int personnage_choisi1, personnage_choisi2;
         bool WasKeyDown_Escape = false; 
-        public static bool jump1 = false, jump2 = false;
+        //public static bool jump1 = false, jump2 = false;
         static int timer_fps, timer_combat_secondes, timer_combat_minutes;
 
         public static MenuButton option, retour, menu_principal, quitter;
@@ -44,8 +45,8 @@ namespace jeu_xna
             picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
 
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.personnage, picture_identity, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content);
-            LocalPlayer2 = new Player(Ressources.personnage, picture_identity, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1].personnage, Ressources.caracters[personnage_choisi1].identity, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Ressources.caracters[personnage_choisi1].jump, Content);
+            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2].personnage, Ressources.caracters[personnage_choisi2].identity, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Ressources.caracters[personnage_choisi2].jump, Content);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
@@ -60,14 +61,14 @@ namespace jeu_xna
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
             #region Blocage temporaire des sauts
-            if (LocalPlayer1.KeyDown_up && !jump1)
+            /*if (LocalPlayer1.KeyDown_up && !jump1)
             {
                 jump1 = true;
             }
 
             if (jump1)
             {
-                if (LocalPlayer1.can_jump <= 30)
+                if (LocalPlayer1.can_jump <= 10)
                 {
                     LocalPlayer1.can_jump++;
                 }
@@ -86,7 +87,7 @@ namespace jeu_xna
 
             if (jump2)
             {
-                if (LocalPlayer2.can_jump <= 30)
+                if (LocalPlayer2.can_jump <= 10)
                 {
                     LocalPlayer2.can_jump++;
                 }
@@ -96,7 +97,7 @@ namespace jeu_xna
                     LocalPlayer2.can_jump = 0;
                     jump2 = false;
                 }
-            }
+            }*/
             #endregion
 
             if (keyboard.IsKeyDown(Keys.Escape) && MainMenu.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
@@ -177,6 +178,7 @@ namespace jeu_xna
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("joueur 1 : x = " + LocalPlayer1.Hitbox.X + " ; y = " + LocalPlayer1.Hitbox.Y + "\n");
             Console.WriteLine("joueur 2 : x = " + LocalPlayer2.Hitbox.X + " ; y = " + LocalPlayer2.Hitbox.Y + "\n");
+            Console.WriteLine("CAN_JUMP joueur 1 : " + LocalPlayer1.can_jump + " joueur 2 : " + LocalPlayer2.can_jump);
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
             if (MainMenu.CurrentGameState == GameState.Playing)

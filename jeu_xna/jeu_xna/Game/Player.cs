@@ -26,6 +26,7 @@ namespace jeu_xna
         int player_number;
         Texture2D photo_identité;
         Texture2D BlankTexture; //nécéssaire pour la barre de vie
+        SoundEffect jump_sound; //son joué au début du saut
 
         public int can_jump = 0;
 
@@ -36,13 +37,14 @@ namespace jeu_xna
         Direction Direction;
         int Frame; //image du personnage affichée
         SpriteEffects Effect; // effet miroir
-        
+
+        bool jump1; //bloque les sauts temporairement
         bool Animation;
         public bool KeyDown_up;
         int Timer; //timer pour l'animation du personnage
         int Timer_sound; //timer pour les bruitages du personnage
 
-        int Speed = 5;
+        int Speed = 3;
         int AnimationSpeed = 14;
         int AnimationSound = 24;
 
@@ -51,7 +53,7 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         // CONSTRUCTOR
-        public Player(Texture2D Joueur, Texture2D photo_identité, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content)
+        public Player(Texture2D Joueur, Texture2D photo_identité, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, SoundEffect jump_sound, ContentManager Content)
         {
             vie = 100; //vie initiale du personnage
 
@@ -60,6 +62,7 @@ namespace jeu_xna
             display_name = Content.Load<SpriteFont>("display_name");
             BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
             this.photo_identité = photo_identité;
+            this.jump_sound = jump_sound;
 
             //DIRECTIONS DU PERSONNAGE
             this.saut = saut;
@@ -77,11 +80,12 @@ namespace jeu_xna
             Timer = 0; //timer pour la texture du personnage
             Timer_sound = 0; //timer pour les bruitages
 
-            jump_speed_initial = 20; 
+            jump_speed_initial = 20;
             jump_speed = 1;
             KeyDown_up = false; //indique si la touche précédement enfoncée est la touche du saut
             jump = false; //indique si la hauteur maximale du saut a déjà été atteinte
             is_jumping = false; //est en train de sauter
+            jump1 = false;
         }
 
         // METHODS
@@ -122,7 +126,7 @@ namespace jeu_xna
                 Timer_sound = 0;
                 Ressources.Pas.Play();
             }
-            
+
         }
 
         // UPDATE & DRAW
@@ -163,29 +167,15 @@ namespace jeu_xna
 
             if (keyboard.IsKeyDown(saut))
             {
-                if (player_number == 1)
+                if (KeyDown_up == false && !jump1)
                 {
-                    if (KeyDown_up == false && !GameMain.jump1)
-                    {
-                        Ressources.Jump.Play();
-                        KeyDown_up = true;
-                        is_jumping = true;
-                        Hitbox.Y -= jump_speed_initial;
-                        can_jump = 0;
-                    }
+                    jump_sound.Play();
+                    KeyDown_up = true;
+                    is_jumping = true;
+                    Hitbox.Y -= jump_speed_initial;
+                    can_jump = 0;
                 }
 
-                else if (player_number == 2)
-                {
-                    if (KeyDown_up == false && !GameMain.jump2)
-                    {
-                        Ressources.Jump.Play();
-                        KeyDown_up = true;
-                        is_jumping = true;
-                        Hitbox.Y -= jump_speed_initial;
-                        can_jump = 0;
-                    }
-                }
             }
 
             if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
@@ -215,13 +205,33 @@ namespace jeu_xna
                 Hitbox.X = 0;
             }
 
+            if (KeyDown_up && !jump1)
+            {
+                jump1 = true;
+            }
+
+            if (jump1)
+            {
+                if (can_jump <= 60)
+                {
+                    can_jump++;
+                    //jump1 = false;
+                }
+
+                else
+                {
+                    can_jump = 0;
+                    jump1 = false;
+                }
+            }
+
             Saut(); //gestion du saut
         }
 
         //GESTION DU SAUT
         private void Saut()
         {
-            if(is_jumping) //est en train de sauter
+            if (is_jumping) //est en train de sauter
             {
                 if (!jump) //n'a pas atteint la hauteur maximale du saut
                 {
@@ -264,7 +274,7 @@ namespace jeu_xna
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Joueur, Hitbox,
-                new Rectangle((Frame - 1) * 95, 0, 95, 200), 
+                new Rectangle((Frame - 1) * 95, 0, 95, 200),
                 Color.White, 0f, Vector2.Zero, Effect, 0f);
 
             if (player_number == 1)
@@ -290,7 +300,7 @@ namespace jeu_xna
 
             if (player_number == 1)
             {
-                x = 40; 
+                x = 40;
             }
 
             else if (player_number == 2)

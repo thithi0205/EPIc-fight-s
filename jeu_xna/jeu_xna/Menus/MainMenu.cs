@@ -30,8 +30,6 @@ namespace jeu_xna
 
         public static MouseState mouse;
 
-        public static int personnage_choisi;
-
         Song musique;
 
         #region Menu_buttons
@@ -52,6 +50,7 @@ namespace jeu_xna
         //INITIALIZE
         protected override void Initialize()
         {
+            ChoiceMenuCaracter.Initialise();
             Options.is_mainmenu = true;
             CurrentGameState = GameState.MainMenu;
             IsMouseVisible = true;
@@ -79,6 +78,8 @@ namespace jeu_xna
             Options.LoadContent(Content);
 
             #endregion
+
+            ChoiceMenuCaracter.LoadContent(Content);
         }
 
         //UNLOADCONTENT
@@ -96,6 +97,7 @@ namespace jeu_xna
             Options.plus_bruitages.Update(mouse);
             Options.moins_bruitages.Update(mouse);
             Options.bouton_retour.Update(mouse);
+            ChoiceMenuCaracter.caracter1.Update(mouse);
 
             //DEBUGgING
             #region Debugging
@@ -128,7 +130,7 @@ namespace jeu_xna
                     #region MainMenu update
                     if (play.isClicked)
                     {
-                        CurrentGameState = GameState.Playing;
+                        CurrentGameState = GameState.ChoiceMenuCaracter;
                     }
 
                     else if (option.isClicked)
@@ -146,6 +148,10 @@ namespace jeu_xna
                 case GameState.Options:
 
                     Options.Update();
+                    break;
+
+                case GameState.ChoiceMenuCaracter:
+                    ChoiceMenuCaracter.Update();
                     break;
 
                 case GameState.Playing:
@@ -181,8 +187,11 @@ namespace jeu_xna
                     break;
 
                 case GameState.Options:
-
                     Options.Draw(spriteBatch, Content);
+                    break;
+
+                case GameState.ChoiceMenuCaracter:
+                    ChoiceMenuCaracter.Draw(spriteBatch);
                     break;
 
                 case GameState.Playing:

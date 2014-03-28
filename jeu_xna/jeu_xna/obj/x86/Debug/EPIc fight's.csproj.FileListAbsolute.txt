@@ -79,3 +79,10 @@ I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Main
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\display_name.xnb
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\BlankTexture.xnb
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\identité1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_quitter.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\BlankTexture.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\identité1.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\chronomètre.xnb
+E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\display_name.xnb
+I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\choix.xnb
