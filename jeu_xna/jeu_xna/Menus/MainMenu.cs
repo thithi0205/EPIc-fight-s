@@ -16,6 +16,7 @@ namespace jeu_xna
     {
         MainMenu,
         ChoiceMenuCaracter,
+        ChoiceMenuBattlefield,
         Options,
         Playing,
         Pause
@@ -80,6 +81,7 @@ namespace jeu_xna
             #endregion
 
             ChoiceMenuCaracter.LoadContent(Content);
+            ChoiceMenuBattlefield.LoadContent(Content);
         }
 
         //UNLOADCONTENT
@@ -113,6 +115,8 @@ namespace jeu_xna
                 Console.WriteLine("Playing\n");
             else if (CurrentGameState == GameState.ChoiceMenuCaracter)
                 Console.WriteLine("ChoiceMenuCaracter\n");
+            else if (CurrentGameState == GameState.ChoiceMenuBattlefield)
+                Console.WriteLine("ChoiceMenuBattlefield\n");
             #endregion
 
             //BOUTONS DU MENU PRINCIPAL
@@ -154,6 +158,10 @@ namespace jeu_xna
                     ChoiceMenuCaracter.Update();
                     break;
 
+                case GameState.ChoiceMenuBattlefield:
+                    ChoiceMenuBattlefield.Update();
+                    break;
+
                 case GameState.Playing:
 
                     //LANCEMENT DU JEU
@@ -192,6 +200,10 @@ namespace jeu_xna
 
                 case GameState.ChoiceMenuCaracter:
                     ChoiceMenuCaracter.Draw(spriteBatch);
+                    break;
+
+                case GameState.ChoiceMenuBattlefield:
+                    ChoiceMenuBattlefield.Draw(spriteBatch);
                     break;
 
                 case GameState.Playing:

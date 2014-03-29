@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="Game\Game1.cs" />
     <Compile Include="Game\GameMain.cs" />
+    <Compile Include="Menus\ChoiceMenuBattlefield.cs" />
     <Compile Include="Menus\ChoiceMenuCaracter.cs" />
     <Compile Include="Menus\MenuButton.cs" />
     <Compile Include="Game\Player.cs" />

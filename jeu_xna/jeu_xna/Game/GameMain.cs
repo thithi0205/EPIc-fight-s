@@ -16,9 +16,8 @@ namespace jeu_xna
     {
         // FIELD
         public static Player LocalPlayer1, LocalPlayer2;
-        public static int personnage_choisi1, personnage_choisi2;
+        public static int personnage_choisi1, personnage_choisi2, terrain_choisi;
         bool WasKeyDown_Escape = false; 
-        //public static bool jump1 = false, jump2 = false;
         static int timer_fps, timer_combat_secondes, timer_combat_minutes;
 
         public static MenuButton option, retour, menu_principal, quitter;
@@ -195,7 +194,7 @@ namespace jeu_xna
             switch (MainMenu.CurrentGameState)
             {
                 case GameState.Playing:
-                    spriteBatch.Draw(Ressources.Fond, Vector2.Zero, Color.White);
+                    spriteBatch.Draw(Ressources.fields[terrain_choisi], Vector2.Zero, Color.White);
 
                     if (timer_combat_secondes < 10)
                     {

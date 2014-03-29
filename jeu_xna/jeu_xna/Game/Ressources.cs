@@ -12,7 +12,7 @@ namespace jeu_xna
     class Ressources
     {
         // STATIC FIELDS
-        public static Texture2D Fond;
+        public static Texture2D[] fields = new Texture2D[1];
         public static SoundEffect Pas, jump_end;
         public static Song Musique;
         public static SoundEffectInstance jump_end_sound;
@@ -23,7 +23,7 @@ namespace jeu_xna
         {
             caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"));
 
-            Fond = Content.Load<Texture2D>(@"Sprites\Maps\map1");
+            fields[0] = Content.Load<Texture2D>(@"Sprites\Maps\map1");
         }
 
         public static void LoadContent_Sounds(ContentManager Content)

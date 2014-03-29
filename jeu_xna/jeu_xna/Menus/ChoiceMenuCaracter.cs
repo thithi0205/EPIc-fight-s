@@ -15,8 +15,8 @@ namespace jeu_xna
         public static RectangleMaker caracter1;
         public static int player;
         static SpriteFont choix;
-        static MenuButton jouer;
-        static bool was_cliqued;
+        static MenuButton jouer, retour;
+        public static bool was_cliqued;
 
         public static void Initialise()
         {
@@ -27,17 +27,18 @@ namespace jeu_xna
         public static void LoadContent(ContentManager Content)
         {
             BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
-            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), BlankTexture);
+            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), BlankTexture, 100, 100);
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             choix = Content.Load<SpriteFont>("choix");
             jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(500, 500));
+            retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(50, 500));
         }
 
         public static void Update()
         {
             Console.WriteLine("player : " + player);
-            //mouse = Mouse.GetState();
             caracter1.Update(MainMenu.mouse);
+            retour.Update(MainMenu.mouse);
 
             if (player == 1)
             {
@@ -57,6 +58,11 @@ namespace jeu_xna
                     player = 3;
                 }
 
+                else if (retour.isClicked)
+                {
+                    player = 1;
+                }
+
                 else if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
                 {
                     was_cliqued = false;
@@ -69,7 +75,7 @@ namespace jeu_xna
 
                 if (jouer.isClicked)
                 {
-                    MainMenu.CurrentGameState = GameState.Playing;
+                    MainMenu.CurrentGameState = GameState.ChoiceMenuBattlefield;
                 }
             }
         }
@@ -79,6 +85,12 @@ namespace jeu_xna
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
             caracter1.draw(spriteBatch);
             jouer.Draw(spriteBatch);
+
+            if (player == 2)
+            {
+                retour.Draw(spriteBatch);
+            }
+
             if (player < 3)
             {
                 spriteBatch.DrawString(choix, "Choix du joueur " + player, new Vector2(300, 30), Color.Black);
@@ -100,7 +112,7 @@ namespace jeu_xna
         Color boarder;
         //MouseState mouse;
 
-        public RectangleMaker(int x, int y, Texture2D caracter, Texture2D BlankTexture)
+        public RectangleMaker(int x, int y, Texture2D caracter, Texture2D BlankTexture, int width, int heigh)
         {
             this.x = x;
             this.y = y;
@@ -111,14 +123,13 @@ namespace jeu_xna
 
             BoarderOffSet = 2;
 
-            rectangle = new Rectangle(x, y, 100, 100);
-            background = new Rectangle(x, y, 100, 100); 
-            RecBoarder = new Rectangle(x - BoarderOffSet, y - BoarderOffSet, 100 + (BoarderOffSet * 2), 100 + (BoarderOffSet * 2));
+            rectangle = new Rectangle(x, y, width, heigh);
+            background = new Rectangle(x, y, width, heigh); 
+            RecBoarder = new Rectangle(x - BoarderOffSet, y - BoarderOffSet, width + (BoarderOffSet * 2), heigh + (BoarderOffSet * 2));
         }
 
         public void Update(MouseState mouse)
         {
-            //mouse = Mouse.GetState();
             Rectangle mouseRectangle = new Rectangle(MainMenu.mouse.X, MainMenu.mouse.Y, 1, 1);
 
             if (mouseRectangle.Intersects(RecBoarder)) 
@@ -134,6 +145,11 @@ namespace jeu_xna
                     boarder = new Color(255, 0, 0);
                 }
 
+                else if (ChoiceMenuCaracter.player == 3)
+                {
+                    boarder = new Color(185, 122, 87);
+                }
+
                 if (mouse.LeftButton == ButtonState.Pressed)
                 {
                     is_clicked = true;
@@ -145,7 +161,7 @@ namespace jeu_xna
                 }
             }
 
-            else //le button devient gris
+            else //le bouton devient gris
             {
                 boarder = new Color(195, 195, 195);
                 is_clicked = false;
