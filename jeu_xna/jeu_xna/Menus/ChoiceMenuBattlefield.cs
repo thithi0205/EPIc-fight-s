@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace jeu_xna
 {
@@ -32,10 +33,18 @@ namespace jeu_xna
 
         public static void Update()
         {
-            if (terrain1.is_clicked)
+            jouer.Update(MainMenu.mouse);
+
+            if (terrain1.is_clicked && !ChoiceMenuCaracter.was_cliqued)
             {
                 GameMain.terrain_choisi = 0;
                 choisi = true;
+                ChoiceMenuCaracter.was_cliqued = true;
+            }
+
+            else if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
+            {
+                ChoiceMenuCaracter.was_cliqued = false;
             }
 
             if (choisi)
@@ -43,9 +52,9 @@ namespace jeu_xna
                 if (jouer.isClicked)
                 {
                     MainMenu.CurrentGameState = GameState.Playing;
+                    choisi = false;
                 }
 
-                jouer.Update(MainMenu.mouse);
             }
 
             terrain1.Update(MainMenu.mouse);
@@ -56,7 +65,11 @@ namespace jeu_xna
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
             spriteBatch.DrawString(display, "Choix du terrain de combat", new Vector2(230, 30), Color.Black);
             terrain1.draw(spriteBatch);
-            jouer.Draw(spriteBatch);
+
+            if (choisi)
+            {
+                jouer.Draw(spriteBatch);
+            }
         }
     }
 }
