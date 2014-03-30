@@ -215,7 +215,6 @@ namespace jeu_xna
                 if (can_jump <= 20)
                 {
                     can_jump++;
-                    //jump1 = false;
                 }
 
                 else

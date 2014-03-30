@@ -12,9 +12,9 @@ namespace jeu_xna
     class ChoiceMenuBattlefield
     {
         static Texture2D blanck, background;
-        static RectangleMaker terrain1;
-        static MenuButton jouer;
-        static bool choisi = false;
+        public static RectangleMaker terrain1;
+        public static MenuButton jouer, retour;
+        public static bool choisi = false;
         static SpriteFont display;
 
         public static void Initialise() 
@@ -26,15 +26,14 @@ namespace jeu_xna
         {
             blanck = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
             terrain1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Maps\map1"), blanck, 200, 120);
-            jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(500, 500));
+            jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(600, 500));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             display = Content.Load<SpriteFont>("choix");
+            retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(50, 500));
         }
 
         public static void Update()
         {
-            jouer.Update(MainMenu.mouse);
-
             if (terrain1.is_clicked && !ChoiceMenuCaracter.was_cliqued)
             {
                 GameMain.terrain_choisi = 0;
@@ -42,7 +41,15 @@ namespace jeu_xna
                 ChoiceMenuCaracter.was_cliqued = true;
             }
 
-            else if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
+            if (retour.isClicked && !ChoiceMenuCaracter.was_cliqued)
+            {
+                choisi = false;
+                ChoiceMenuCaracter.was_cliqued = true;
+                ChoiceMenuCaracter.player = 2;
+                MainMenu.CurrentGameState = GameState.ChoiceMenuCaracter;
+            }
+
+            if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
             {
                 ChoiceMenuCaracter.was_cliqued = false;
             }
@@ -55,9 +62,7 @@ namespace jeu_xna
                     choisi = false;
                 }
 
-            }
-
-            terrain1.Update(MainMenu.mouse);
+            }  
         }
 
         public static void Draw(SpriteBatch spriteBatch)
@@ -65,6 +70,7 @@ namespace jeu_xna
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
             spriteBatch.DrawString(display, "Choix du terrain de combat", new Vector2(230, 30), Color.Black);
             terrain1.draw(spriteBatch);
+            retour.Draw(spriteBatch);
 
             if (choisi)
             {

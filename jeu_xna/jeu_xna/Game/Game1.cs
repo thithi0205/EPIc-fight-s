@@ -71,7 +71,7 @@ namespace jeu_xna
             MainMenu.mouse = Mouse.GetState();
             Mouse.WindowHandle = Window.Handle;
 
-            Main.Update(MainMenu.mouse, Keyboard.GetState());
+            Main.Update(MainMenu.mouse);
         }
 
         //DRAW

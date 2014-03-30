@@ -218,6 +218,15 @@
       <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\choix.xnb</Output>
       <Time>2014-03-28T22:51:43.3420908+01:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\Font\pause.spritefont</Source>
+      <Name>Sprites\MainMenu\Options\Font\pause</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\pause.xnb</Output>
+      <Time>2014-03-31T00:22:22.9706357+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

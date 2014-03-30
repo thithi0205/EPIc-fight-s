@@ -22,7 +22,9 @@ namespace jeu_xna
 
         public static MenuButton option, retour, menu_principal, quitter;
         static Texture2D background, picture_identity;
-        static SpriteFont chrono;
+        static SpriteFont chrono, pause;
+
+        static KeyboardState keyboard;
 
         // CONSTRUCTOR
         public GameMain(ContentManager Content)
@@ -54,50 +56,14 @@ namespace jeu_xna
             menu_principal = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(255, 200));
             quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2(300, 400));
             Options.LoadContent(Content);
+
+            pause = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
         }
 
         // UPDATE & DRAW
-        public void Update(MouseState mouse, KeyboardState keyboard)
+        public void Update(MouseState mouse)
         {
-            #region Blocage temporaire des sauts
-            /*if (LocalPlayer1.KeyDown_up && !jump1)
-            {
-                jump1 = true;
-            }
-
-            if (jump1)
-            {
-                if (LocalPlayer1.can_jump <= 10)
-                {
-                    LocalPlayer1.can_jump++;
-                }
-
-                else
-                {
-                    LocalPlayer1.can_jump = 0;
-                    jump1 = false;
-                }
-            }
-
-            if (LocalPlayer2.KeyDown_up && !jump2)
-            {
-                jump2 = true;
-            }
-
-            if (jump2)
-            {
-                if (LocalPlayer2.can_jump <= 10)
-                {
-                    LocalPlayer2.can_jump++;
-                }
-
-                else
-                {
-                    LocalPlayer2.can_jump = 0;
-                    jump2 = false;
-                }
-            }*/
-            #endregion
+            keyboard = Keyboard.GetState();
 
             if (keyboard.IsKeyDown(Keys.Escape) && MainMenu.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
             {
@@ -114,6 +80,11 @@ namespace jeu_xna
             else if (keyboard.IsKeyUp(Keys.Escape))
             {
                 WasKeyDown_Escape = false;
+            }
+
+            if (WasKeyDown_Escape)
+            {
+                Console.WriteLine("escape pressed");
             }
 
             switch (MainMenu.CurrentGameState)
@@ -218,6 +189,7 @@ namespace jeu_xna
 
                 case GameState.Pause:
                     spriteBatch.Draw(background, Vector2.Zero, Color.White);
+                    spriteBatch.DrawString(pause, "PAUSE", new Vector2(330, 20), Color.Black);
                     option.Draw(spriteBatch);
                     retour.Draw(spriteBatch);
                     menu_principal.Draw(spriteBatch);

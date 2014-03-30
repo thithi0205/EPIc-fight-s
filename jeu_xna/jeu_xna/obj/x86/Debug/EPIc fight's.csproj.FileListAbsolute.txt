@@ -86,3 +86,4 @@ E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Pers
 E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\chronomètre.xnb
 E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\display_name.xnb
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\choix.xnb
+I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\pause.xnb

@@ -52,7 +52,6 @@ namespace jeu_xna
                 couleur.R = 195;
                 couleur.G = 195;
                 couleur.B = 195;
-                //isClicked = false;
             }
         }
 

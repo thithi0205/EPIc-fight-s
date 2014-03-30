@@ -15,7 +15,6 @@ namespace jeu_xna
     {
         public static MenuButton plus_musique, moins_musique, plus_bruitages, moins_bruitages, bouton_retour;
         public static bool was_cliqued, is_mainmenu;
-        //public static MouseState mouse;
         public static SoundEffect test_volume_bruitage;
         public static float mediaplayer_volume, bruitage_volume;
         public static Texture2D background, volume, volume_musique, volume_bruitage;
@@ -28,10 +27,10 @@ namespace jeu_xna
 
         public static void LoadContent(ContentManager Content)
         {
-            plus_musique = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\+"), new Vector2(250, 100));
-            moins_musique = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(400, 100));
-            plus_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\+"), new Vector2(250, 170));
-            moins_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(400, 170));
+            plus_musique = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\+"), new Vector2(400, 100));
+            moins_musique = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(250, 100));
+            plus_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\+"), new Vector2(400, 170));
+            moins_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(250, 170));
             bouton_retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(20, 520));
             test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\jump1");
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
@@ -43,7 +42,6 @@ namespace jeu_xna
 
         public static void Update()
         {
-            //mouse = Mouse.GetState();
             mediaplayer_volume = MediaPlayer.Volume;
             bruitage_volume = SoundEffect.MasterVolume;
 

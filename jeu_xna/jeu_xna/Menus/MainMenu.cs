@@ -34,7 +34,7 @@ namespace jeu_xna
         Song musique;
 
         #region Menu_buttons
-        MenuButton play, option, quitter; //menu principal
+        MenuButton play, option, quitter, mainmenu; //menu principal
         public static GameState CurrentGameState;
 
         #endregion
@@ -82,6 +82,8 @@ namespace jeu_xna
 
             ChoiceMenuCaracter.LoadContent(Content);
             ChoiceMenuBattlefield.LoadContent(Content);
+
+            mainmenu = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(270, 500));
         }
 
         //UNLOADCONTENT
@@ -94,12 +96,22 @@ namespace jeu_xna
         protected override void Update(GameTime gameTime)
         {
             mouse = Mouse.GetState();
+
+            #region mise à jour des boutons des menus
             Options.plus_musique.Update(mouse);
             Options.moins_musique.Update(mouse);
             Options.plus_bruitages.Update(mouse);
             Options.moins_bruitages.Update(mouse);
             Options.bouton_retour.Update(mouse);
+
             ChoiceMenuCaracter.caracter1.Update(mouse);
+            ChoiceMenuCaracter.retour.Update(mouse);
+            ChoiceMenuCaracter.jouer.Update(mouse);
+
+            ChoiceMenuBattlefield.jouer.Update(mouse);
+            ChoiceMenuBattlefield.retour.Update(mouse);
+            ChoiceMenuBattlefield.terrain1.Update(mouse);
+            #endregion
 
             //DEBUGgING
             #region Debugging
@@ -129,20 +141,19 @@ namespace jeu_xna
             switch (CurrentGameState)
             {
                 case GameState.MainMenu:
-
                     //MISE A JOUR DU MENU PRINCIPAL
                     #region MainMenu update
-                    if (play.isClicked)
+                    if (play.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
                         CurrentGameState = GameState.ChoiceMenuCaracter;
                     }
 
-                    else if (option.isClicked)
+                    else if (option.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
                         CurrentGameState = GameState.Options;
                     }
 
-                    else if (quitter.isClicked)
+                    else if (quitter.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
                         this.Exit();
                     }
@@ -150,7 +161,6 @@ namespace jeu_xna
                     break;
 
                 case GameState.Options:
-
                     Options.Update();
                     break;
 
@@ -163,7 +173,6 @@ namespace jeu_xna
                     break;
 
                 case GameState.Playing:
-
                     //LANCEMENT DU JEU
                     thread_jeu = new Thread(jeu);
                     thread_jeu.Start();
@@ -171,6 +180,26 @@ namespace jeu_xna
                     Program.thread_menu.Abort();
                     break;
             }
+
+            #region mise à jour bouton Menu principal choix personnages et terrain de combat
+            mainmenu.Update(mouse);
+
+            if (CurrentGameState == GameState.ChoiceMenuCaracter || CurrentGameState == GameState.ChoiceMenuBattlefield)
+            {
+                if (mainmenu.isClicked)
+                {
+                    CurrentGameState = GameState.MainMenu;
+                    ChoiceMenuCaracter.was_cliqued = true;
+                    ChoiceMenuBattlefield.choisi = false;
+                    ChoiceMenuCaracter.player = 1;
+                }
+            }
+
+            if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
+            {
+                ChoiceMenuCaracter.was_cliqued = false;
+            }
+            #endregion
 
             base.Update(gameTime);
         }
@@ -210,13 +239,19 @@ namespace jeu_xna
                     //affichage géré par le deuxième thread (thread_jeu)
                     break;
             }
+
+            if (CurrentGameState == GameState.ChoiceMenuCaracter || CurrentGameState == GameState.ChoiceMenuBattlefield)
+            {
+                mainmenu.Draw(spriteBatch);
+            }
+
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
 
 
-        public static void jeu()
+        public static void jeu() //lancement du jeu
         {
             using (Game1 game1 = new Game1())
             {
