@@ -1,4 +1,3 @@
-Content\Sprites\Personnages\personnage1.xnb
 Content\Sprites\Maps\map1.xnb
 Content\Sprites\MainMenu\Main_menu.xnb
 Content\Sprites\MainMenu\button_jouer.xnb
@@ -14,6 +13,7 @@ Content\Sprites\MainMenu\bouton_quitter.xnb
 Content\Sprites\MainMenu\bouton_menu-principal.xnb
 Content\Sprites\Personnages\BlankTexture.xnb
 Content\Sprites\Personnages\identité1.xnb
+Content\Sprites\Personnages\personnage1.xnb
 Content\Sounds\Personnage\jump1.xnb
 Content\Sounds\Personnage\step1.xnb
 Content\Sounds\Personnage\jump_end.xnb
