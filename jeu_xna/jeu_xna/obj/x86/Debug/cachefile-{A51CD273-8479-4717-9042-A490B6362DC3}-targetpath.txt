@@ -24,3 +24,6 @@ Content\chronomètre.xnb
 Content\display_name.xnb
 Content\choix.xnb
 Content\Sprites\MainMenu\Options\Font\pause.xnb
+Content\Sprites\Game\ready.xnb
+Content\Sprites\Game\fight.xnb
+Content\Sprites\Personnages\attaque_1.xnb

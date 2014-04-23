@@ -12,17 +12,6 @@ using System.Threading;
 
 namespace jeu_xna
 {
-    public enum GameState
-    {
-        MainMenu,
-        ChoiceMenuCaracter,
-        ChoiceMenuBattlefield,
-        Options,
-        Playing,
-        Pause
-    }
-
-
     public class MainMenu : Microsoft.Xna.Framework.Game
     {
         public static GraphicsDeviceManager graphics;
@@ -35,7 +24,7 @@ namespace jeu_xna
 
         #region Menu_buttons
         MenuButton play, option, quitter, mainmenu; //menu principal
-        public static GameState CurrentGameState;
+        //public static GameState CurrentGameState;
 
         #endregion
 
@@ -53,7 +42,7 @@ namespace jeu_xna
         {
             ChoiceMenuCaracter.Initialise();
             Options.is_mainmenu = true;
-            CurrentGameState = GameState.MainMenu;
+            State.CurrentGameState = GameState.MainMenu;
             IsMouseVisible = true;
             base.Initialize();
         }
@@ -119,15 +108,15 @@ namespace jeu_xna
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
-            if (CurrentGameState == GameState.MainMenu)
+            if (State.CurrentGameState == GameState.MainMenu)
                 Console.WriteLine("MainMenu\n");
-            else if (CurrentGameState == GameState.Options)
+            else if (State.CurrentGameState == GameState.Options)
                 Console.WriteLine("Options\n");
-            else if (CurrentGameState == GameState.Playing)
+            else if (State.CurrentGameState == GameState.Playing)
                 Console.WriteLine("Playing\n");
-            else if (CurrentGameState == GameState.ChoiceMenuCaracter)
+            else if (State.CurrentGameState == GameState.ChoiceMenuCaracter)
                 Console.WriteLine("ChoiceMenuCaracter\n");
-            else if (CurrentGameState == GameState.ChoiceMenuBattlefield)
+            else if (State.CurrentGameState == GameState.ChoiceMenuBattlefield)
                 Console.WriteLine("ChoiceMenuBattlefield\n");
             #endregion
 
@@ -138,19 +127,19 @@ namespace jeu_xna
             quitter.Update(mouse);
             #endregion
 
-            switch (CurrentGameState)
+            switch (State.CurrentGameState)
             {
                 case GameState.MainMenu:
                     //MISE A JOUR DU MENU PRINCIPAL
                     #region MainMenu update
                     if (play.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
-                        CurrentGameState = GameState.ChoiceMenuCaracter;
+                        State.CurrentGameState = GameState.ChoiceMenuCaracter;
                     }
 
                     else if (option.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
-                        CurrentGameState = GameState.Options;
+                        State.CurrentGameState = GameState.Options;
                     }
 
                     else if (quitter.isClicked && !ChoiceMenuCaracter.was_cliqued)
@@ -184,11 +173,11 @@ namespace jeu_xna
             #region mise à jour bouton Menu principal choix personnages et terrain de combat
             mainmenu.Update(mouse);
 
-            if (CurrentGameState == GameState.ChoiceMenuCaracter || CurrentGameState == GameState.ChoiceMenuBattlefield)
+            if (State.CurrentGameState == GameState.ChoiceMenuCaracter || State.CurrentGameState == GameState.ChoiceMenuBattlefield)
             {
                 if (mainmenu.isClicked)
                 {
-                    CurrentGameState = GameState.MainMenu;
+                    State.CurrentGameState = GameState.MainMenu;
                     ChoiceMenuCaracter.was_cliqued = true;
                     ChoiceMenuBattlefield.choisi = false;
                     ChoiceMenuCaracter.player = 1;
@@ -210,7 +199,7 @@ namespace jeu_xna
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
-            switch (CurrentGameState)
+            switch (State.CurrentGameState)
             {
                 case GameState.MainMenu:
 
@@ -240,7 +229,7 @@ namespace jeu_xna
                     break;
             }
 
-            if (CurrentGameState == GameState.ChoiceMenuCaracter || CurrentGameState == GameState.ChoiceMenuBattlefield)
+            if (State.CurrentGameState == GameState.ChoiceMenuCaracter || State.CurrentGameState == GameState.ChoiceMenuBattlefield)
             {
                 mainmenu.Draw(spriteBatch);
             }

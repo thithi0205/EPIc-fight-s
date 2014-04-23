@@ -21,7 +21,7 @@ namespace jeu_xna
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
         {
-            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"));
+            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"), new Attack(1, 1, 10, new Texture2D[]{Content.Load<Texture2D>(@"Sprites\Personnages\attaque_1")}));
 
             fields[0] = Content.Load<Texture2D>(@"Sprites\Maps\map1");
         }
@@ -45,14 +45,16 @@ namespace jeu_xna
 
     class TextureCaracter
     {
-        public Texture2D personnage, identity;//, attaques
+        public Texture2D personnage, identity;
         public SoundEffect jump;
+        public Attack attaque;
 
-        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump)
+        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque)
         {
             this.personnage = personnage;
             this.identity = identity;
             this.jump = jump;
+            this.attaque = attaque;
         }
     }
 }

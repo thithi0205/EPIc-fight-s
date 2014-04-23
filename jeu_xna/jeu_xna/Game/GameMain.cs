@@ -18,13 +18,13 @@ namespace jeu_xna
         public static Player LocalPlayer1, LocalPlayer2;
         public static int personnage_choisi1, personnage_choisi2, terrain_choisi;
         bool WasKeyDown_Escape = false; 
-        static int timer_fps, timer_combat_secondes, timer_combat_minutes;
+        public static int timer_fps, timer_combat_secondes, timer_combat_minutes;
 
         public static MenuButton option, retour, menu_principal, quitter;
-        static Texture2D background, picture_identity;
+        static Texture2D background, picture_identity, ready, fight;
         static SpriteFont chrono, pause;
 
-        static KeyboardState keyboard;
+        //static KeyboardState keyboard;
 
         // CONSTRUCTOR
         public GameMain(ContentManager Content)
@@ -32,12 +32,12 @@ namespace jeu_xna
         }
 
         // METHODS
-        public static void Initialize()
+        public static new void Initialize()
         {
             Options.mediaplayer_volume = MediaPlayer.Volume;
             Options.bruitage_volume = SoundEffect.MasterVolume;
             timer_fps = 0;
-            timer_combat_secondes = 0;
+            timer_combat_secondes = -2;
             timer_combat_minutes = 0;
         }
 
@@ -46,8 +46,8 @@ namespace jeu_xna
             picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
 
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1].personnage, Ressources.caracters[personnage_choisi1].identity, 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Ressources.caracters[personnage_choisi1].jump, Content);
-            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2].personnage, Ressources.caracters[personnage_choisi2].identity, 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Ressources.caracters[personnage_choisi2].jump, Content);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content, Keys.E);
+            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content, Keys.RightShift);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
@@ -58,22 +58,22 @@ namespace jeu_xna
             Options.LoadContent(Content);
 
             pause = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
+            ready = Content.Load<Texture2D>(@"Sprites\Game\ready");
+            fight = Content.Load<Texture2D>(@"Sprites\Game\fight");
         }
 
         // UPDATE & DRAW
-        public void Update(MouseState mouse)
+        public void Update(MouseState mouse, KeyboardState keyboard)
         {
-            keyboard = Keyboard.GetState();
-
-            if (keyboard.IsKeyDown(Keys.Escape) && MainMenu.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
+            if (keyboard.IsKeyDown(Keys.Escape) && State.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
             {
-                MainMenu.CurrentGameState = GameState.Pause;
+                State.CurrentGameState = GameState.Pause;
                 WasKeyDown_Escape = true;
             }
 
-            else if (keyboard.IsKeyDown(Keys.Escape) && (MainMenu.CurrentGameState == GameState.Pause || MainMenu.CurrentGameState == GameState.Options) && !WasKeyDown_Escape)
+            else if (keyboard.IsKeyDown(Keys.Escape) && (State.CurrentGameState == GameState.Pause || State.CurrentGameState == GameState.Options) && !WasKeyDown_Escape)
             {
-                MainMenu.CurrentGameState = GameState.Playing;
+                State.CurrentGameState = GameState.Playing;
                 WasKeyDown_Escape = true;
             }
 
@@ -82,16 +82,14 @@ namespace jeu_xna
                 WasKeyDown_Escape = false;
             }
 
-            if (WasKeyDown_Escape)
-            {
-                Console.WriteLine("escape pressed");
-            }
-
-            switch (MainMenu.CurrentGameState)
+            switch (State.CurrentGameState)
             {
                 case GameState.Playing:
-                    LocalPlayer1.Update(mouse, keyboard);
-                    LocalPlayer2.Update(mouse, keyboard);
+                    if (timer_combat_secondes >= 0)
+                    {
+                        LocalPlayer1.Update(mouse, keyboard);
+                        LocalPlayer2.Update(mouse, keyboard);
+                    }
                     timer_fps++;
 
                     //CHRONOMETRE
@@ -115,17 +113,17 @@ namespace jeu_xna
                 case GameState.Pause:
                     if (option.isClicked)
                     {
-                        MainMenu.CurrentGameState = GameState.Options;
+                        State.CurrentGameState = GameState.Options;
                     }
 
                     else if (retour.isClicked)
                     {
-                        MainMenu.CurrentGameState = GameState.Playing;
+                        State.CurrentGameState = GameState.Playing;
                     }
 
                     else if (menu_principal.isClicked)
                     {
-                        MainMenu.CurrentGameState = GameState.MainMenu;
+                        State.CurrentGameState = GameState.MainMenu;
                         Program.thread_menu = new Thread(new ThreadStart(Program.Menu));
                         Program.thread_menu.Start();
                         MainMenu.thread_jeu.Abort();
@@ -151,34 +149,51 @@ namespace jeu_xna
             Console.WriteLine("CAN_JUMP joueur 1 : " + LocalPlayer1.can_jump + " joueur 2 : " + LocalPlayer2.can_jump);
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
-            if (MainMenu.CurrentGameState == GameState.Playing)
+            if (State.CurrentGameState == GameState.Playing)
                 Console.WriteLine("Playing\n");
-            else if (MainMenu.CurrentGameState == GameState.Pause)
+            else if (State.CurrentGameState == GameState.Pause)
                 Console.WriteLine("Pause\n");
-            else if (MainMenu.CurrentGameState == GameState.Options)
+            else if (State.CurrentGameState == GameState.Options)
                 Console.WriteLine("Options\n");
+            if (!WasKeyDown_Escape)
+                Console.WriteLine("escape not pressed");
             #endregion
+
+            //keyboard = Keyboard.GetState();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            switch (MainMenu.CurrentGameState)
+            switch (State.CurrentGameState)
             {
                 case GameState.Playing:
                     spriteBatch.Draw(Ressources.fields[terrain_choisi], Vector2.Zero, Color.White);
+                    LocalPlayer1.Draw(spriteBatch);
+                    LocalPlayer2.Draw(spriteBatch);
 
                     if (timer_combat_secondes < 10)
                     {
-                        spriteBatch.DrawString(chrono, timer_combat_minutes + " : 0" + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                        if (timer_combat_secondes < 0)
+                        {
+                            spriteBatch.DrawString(chrono, "- " + timer_combat_minutes + " : 0" + (timer_combat_secondes) * (-1), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                            spriteBatch.Draw(ready, new Vector2(350, 260), Color.White);
+                        }
+
+                        else
+                        {
+                            spriteBatch.DrawString(chrono, timer_combat_minutes + " : 0" + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                        }
+
+                        if (timer_combat_secondes >= 0 && timer_combat_secondes < 2)
+                        {
+                            spriteBatch.Draw(fight, new Vector2(350, 260), Color.White);
+                        }
                     }
 
                     else
                     {
                         spriteBatch.DrawString(chrono, timer_combat_minutes + " : " + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                     }
-
-                    LocalPlayer1.Draw(spriteBatch);
-                    LocalPlayer2.Draw(spriteBatch);
 
                     LocalPlayer1.GenerateBar(LocalPlayer1.vie, 100, spriteBatch);
                     LocalPlayer2.GenerateBar(LocalPlayer2.vie, 100, spriteBatch);

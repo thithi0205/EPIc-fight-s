@@ -4,3 +4,4 @@ I:\epita\projet\jeu_xna\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.cont
 I:\epita\projet\jeu_xna - git\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache
 E:\epita\projet\jeu_xna - git\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache
 D:\epita\projet\jeu_xna - git\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xnaContent\obj\x86\Debug\jeu_xnaContent.contentprojResolveAssemblyReference.cache

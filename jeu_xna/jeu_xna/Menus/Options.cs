@@ -49,12 +49,12 @@ namespace jeu_xna
             {
                 if (is_mainmenu)
                 {
-                    MainMenu.CurrentGameState = GameState.MainMenu;
+                    State.CurrentGameState = GameState.MainMenu;
                 }
 
                 else   
                 {
-                    MainMenu.CurrentGameState = GameState.Pause;
+                    State.CurrentGameState = GameState.Pause;
                 }
             }
 

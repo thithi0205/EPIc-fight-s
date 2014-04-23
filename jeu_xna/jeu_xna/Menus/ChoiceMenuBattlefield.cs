@@ -46,7 +46,7 @@ namespace jeu_xna
                 choisi = false;
                 ChoiceMenuCaracter.was_cliqued = true;
                 ChoiceMenuCaracter.player = 2;
-                MainMenu.CurrentGameState = GameState.ChoiceMenuCaracter;
+                State.CurrentGameState = GameState.ChoiceMenuCaracter;
             }
 
             if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)
@@ -58,7 +58,7 @@ namespace jeu_xna
             {
                 if (jouer.isClicked)
                 {
-                    MainMenu.CurrentGameState = GameState.Playing;
+                    State.CurrentGameState = GameState.Playing;
                     choisi = false;
                 }
 

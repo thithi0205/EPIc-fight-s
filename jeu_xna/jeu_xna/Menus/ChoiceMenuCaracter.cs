@@ -70,7 +70,7 @@ namespace jeu_xna
             {
                 if (jouer.isClicked && !was_cliqued)
                 {
-                    MainMenu.CurrentGameState = GameState.ChoiceMenuBattlefield;
+                    State.CurrentGameState = GameState.ChoiceMenuBattlefield;
                     was_cliqued = true;
                 }
 

@@ -17,6 +17,7 @@ namespace jeu_xna
         public static GraphicsDeviceManager graphics1;
         SpriteBatch spriteBatch;
         GameMain Main;
+        KeyboardState keyboard;
 
         public Game1()
         {
@@ -24,7 +25,7 @@ namespace jeu_xna
             graphics1.PreferredBackBufferHeight = 600;
             graphics1.PreferredBackBufferWidth = 800;
             graphics1.ApplyChanges();
-            //graphics1.ToggleFullScreen();
+            graphics1.ToggleFullScreen();
             Content.RootDirectory = "Content";
         }
 
@@ -70,8 +71,9 @@ namespace jeu_xna
             
             MainMenu.mouse = Mouse.GetState();
             Mouse.WindowHandle = Window.Handle;
+            keyboard = Keyboard.GetState();
 
-            Main.Update(MainMenu.mouse);
+            Main.Update(MainMenu.mouse, keyboard);
         }
 
         //DRAW

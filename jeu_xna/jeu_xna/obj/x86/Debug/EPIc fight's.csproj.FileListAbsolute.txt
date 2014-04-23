@@ -121,3 +121,38 @@ D:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\EPIc fight's.csprojR
 D:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.exe
 D:\epita\projet\jeu_xna - git\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.pdb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Maps\map1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Main_menu.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_jouer.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\background.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\button_options.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\+.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\-.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume_bruitages.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\volume_musique.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\bouton_retour.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_quitter.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\bouton_menu-principal.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\BlankTexture.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\identité1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\personnage1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\jump1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\step1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Personnage\jump_end.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\chronomètre.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\display_name.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\choix.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\MainMenu\Options\Font\pause.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sounds\Musique\Son Game 1.wma
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.exe
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\jeu_xna.pdb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\obj\x86\Debug\EPIc fight's.csprojResolveAssemblyReference.cache
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.exe
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\obj\x86\Debug\jeu_xna.pdb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Game\ready.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Game\fight.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Debug\Content\Sprites\Personnages\attaque_1.xnb
