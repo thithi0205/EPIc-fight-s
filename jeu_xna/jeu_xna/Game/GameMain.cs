@@ -17,14 +17,12 @@ namespace jeu_xna
         // FIELD
         public static Player LocalPlayer1, LocalPlayer2;
         public static int personnage_choisi1, personnage_choisi2, terrain_choisi;
-        bool WasKeyDown_Escape = false; 
+        static bool WasKeyDown_Escape = false, was_displayed = false; 
         public static int timer_fps, timer_combat_secondes, timer_combat_minutes;
 
         public static MenuButton option, retour, menu_principal, quitter;
         static Texture2D background, picture_identity, ready, fight;
         static SpriteFont chrono, pause;
-
-        //static KeyboardState keyboard;
 
         // CONSTRUCTOR
         public GameMain(ContentManager Content)
@@ -46,7 +44,7 @@ namespace jeu_xna
             picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
 
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content, Keys.E);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content, Keys.F);
             LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content, Keys.RightShift);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
@@ -157,9 +155,11 @@ namespace jeu_xna
                 Console.WriteLine("Options\n");
             if (!WasKeyDown_Escape)
                 Console.WriteLine("escape not pressed");
+            if (keyboard.IsKeyDown(Keys.Escape))
+                Console.WriteLine("escape pressed");
             #endregion
 
-            //keyboard = Keyboard.GetState();
+            keyboard = Keyboard.GetState();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -184,9 +184,10 @@ namespace jeu_xna
                             spriteBatch.DrawString(chrono, timer_combat_minutes + " : 0" + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                         }
 
-                        if (timer_combat_secondes >= 0 && timer_combat_secondes < 2)
+                        if (timer_combat_secondes >= 0 && timer_combat_secondes < 2 && !was_displayed)
                         {
                             spriteBatch.Draw(fight, new Vector2(350, 260), Color.White);
+                            was_displayed = true;
                         }
                     }
 

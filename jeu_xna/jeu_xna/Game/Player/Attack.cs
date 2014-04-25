@@ -10,15 +10,19 @@ namespace jeu_xna
 {
     class Attack
     {
-        int nb_frames, dégat_min, dégat_max;
-        Texture2D[] frames;
+        public int nb_frames, dégat_min, dégat_max, width, height, x, y;
+        public Texture2D[] frames;
 
-        public Attack(int nb_frames, int dégat_min, int dégat_max, Texture2D[] frames)
+        public Attack(int nb_frames, int dégat_min, int dégat_max, Texture2D[] frames, int width, int height, int x, int y)
         {
             this.nb_frames = nb_frames;
             this.dégat_min = dégat_min;
             this.dégat_max = dégat_max;
             this.frames = frames;
+            this.width = width;
+            this.height = height;
+            this.x = x;
+            this.y = y;
         }
 
         public static void draw(int x, int y, SpriteBatch spriteBatch, Texture2D texture)

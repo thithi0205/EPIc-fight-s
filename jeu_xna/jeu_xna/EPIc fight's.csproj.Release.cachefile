@@ -1,0 +1,29 @@
+Content\Sprites\Maps\map1.xnb
+Content\Sprites\MainMenu\Main_menu.xnb
+Content\Sprites\MainMenu\button_jouer.xnb
+Content\Sprites\MainMenu\Options\background.xnb
+Content\Sprites\MainMenu\button_options.xnb
+Content\Sprites\MainMenu\Options\+.xnb
+Content\Sprites\MainMenu\Options\-.xnb
+Content\Sprites\MainMenu\Options\volume.xnb
+Content\Sprites\MainMenu\Options\volume_bruitages.xnb
+Content\Sprites\MainMenu\Options\volume_musique.xnb
+Content\Sprites\MainMenu\Options\bouton_retour.xnb
+Content\Sprites\MainMenu\bouton_quitter.xnb
+Content\Sprites\MainMenu\bouton_menu-principal.xnb
+Content\Sprites\Personnages\BlankTexture.xnb
+Content\Sprites\Personnages\identité1.xnb
+Content\Sprites\Personnages\personnage1.xnb
+Content\Sprites\Game\ready.xnb
+Content\Sprites\Game\fight.xnb
+Content\Sprites\Personnages\attaque_1.xnb
+Content\Sounds\Personnage\jump1.xnb
+Content\Sounds\Personnage\step1.xnb
+Content\Sounds\Personnage\jump_end.xnb
+Content\Sounds\Musique\Son Game 1.xnb
+Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+Content\chronomètre.xnb
+Content\display_name.xnb
+Content\choix.xnb
+Content\Sprites\MainMenu\Options\Font\pause.xnb
+Content\Sounds\Musique\Son Game 1.wma

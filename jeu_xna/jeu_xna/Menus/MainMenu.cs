@@ -19,6 +19,7 @@ namespace jeu_xna
         public static Thread thread_jeu;
 
         public static MouseState mouse;
+        KeyboardState keyboard;
 
         Song musique;
 
@@ -85,6 +86,7 @@ namespace jeu_xna
         protected override void Update(GameTime gameTime)
         {
             mouse = Mouse.GetState();
+            keyboard = Keyboard.GetState();
 
             #region mise à jour des boutons des menus
             Options.plus_musique.Update(mouse);

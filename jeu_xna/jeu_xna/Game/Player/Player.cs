@@ -53,6 +53,9 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         Keys attaque1;
+        Attack attaque_1;
+        Rectangle attaque;
+        bool is_attacking;
 
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1)
@@ -74,7 +77,17 @@ namespace jeu_xna
             this.Joueur = texturecaracter.personnage; //texture du personnage
             Hitbox = new Rectangle(x, y, 95, 200);
             Frame = 1; //texture affichée lorsque toutes les touches sont relachées
-            Effect = SpriteEffects.None;
+
+            if (player_number == 2)
+            {
+                Effect = SpriteEffects.FlipHorizontally;
+            }
+
+            else if (player_number == 1)
+            {
+                Effect = SpriteEffects.None;
+            }
+
             Direction = direction;
 
             Animation = true; //utilisé pour le retour à la première image lors de l'animation de la texture du personnage
@@ -90,6 +103,9 @@ namespace jeu_xna
             jump1 = false;
 
             this.attaque1 = attaque1;
+            attaque_1 = texturecaracter.attaque1;
+            is_attacking = false;
+            attaque = new Rectangle(1, 1, 1, 1);
         }
 
         // METHODS
@@ -180,6 +196,29 @@ namespace jeu_xna
                     can_jump = 0;
                 }
 
+            }
+
+            if (keyboard.IsKeyDown(attaque1))
+            {
+                if (Effect == SpriteEffects.FlipHorizontally)
+                {
+                    attaque.X = Hitbox.X;
+                }
+
+                else
+                {
+                    attaque.X = Hitbox.X + attaque_1.x;
+                }
+
+                attaque.Y = Hitbox.Y + attaque_1.y;
+                attaque.Width = attaque_1.width;
+                attaque.Height = attaque_1.height;
+                is_attacking = true;
+            }
+
+            else if (keyboard.IsKeyUp(attaque1))
+            {
+                is_attacking = false;
             }
 
             if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
@@ -286,17 +325,17 @@ namespace jeu_xna
                 spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X, 500), Color.White);
             }
 
-            if (player_number == 2 && GameMain.timer_combat_secondes < 0)
+            if (is_attacking)
             {
-                spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0f);
+                spriteBatch.Draw(attaque_1.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, attaque_1.frames[0].Width, attaque_1.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                spriteBatch.Draw(BlankTexture, attaque, Color.Red);
             }
 
             else
             {
                 spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
             }
-
-            
+                  
         }
 
         public void GenerateBar(int Current, int Max, SpriteBatch spriteBatch)
