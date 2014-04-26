@@ -103,6 +103,7 @@ namespace jeu_xna
             is_jumping = false; //est en train de sauter
             jump1 = false;
 
+            //VARIABLES POUR LES ATTAQUES
             this.attaque1 = attaque1;
             attaque_1 = texturecaracter.attaque1;
             is_attacking = false;
@@ -158,7 +159,7 @@ namespace jeu_xna
         //DEPLACEMENT DU PERSONNAGE
         public void Update(MouseState MouseState, KeyboardState keyboard)
         {
-            if (is_jumping)
+            if (is_jumping) //accélération du déplacement sur l'axe des adscisses pendant le saut
             {
                 Speed = 10;
             }
@@ -284,18 +285,18 @@ namespace jeu_xna
                 frame_counter++;
             }
 
-            else if (frame_counter >= 30)
+            else if (frame_counter >= 20)
             {
                 current_attack = null;
                 can_display_attack = false;
             }
 
-            if (frame_counter >= 30 && frame_counter <= 50)
+            if (frame_counter >= 20 && frame_counter <= 40)
             {
                 frame_counter++;
             }
 
-            else if (frame_counter >= 50)
+            else if (frame_counter >= 40)
             {
                 can_attack = true;
                 frame_counter = 0;
@@ -363,10 +364,9 @@ namespace jeu_xna
                 spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X, 500), Color.White);
             }
 
-            if (frame_counter <= 30 && can_display_attack)
+            if (frame_counter <= 20 && can_display_attack)
             {
                 spriteBatch.Draw(current_attack.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames[0].Width, current_attack.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
-                spriteBatch.Draw(BlankTexture, attaque, Color.Red);
             }
 
             else

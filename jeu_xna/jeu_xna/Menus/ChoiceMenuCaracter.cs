@@ -15,7 +15,7 @@ namespace jeu_xna
         public static RectangleMaker caracter1;
         public static int player;
         static SpriteFont choix;
-        public static MenuButton jouer, retour;
+        public static MenuButton terrain, retour;
         public static bool was_cliqued;
 
         public static void Initialise()
@@ -30,7 +30,7 @@ namespace jeu_xna
             caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), BlankTexture, 100, 100);
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             choix = Content.Load<SpriteFont>("choix");
-            jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(600, 500));
+            terrain = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_terrain"), new Vector2(600, 500));
             retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(50, 500));
         }
 
@@ -68,7 +68,7 @@ namespace jeu_xna
 
             else if (player == 3)
             {
-                if (jouer.isClicked && !was_cliqued)
+                if (terrain.isClicked && !was_cliqued)
                 {
                     State.CurrentGameState = GameState.ChoiceMenuBattlefield;
                     was_cliqued = true;
@@ -104,7 +104,7 @@ namespace jeu_xna
 
             else if (player == 3)
             {
-                jouer.Draw(spriteBatch);
+                terrain.Draw(spriteBatch);
                 retour.Draw(spriteBatch);
             }
         }

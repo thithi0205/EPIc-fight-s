@@ -12,7 +12,7 @@ namespace jeu_xna
     class ChoiceMenuBattlefield
     {
         static Texture2D blanck, background;
-        public static RectangleMaker terrain1;
+        public static RectangleMaker terrain1, terrain2;
         public static MenuButton jouer, retour;
         public static bool choisi = false;
         static SpriteFont display;
@@ -26,6 +26,7 @@ namespace jeu_xna
         {
             blanck = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
             terrain1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Maps\map1"), blanck, 200, 120);
+            terrain2 = new RectangleMaker(270, 100, Content.Load<Texture2D>(@"Sprites\Maps\map2"), blanck, 200, 120);
             jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(600, 500));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             display = Content.Load<SpriteFont>("choix");
@@ -37,6 +38,13 @@ namespace jeu_xna
             if (terrain1.is_clicked && !ChoiceMenuCaracter.was_cliqued)
             {
                 GameMain.terrain_choisi = 0;
+                choisi = true;
+                ChoiceMenuCaracter.was_cliqued = true;
+            }
+
+            else if (terrain2.is_clicked && !ChoiceMenuCaracter.was_cliqued)
+            {
+                GameMain.terrain_choisi = 1;
                 choisi = true;
                 ChoiceMenuCaracter.was_cliqued = true;
             }
@@ -70,6 +78,7 @@ namespace jeu_xna
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
             spriteBatch.DrawString(display, "Choix du terrain de combat", new Vector2(230, 30), Color.Black);
             terrain1.draw(spriteBatch);
+            terrain2.draw(spriteBatch);
             retour.Draw(spriteBatch);
 
             if (choisi)

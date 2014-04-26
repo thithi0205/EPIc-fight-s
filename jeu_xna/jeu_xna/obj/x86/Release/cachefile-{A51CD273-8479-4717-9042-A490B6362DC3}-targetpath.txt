@@ -1,5 +1,4 @@
 Content\Sprites\Maps\map1.xnb
-Content\Sprites\MainMenu\Main_menu.xnb
 Content\Sprites\MainMenu\button_jouer.xnb
 Content\Sprites\MainMenu\Options\background.xnb
 Content\Sprites\MainMenu\button_options.xnb
@@ -27,3 +26,8 @@ Content\chronomètre.xnb
 Content\display_name.xnb
 Content\choix.xnb
 Content\Sprites\MainMenu\Options\Font\pause.xnb
+Content\Sprites\Game\game_over.xnb
+Content\Sprites\MainMenu\epic_fight's.xnb
+Content\team.xnb
+Content\Sprites\MainMenu\bouton_terrain.xnb
+Content\Sprites\Maps\map2.xnb

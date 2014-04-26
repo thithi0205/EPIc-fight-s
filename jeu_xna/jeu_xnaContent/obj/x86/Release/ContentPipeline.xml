@@ -11,15 +11,6 @@
       <Time>2014-02-05T23:18:39.1304454+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\MainMenu\Main_menu.png</Source>
-      <Name>Sprites\MainMenu\Main_menu</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Main_menu.xnb</Output>
-      <Time>2014-03-12T16:47:08.4715979+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\MainMenu\button_jouer.jpg</Source>
       <Name>Sprites\MainMenu\button_jouer</Name>
       <Importer>TextureImporter</Importer>
@@ -253,6 +244,51 @@
       <Options>None</Options>
       <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\pause.xnb</Output>
       <Time>2014-03-31T00:22:22.9706357+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Game\game_over.png</Source>
+      <Name>Sprites\Game\game_over</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\game_over.xnb</Output>
+      <Time>2014-04-26T17:03:02.2775118+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\epic_fight's.png</Source>
+      <Name>Sprites\MainMenu\epic_fight's</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\epic_fight's.xnb</Output>
+      <Time>2014-04-26T18:01:25.5055896+02:00</Time>
+    </Item>
+    <Item>
+      <Source>team.spritefont</Source>
+      <Name>team</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\team.xnb</Output>
+      <Time>2014-04-26T18:16:28.9626109+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_terrain.png</Source>
+      <Name>Sprites\MainMenu\bouton_terrain</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_terrain.xnb</Output>
+      <Time>2014-04-26T18:35:53.3661731+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Maps\map2.jpg</Source>
+      <Name>Sprites\Maps\map2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb</Output>
+      <Time>2014-04-26T18:44:17.6651441+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

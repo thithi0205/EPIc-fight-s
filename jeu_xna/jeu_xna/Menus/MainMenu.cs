@@ -18,6 +18,9 @@ namespace jeu_xna
         SpriteBatch spriteBatch;
         public static Thread thread_jeu;
 
+        static Texture2D background, epic_fight_s;
+        static SpriteFont team;
+
         public static MouseState mouse;
         KeyboardState keyboard;
 
@@ -25,7 +28,6 @@ namespace jeu_xna
 
         #region Menu_buttons
         MenuButton play, option, quitter, mainmenu; //menu principal
-        //public static GameState CurrentGameState;
 
         #endregion
 
@@ -74,6 +76,9 @@ namespace jeu_xna
             ChoiceMenuBattlefield.LoadContent(Content);
 
             mainmenu = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(270, 500));
+            background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
+            epic_fight_s = Content.Load<Texture2D>(@"Sprites\MainMenu\epic_fight's");
+            team = Content.Load<SpriteFont>("team");
         }
 
         //UNLOADCONTENT
@@ -97,11 +102,12 @@ namespace jeu_xna
 
             ChoiceMenuCaracter.caracter1.Update(mouse);
             ChoiceMenuCaracter.retour.Update(mouse);
-            ChoiceMenuCaracter.jouer.Update(mouse);
+            ChoiceMenuCaracter.terrain.Update(mouse);
 
             ChoiceMenuBattlefield.jouer.Update(mouse);
             ChoiceMenuBattlefield.retour.Update(mouse);
             ChoiceMenuBattlefield.terrain1.Update(mouse);
+            ChoiceMenuBattlefield.terrain2.Update(mouse);
             #endregion
 
             //DEBUGgING
@@ -207,10 +213,12 @@ namespace jeu_xna
 
                     //AFFICHAGE DU MENU PRINCIPAL
                     #region MainMenu draw
-                    spriteBatch.Draw(Content.Load<Texture2D>(@"Sprites\MainMenu\Main_menu"), Vector2.Zero, Color.White);
+                    spriteBatch.Draw(background, Vector2.Zero, Color.White);
+                    spriteBatch.Draw(epic_fight_s, new Vector2(100, 0), Color.White);
                     option.Draw(spriteBatch);
                     play.Draw(spriteBatch);
                     quitter.Draw(spriteBatch);
+                    spriteBatch.DrawString(team, "By Ubidah !", new Vector2(730, 580), Color.Black);
                     #endregion
                     break;
 

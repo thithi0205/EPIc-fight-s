@@ -17,11 +17,12 @@ namespace jeu_xna
         // FIELD
         public static Player LocalPlayer1, LocalPlayer2;
         public static int personnage_choisi1, personnage_choisi2, terrain_choisi;
-        static bool WasKeyDown_Escape = false, was_displayed = false; 
+        static bool WasKeyDown_Escape, was_displayed; 
         public static int timer_fps, timer_combat_secondes, timer_combat_minutes;
+        static int fps_counter;
 
         public static MenuButton option, retour, menu_principal, quitter;
-        static Texture2D background, picture_identity, ready, fight;
+        static Texture2D background, picture_identity, ready, fight, game_over;
         static SpriteFont chrono, pause;
 
         // CONSTRUCTOR
@@ -37,6 +38,9 @@ namespace jeu_xna
             timer_fps = 0;
             timer_combat_secondes = -2;
             timer_combat_minutes = 0;
+            WasKeyDown_Escape = false;
+            was_displayed = false;
+            fps_counter = 0;
         }
 
         public static void LoadContent(ContentManager Content)
@@ -44,8 +48,8 @@ namespace jeu_xna
             picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
 
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 300, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content, Keys.F);
-            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 400, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content, Keys.RightShift);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content, Keys.F);
+            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content, Keys.RightShift);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
@@ -58,11 +62,17 @@ namespace jeu_xna
             pause = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
             ready = Content.Load<Texture2D>(@"Sprites\Game\ready");
             fight = Content.Load<Texture2D>(@"Sprites\Game\fight");
+            game_over = Content.Load<Texture2D>(@"Sprites\Game\game_over");
         }
 
         // UPDATE & DRAW
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
+            GameMain.option.Update(MainMenu.mouse);
+            GameMain.retour.Update(MainMenu.mouse);
+            GameMain.menu_principal.Update(MainMenu.mouse);
+            GameMain.quitter.Update(MainMenu.mouse);
+
             if (keyboard.IsKeyDown(Keys.Escape) && State.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
             {
                 State.CurrentGameState = GameState.Pause;
@@ -167,10 +177,7 @@ namespace jeu_xna
                 Console.WriteLine("attack player 2 = true");
             else if (!LocalPlayer2.attack)
                 Console.WriteLine("attack player 2 = false\n");
-
             #endregion
-
-            keyboard = Keyboard.GetState();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -178,7 +185,7 @@ namespace jeu_xna
             switch (State.CurrentGameState)
             {
                 case GameState.Playing:
-                    spriteBatch.Draw(Ressources.fields[terrain_choisi], Vector2.Zero, Color.White);
+                    spriteBatch.Draw(Ressources.fields[terrain_choisi], new Rectangle(0, 0, 800, 480), Color.White);
                     LocalPlayer1.Draw(spriteBatch);
                     LocalPlayer2.Draw(spriteBatch);
 
@@ -195,11 +202,16 @@ namespace jeu_xna
                             spriteBatch.DrawString(chrono, timer_combat_minutes + " : 0" + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                         }
 
-                        if (timer_combat_secondes >= 0 && timer_combat_secondes < 2 && !was_displayed)
+                        if (timer_combat_secondes >= 0 && !was_displayed)
                         {
                             spriteBatch.Draw(fight, new Vector2(350, 260), Color.White);
-                            was_displayed = true;
+
+                            if (timer_combat_secondes >= 1)
+                            {
+                                was_displayed = true;
+                            }
                         }
+
                     }
 
                     else
@@ -212,6 +224,24 @@ namespace jeu_xna
 
                     LocalPlayer1.GeneratePicture(spriteBatch);
                     LocalPlayer2.GeneratePicture(spriteBatch);
+
+                    if (LocalPlayer1.vie == 0 || LocalPlayer2.vie == 0)
+                    {
+                        if (fps_counter <= 120)
+                        {
+                            fps_counter++;
+                            spriteBatch.Draw(game_over, new Vector2(330, 240), Color.White);
+                        }
+
+                        else
+                        {
+                            fps_counter = 0;
+                            State.CurrentGameState = GameState.MainMenu;
+                            Program.thread_menu = new Thread(new ThreadStart(Program.Menu));
+                            Program.thread_menu.Start();
+                            MainMenu.thread_jeu.Abort();
+                        }
+                    }
                     break;
 
                 case GameState.Pause:
