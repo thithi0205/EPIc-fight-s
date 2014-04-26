@@ -154,9 +154,20 @@ namespace jeu_xna
             else if (State.CurrentGameState == GameState.Options)
                 Console.WriteLine("Options\n");
             if (!WasKeyDown_Escape)
-                Console.WriteLine("escape not pressed");
+                Console.WriteLine("escape not pressed\n");
             if (keyboard.IsKeyDown(Keys.Escape))
-                Console.WriteLine("escape pressed");
+                Console.WriteLine("escape pressed\n");
+            Console.WriteLine("FRAME COUNTER 1: " + LocalPlayer1.frame_counter);
+            Console.WriteLine("FRAME COUNTER 2: " + LocalPlayer2.frame_counter + "\n");
+            if (LocalPlayer1.attack)
+                Console.WriteLine("attack player 1 = true");
+            else if (!LocalPlayer1.attack)
+                Console.WriteLine("attack player 1 = false");
+            if (LocalPlayer2.attack)
+                Console.WriteLine("attack player 2 = true");
+            else if (!LocalPlayer2.attack)
+                Console.WriteLine("attack player 2 = false\n");
+
             #endregion
 
             keyboard = Keyboard.GetState();

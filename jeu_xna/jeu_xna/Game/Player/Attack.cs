@@ -29,5 +29,28 @@ namespace jeu_xna
         {
             spriteBatch.Draw(texture, new Vector2(x, y), Color.White); 
         }
+
+        public static void attacking(int player_number, Attack current_attack)
+        {
+            if (player_number == 1)
+            {
+                if (GameMain.LocalPlayer1.attaque.Intersects(GameMain.LocalPlayer2.Hitbox)) //le joueur 1 attaque le joueur 2
+                {
+                    Random random = new Random();
+                    int degat = random.Next(current_attack.dégat_min, current_attack.dégat_max);
+                    GameMain.LocalPlayer2.vie = GameMain.LocalPlayer2.vie - degat;
+                }
+            }
+
+            else if (player_number == 2)
+            {
+                if (GameMain.LocalPlayer2.attaque.Intersects(GameMain.LocalPlayer1.Hitbox)) //le joueur 2 attaque le joueur 1
+                {
+                    Random random = new Random();
+                    int degat = random.Next(current_attack.dégat_min, current_attack.dégat_max);
+                    GameMain.LocalPlayer1.vie = GameMain.LocalPlayer1.vie - degat;
+                }
+            }
+        }
     }
 }

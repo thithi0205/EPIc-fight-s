@@ -53,9 +53,10 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         Keys attaque1;
-        Attack attaque_1;
-        Rectangle attaque;
-        bool is_attacking;
+        Attack attaque_1, current_attack;
+        public Rectangle attaque;
+        public bool is_attacking, can_attack, attack, can_display_attack;
+        public int frame_counter;
 
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1)
@@ -105,7 +106,11 @@ namespace jeu_xna
             this.attaque1 = attaque1;
             attaque_1 = texturecaracter.attaque1;
             is_attacking = false;
+            can_attack = true;
+            attack = false;
+            can_display_attack = false;
             attaque = new Rectangle(1, 1, 1, 1);
+            frame_counter = 0;
         }
 
         // METHODS
@@ -198,8 +203,10 @@ namespace jeu_xna
 
             }
 
-            if (keyboard.IsKeyDown(attaque1))
+            if (keyboard.IsKeyDown(attaque1) && can_attack)
             {
+                attack = true;
+
                 if (Effect == SpriteEffects.FlipHorizontally)
                 {
                     attaque.X = Hitbox.X;
@@ -213,12 +220,10 @@ namespace jeu_xna
                 attaque.Y = Hitbox.Y + attaque_1.y;
                 attaque.Width = attaque_1.width;
                 attaque.Height = attaque_1.height;
+                current_attack = attaque_1;
                 is_attacking = true;
-            }
-
-            else if (keyboard.IsKeyUp(attaque1))
-            {
-                is_attacking = false;
+                can_attack = false;
+                can_display_attack = true;
             }
 
             if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
@@ -268,6 +273,39 @@ namespace jeu_xna
             }
 
             Saut(); //gestion du saut
+
+            if (frame_counter <= 30 && attack)
+            {
+                if (frame_counter > 1)
+                {
+                    is_attacking = false;
+                }
+
+                frame_counter++;
+            }
+
+            else if (frame_counter >= 30)
+            {
+                current_attack = null;
+                can_display_attack = false;
+            }
+
+            if (frame_counter >= 30 && frame_counter <= 50)
+            {
+                frame_counter++;
+            }
+
+            else if (frame_counter >= 50)
+            {
+                can_attack = true;
+                frame_counter = 0;
+                attack = false;
+            }
+
+            if (current_attack != null && is_attacking)
+            {
+                Attack.attacking(player_number, current_attack); //gestion des attaques
+            }
         }
 
         //GESTION DU SAUT
@@ -277,7 +315,7 @@ namespace jeu_xna
             {
                 if (!jump) //n'a pas atteint la hauteur maximale du saut
                 {
-                    if (Hitbox.Y > 20) //20
+                    if (Hitbox.Y > 20) 
                     {
                         jump_speed_initial -= jump_speed;
                         Hitbox.Y -= jump_speed_initial;
@@ -291,8 +329,8 @@ namespace jeu_xna
 
                 else if (jump)
                 {
-                    jump_speed_initial = 3; //3
-                    jump_speed = 11; //11
+                    jump_speed_initial = 3; 
+                    jump_speed = 11; 
 
                     if (Hitbox.Y < 230)
                     {
@@ -325,9 +363,9 @@ namespace jeu_xna
                 spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X, 500), Color.White);
             }
 
-            if (is_attacking)
+            if (frame_counter <= 30 && can_display_attack)
             {
-                spriteBatch.Draw(attaque_1.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, attaque_1.frames[0].Width, attaque_1.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                spriteBatch.Draw(current_attack.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames[0].Width, current_attack.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
                 spriteBatch.Draw(BlankTexture, attaque, Color.Red);
             }
 
@@ -351,11 +389,21 @@ namespace jeu_xna
             if (player_number == 1)
             {
                 x = 40;
+
+                if (GameMain.LocalPlayer1.vie < 0)
+                {
+                    GameMain.LocalPlayer1.vie = 0;
+                }
             }
 
             else if (player_number == 2)
             {
                 x = Game1.graphics1.GraphicsDevice.Viewport.Width - BarWidth - 40;
+
+                if (GameMain.LocalPlayer2.vie < 0)
+                {
+                    GameMain.LocalPlayer2.vie = 0;
+                }
             }
 
             //Boarder Rectangle
