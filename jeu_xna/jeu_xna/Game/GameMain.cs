@@ -174,9 +174,11 @@ namespace jeu_xna
             else if (!LocalPlayer1.attack)
                 Console.WriteLine("attack player 1 = false");
             if (LocalPlayer2.attack)
-                Console.WriteLine("attack player 2 = true");
+                Console.WriteLine("attack player 2 = true\n");
             else if (!LocalPlayer2.attack)
                 Console.WriteLine("attack player 2 = false\n");
+            Console.WriteLine("frame_counter_is_attacked 1: " + LocalPlayer1.frame_counter_is_attacked);
+            Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
             #endregion
         }
 

@@ -11,6 +11,7 @@ namespace jeu_xna
         ChoiceMenuCaracter,
         ChoiceMenuBattlefield,
         Options,
+        Commandes,
         Playing,
         Pause
     }

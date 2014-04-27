@@ -21,7 +21,7 @@ namespace jeu_xna
         // FIELDS
         public int vie;
 
-        string name;
+        public string name;
         SpriteFont display_name;
         int player_number;
         Texture2D photo_identité;
@@ -32,7 +32,7 @@ namespace jeu_xna
 
         public Rectangle Hitbox;
         Texture2D Joueur;
-        Keys saut, droite, gauche;
+        public Keys saut, droite, gauche;
 
         Direction Direction;
         int Frame; //image du personnage affichée
@@ -52,11 +52,11 @@ namespace jeu_xna
         int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
-        Keys attaque1;
+        public Keys attaque1;
         Attack attaque_1, current_attack;
         public Rectangle attaque;
-        public bool is_attacking, can_attack, attack, can_display_attack;
-        public int frame_counter;
+        public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter;
+        public int frame_counter, frame_counter_is_attacked;
 
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1)
@@ -107,11 +107,14 @@ namespace jeu_xna
             this.attaque1 = attaque1;
             attaque_1 = texturecaracter.attaque1;
             is_attacking = false;
+            is_attacked = false;
             can_attack = true;
             attack = false;
             can_display_attack = false;
             attaque = new Rectangle(1, 1, 1, 1);
             frame_counter = 0;
+            frame_counter_is_attacked = 0;
+            display_caracter = true;
         }
 
         // METHODS
@@ -169,7 +172,7 @@ namespace jeu_xna
                 Speed = 5;
             }
 
-            if (keyboard.IsKeyDown(gauche))
+            if (keyboard.IsKeyDown(gauche) && !is_attacked)
             {
                 Hitbox.X -= Speed;
                 Direction = Direction.Left;
@@ -180,7 +183,7 @@ namespace jeu_xna
                 }
             }
 
-            else if (keyboard.IsKeyDown(droite))
+            else if (keyboard.IsKeyDown(droite) && !is_attacked)
             {
                 Hitbox.X += Speed;
                 Direction = Direction.Right;
@@ -191,7 +194,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyDown(saut))
+            if (keyboard.IsKeyDown(saut) && !is_attacked)
             {
                 if (KeyDown_up == false && !jump1)
                 {
@@ -204,7 +207,7 @@ namespace jeu_xna
 
             }
 
-            if (keyboard.IsKeyDown(attaque1) && can_attack)
+            if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked)
             {
                 attack = true;
 
@@ -300,12 +303,37 @@ namespace jeu_xna
             {
                 can_attack = true;
                 frame_counter = 0;
-                attack = false;
-            }
+                attack = false; 
+            } 
 
             if (current_attack != null && is_attacking)
             {
                 Attack.attacking(player_number, current_attack); //gestion des attaques
+            }
+
+            //blocage du personnage attaqué pendant 0,5 seconde
+            if (is_attacked)
+            {
+                if (frame_counter_is_attacked < 30)
+                {
+                    frame_counter_is_attacked++;
+
+                    if (display_caracter)
+                    {
+                        display_caracter = false;
+                    }
+
+                    else
+                    {
+                        display_caracter = true;
+                    }
+                }
+
+                else
+                {
+                    frame_counter_is_attacked = 0;
+                    is_attacked = false;
+                }
             }
         }
 
@@ -364,16 +392,18 @@ namespace jeu_xna
                 spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X, 500), Color.White);
             }
 
-            if (frame_counter <= 20 && can_display_attack)
+            if (display_caracter) //permet de faire clignoter le personnage attaqué
             {
-                spriteBatch.Draw(current_attack.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames[0].Width, current_attack.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
-            }
+                if (frame_counter <= 20 && can_display_attack)
+                {
+                    spriteBatch.Draw(current_attack.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames[0].Width, current_attack.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                }
 
-            else
-            {
-                spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
-            }
-                  
+                else
+                {
+                    spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                }
+            }    
         }
 
         public void GenerateBar(int Current, int Max, SpriteBatch spriteBatch)

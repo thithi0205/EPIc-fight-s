@@ -113,6 +113,7 @@
     <Compile Include="Game\Game1.cs" />
     <Compile Include="Game\GameMain.cs" />
     <Compile Include="Game\Player\Attack.cs" />
+    <Compile Include="Menus\ChangeControls.cs" />
     <Compile Include="Menus\ChoiceMenuBattlefield.cs" />
     <Compile Include="Menus\ChoiceMenuCaracter.cs" />
     <Compile Include="Menus\MenuButton.cs" />

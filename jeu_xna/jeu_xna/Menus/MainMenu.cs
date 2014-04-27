@@ -126,6 +126,8 @@ namespace jeu_xna
                 Console.WriteLine("ChoiceMenuCaracter\n");
             else if (State.CurrentGameState == GameState.ChoiceMenuBattlefield)
                 Console.WriteLine("ChoiceMenuBattlefield\n");
+            if(keyboard.IsKeyDown(Keys.D1))
+                Console.WriteLine("D1\n");
             #endregion
 
             //BOUTONS DU MENU PRINCIPAL

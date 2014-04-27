@@ -39,6 +39,7 @@ namespace jeu_xna
                     Random random = new Random();
                     int degat = random.Next(current_attack.dégat_min, current_attack.dégat_max);
                     GameMain.LocalPlayer2.vie = GameMain.LocalPlayer2.vie - degat;
+                    GameMain.LocalPlayer2.is_attacked = true;
                 }
             }
 
@@ -49,6 +50,7 @@ namespace jeu_xna
                     Random random = new Random();
                     int degat = random.Next(current_attack.dégat_min, current_attack.dégat_max);
                     GameMain.LocalPlayer1.vie = GameMain.LocalPlayer1.vie - degat;
+                    GameMain.LocalPlayer1.is_attacked = true;
                 }
             }
         }
