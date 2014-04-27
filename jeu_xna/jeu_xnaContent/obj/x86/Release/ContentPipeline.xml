@@ -290,6 +290,15 @@
       <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb</Output>
       <Time>2014-04-26T18:44:17.6651441+02:00</Time>
     </Item>
+    <Item>
+      <Source>Controls.spritefont</Source>
+      <Name>Controls</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb</Output>
+      <Time>2014-04-27T21:48:44.3814146+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
