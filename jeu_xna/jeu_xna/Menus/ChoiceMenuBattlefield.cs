@@ -13,7 +13,7 @@ namespace jeu_xna
     {
         static Texture2D blanck, background;
         public static RectangleMaker terrain1, terrain2;
-        public static MenuButton jouer, retour;
+        public static MenuButton jouer;
         public static bool choisi = false;
         static SpriteFont display;
 
@@ -30,7 +30,6 @@ namespace jeu_xna
             jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(600, 500));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             display = Content.Load<SpriteFont>("choix");
-            retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(50, 500));
         }
 
         public static void Update()
@@ -49,7 +48,7 @@ namespace jeu_xna
                 ChoiceMenuCaracter.was_cliqued = true;
             }
 
-            if (retour.isClicked && !ChoiceMenuCaracter.was_cliqued)
+            if (ChoiceMenuCaracter.retour.isClicked && !ChoiceMenuCaracter.was_cliqued)
             {
                 choisi = false;
                 ChoiceMenuCaracter.was_cliqued = true;
@@ -79,7 +78,7 @@ namespace jeu_xna
             spriteBatch.DrawString(display, "Choix du terrain de combat", new Vector2(230, 30), Color.Black);
             terrain1.draw(spriteBatch);
             terrain2.draw(spriteBatch);
-            retour.Draw(spriteBatch);
+            ChoiceMenuCaracter.retour.Draw(spriteBatch);
 
             if (choisi)
             {

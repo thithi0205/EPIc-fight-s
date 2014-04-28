@@ -299,6 +299,24 @@
       <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb</Output>
       <Time>2014-04-27T21:48:44.3814146+02:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\bouton_commandes.png</Source>
+      <Name>Sprites\MainMenu\Options\bouton_commandes</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb</Output>
+      <Time>2014-04-28T14:31:55.8235926+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\Font\touches.spritefont</Source>
+      <Name>Sprites\MainMenu\Options\Font\touches</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb</Output>
+      <Time>2014-04-28T16:33:38.5709003+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

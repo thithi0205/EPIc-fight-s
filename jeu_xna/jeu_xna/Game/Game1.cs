@@ -25,7 +25,7 @@ namespace jeu_xna
             graphics1.PreferredBackBufferHeight = 600;
             graphics1.PreferredBackBufferWidth = 800;
             graphics1.ApplyChanges();
-            //graphics1.ToggleFullScreen();
+            graphics1.ToggleFullScreen();
             Content.RootDirectory = "Content";
         }
 
@@ -63,6 +63,7 @@ namespace jeu_xna
             Options.plus_bruitages.Update(MainMenu.mouse);
             Options.moins_bruitages.Update(MainMenu.mouse);
             Options.bouton_retour.Update(MainMenu.mouse);
+            Options.bouton_commande.Update(MainMenu.mouse);
 
             MainMenu.mouse = Mouse.GetState();
             Mouse.WindowHandle = Window.Handle;

@@ -22,7 +22,6 @@ namespace jeu_xna
         static SpriteFont team;
 
         public static MouseState mouse;
-        KeyboardState keyboard;
 
         Song musique;
 
@@ -75,7 +74,7 @@ namespace jeu_xna
             ChoiceMenuCaracter.LoadContent(Content);
             ChoiceMenuBattlefield.LoadContent(Content);
 
-            mainmenu = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(270, 500));
+            mainmenu = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(280, 500));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             epic_fight_s = Content.Load<Texture2D>(@"Sprites\MainMenu\epic_fight's");
             team = Content.Load<SpriteFont>("team");
@@ -91,7 +90,6 @@ namespace jeu_xna
         protected override void Update(GameTime gameTime)
         {
             mouse = Mouse.GetState();
-            keyboard = Keyboard.GetState();
 
             #region mise à jour des boutons des menus
             Options.plus_musique.Update(mouse);
@@ -105,7 +103,6 @@ namespace jeu_xna
             ChoiceMenuCaracter.terrain.Update(mouse);
 
             ChoiceMenuBattlefield.jouer.Update(mouse);
-            ChoiceMenuBattlefield.retour.Update(mouse);
             ChoiceMenuBattlefield.terrain1.Update(mouse);
             ChoiceMenuBattlefield.terrain2.Update(mouse);
             #endregion
@@ -126,8 +123,6 @@ namespace jeu_xna
                 Console.WriteLine("ChoiceMenuCaracter\n");
             else if (State.CurrentGameState == GameState.ChoiceMenuBattlefield)
                 Console.WriteLine("ChoiceMenuBattlefield\n");
-            if(keyboard.IsKeyDown(Keys.D1))
-                Console.WriteLine("D1\n");
             #endregion
 
             //BOUTONS DU MENU PRINCIPAL

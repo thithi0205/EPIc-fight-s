@@ -11,12 +11,10 @@ namespace jeu_xna
 {
     class ChangeControls
     {
-        static SpriteFont player, commandes;
+        static SpriteFont player, commandes, touche, commande_display;
         static Texture2D background;
         public static Texture2D blank;
-        static Color color;
-        static ControlsButton left1, right1, up1, attack1, left2, right2, up2, attack2;
-        static MouseState mouse;
+        public static ControlsButton left1, right1, up1, attack1, left2, right2, up2, attack2;
         public static SpriteFont font;
 
         public static void LoadContent(ContentManager Content)
@@ -27,55 +25,81 @@ namespace jeu_xna
 
             blank = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
 
-            left1 = new ControlsButton(GameMain.LocalPlayer1.gauche, 70, 60, "left", 1);
-            right1 = new ControlsButton(GameMain.LocalPlayer1.droite, 70, 100, "right", 1);
-            up1 = new ControlsButton(GameMain.LocalPlayer1.saut, 70, 140, "up", 1);
-            attack1 = new ControlsButton(GameMain.LocalPlayer1.attaque1, 70, 180, "attack1", 1);
+            left1 = new ControlsButton(GameMain.LocalPlayer1.gauche, 200, 210, "left", 1);
+            right1 = new ControlsButton(GameMain.LocalPlayer1.droite, 200, 260, "right", 1);
+            up1 = new ControlsButton(GameMain.LocalPlayer1.saut, 200, 310, "up", 1);
+            attack1 = new ControlsButton(GameMain.LocalPlayer1.attaque1, 200, 360, "attack1", 1);
 
-            left2 = new ControlsButton(GameMain.LocalPlayer2.gauche, 70, 60, "left", 2);
-            right2 = new ControlsButton(GameMain.LocalPlayer2.droite, 70, 100, "right", 2);
-            up2 = new ControlsButton(GameMain.LocalPlayer2.saut, 70, 140, "up", 2);
-            attack2 = new ControlsButton(GameMain.LocalPlayer2.attaque1, 70, 180, "attack1", 2);
+            left2 = new ControlsButton(GameMain.LocalPlayer2.gauche, 670, 210, "left", 2);
+            right2 = new ControlsButton(GameMain.LocalPlayer2.droite, 670, 260, "right", 2);
+            up2 = new ControlsButton(GameMain.LocalPlayer2.saut, 670, 310, "up", 2);
+            attack2 = new ControlsButton(GameMain.LocalPlayer2.attaque1, 670, 360, "attack1", 2);
 
             font = Content.Load<SpriteFont>("Controls");
+            touche = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\touches");
+            commande_display = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
         }
 
-        public static void Update(MouseState mouse, KeyboardState keyboard)
+        public static void Update(KeyboardState keyboard)
         {
-            left1.Update(mouse, keyboard);
-            right1.Update(mouse, keyboard);
-            up1.Update(mouse, keyboard);
-            attack1.Update(mouse, keyboard);
+            ChangeControls.left1.Update(keyboard);
+            ChangeControls.right1.Update(keyboard);
+            ChangeControls.up1.Update(keyboard);
+            ChangeControls.attack1.Update(keyboard);
 
-            left2.Update(mouse, keyboard);
-            right2.Update(mouse, keyboard);
-            up2.Update(mouse, keyboard);
-            attack2.Update(mouse, keyboard);
+            ChangeControls.left2.Update(keyboard);
+            ChangeControls.right2.Update(keyboard);
+            ChangeControls.up2.Update(keyboard);
+            ChangeControls.attack2.Update(keyboard);
+
+            if (Options.bouton_retour.isClicked)
+            {
+                State.CurrentGameState = GameState.Options;
+                Options.was_cliqued = true;
+            }
         }
 
         public static void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
-            spriteBatch.DrawString(player, GameMain.LocalPlayer1.name + " :", new Vector2(30, 30), Color.Black);
-            spriteBatch.DrawString(player, GameMain.LocalPlayer2.name + " :", new Vector2(500, 30), Color.Black);
+            spriteBatch.DrawString(player, GameMain.LocalPlayer1.name + " :", new Vector2(130, 130), Color.Black);
+            spriteBatch.DrawString(player, GameMain.LocalPlayer2.name + " :", new Vector2(600, 130), Color.Black);
+            spriteBatch.DrawString(touche, "gauche :", new Vector2(20, 200), Color.Black);
+            spriteBatch.DrawString(touche, "droite :", new Vector2(20, 250), Color.Black);
+            spriteBatch.DrawString(touche, "saut :", new Vector2(20, 300), Color.Black);
+            spriteBatch.DrawString(touche, "attaque 1 :", new Vector2(20, 350), Color.Black);
+            spriteBatch.DrawString(commande_display, "Commandes", new Vector2(300, 20), Color.Black);
+
+            left1.Draw(spriteBatch);
+            right1.Draw(spriteBatch);
+            up1.Draw(spriteBatch);
+            attack1.Draw(spriteBatch);
+
+            left2.Draw(spriteBatch);
+            right2.Draw(spriteBatch);
+            up2.Draw(spriteBatch);
+            attack2.Draw(spriteBatch);
+
+            Options.bouton_retour.Draw(spriteBatch);
         }
     }
 
+
     class ControlsButton
     {
-        static Rectangle white, boarders, souris; //, rectangle;
-        static string clé;
-        static Keys key_bis;
-        static Color color;
-        static Keys[] board;
-        static string touche_bis;
-        static int player_number_bis;
+        Rectangle boarders, souris;
+        public string clé;
+        public Keys key_bis;
+        Color color;
+        Keys[] board;
+        string touche_bis;
+        int player_number_bis;
         int x, y;
+        bool can_modify;
 
         public ControlsButton(Keys key, int x, int y, string touche, int player_number)
         {
             boarders = new Rectangle(x, y, 10, 20);
-            white = new Rectangle(x, y, 10, 20);
             key_bis = key;
             souris = new Rectangle(1, 1, 1, 1);
             color = Color.Blue;
@@ -83,84 +107,110 @@ namespace jeu_xna
             player_number_bis = player_number;
             this.x = x;
             this.y = y;
+            MakeControl(key_bis);
+            can_modify = false;
         }
 
-        public void Update(MouseState mouse, KeyboardState keyboard) //A VERIFIER
+        public void Update(KeyboardState keyboard)
         {
-            mouse = Mouse.GetState();
-            souris.X = mouse.X;
-            souris.Y = mouse.Y;
+            MainMenu.mouse = Mouse.GetState();
+            souris.X = MainMenu.mouse.X;
+            souris.Y = MainMenu.mouse.Y;
             keyboard = Keyboard.GetState();
 
-            if (boarders.Intersects(souris)) //VOIR LA VALEUR DE STRING CLE
+            if (boarders.Intersects(souris))
             {
-                color = Color.LightBlue;
+                color = Color.Purple;
 
-                if (mouse.LeftButton == ButtonState.Pressed)
+                if (MainMenu.mouse.LeftButton == ButtonState.Pressed)
                 {
-                    board = keyboard.GetPressedKeys();
+                    can_modify = true;
+                }
+            }
 
-                    if (board.Length > 1)
+            else
+            {
+                if (MainMenu.mouse.LeftButton == ButtonState.Pressed)
+                {
+                    can_modify = false;
+                }
+            }
+
+            if (can_modify)
+            {
+                board = keyboard.GetPressedKeys();
+                color = Color.Green;
+
+                if (board.Length >= 1)
+                {
+                    can_modify = false;
+                    key_bis = board[0];
+
+                    if (player_number_bis == 1)
                     {
-                        key_bis = board[0];
-                        MakeControl(key_bis);
-
-                        if (player_number_bis == 1)
+                        if (touche_bis == "left" && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
                         {
-                            if (touche_bis == "left")
-                            {
-                                GameMain.LocalPlayer1.gauche = key_bis;
-                            }
-
-                            else if (touche_bis == "right")
-                            {
-                                GameMain.LocalPlayer1.droite = key_bis;
-                            }
-
-                            else if (touche_bis == "up")
-                            {
-                                GameMain.LocalPlayer1.saut = key_bis;
-                            }
-
-                            else if (touche_bis == "attack1")
-                            {
-                                GameMain.LocalPlayer1.attaque1 = key_bis;
-                            }
+                            GameMain.LocalPlayer1.gauche = key_bis;
+                            MakeControl(key_bis);
                         }
 
-                        if (player_number_bis == 2)
+                        else if (touche_bis == "right" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
                         {
-                            if (touche_bis == "left")
-                            {
-                                GameMain.LocalPlayer2.gauche = key_bis;
-                            }
-
-                            else if (touche_bis == "right")
-                            {
-                                GameMain.LocalPlayer2.droite = key_bis;
-                            }
-
-                            else if (touche_bis == "up")
-                            {
-                                GameMain.LocalPlayer2.saut = key_bis;
-                            }
-
-                            else if (touche_bis == "attack1")
-                            {
-                                GameMain.LocalPlayer2.attaque1 = key_bis;
-                            }
+                            GameMain.LocalPlayer1.droite = key_bis;
+                            MakeControl(key_bis);
                         }
 
-                        MakeControl(key_bis);
+                        else if (touche_bis == "up" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        {
+                            GameMain.LocalPlayer1.saut = key_bis;
+                            MakeControl(key_bis);
+                        }
+
+                        else if (touche_bis == "attack1" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        {
+                            GameMain.LocalPlayer1.attaque1 = key_bis;
+                            MakeControl(key_bis);
+                        }
+                    }
+
+                    if (player_number_bis == 2)
+                    {
+                        if (touche_bis == "left" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        {
+                            GameMain.LocalPlayer2.gauche = key_bis;
+                            MakeControl(key_bis);
+                        }
+
+                        else if (touche_bis == "right" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        {
+                            GameMain.LocalPlayer2.droite = key_bis;
+                            MakeControl(key_bis);
+                        }
+
+                        else if (touche_bis == "up" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        {
+                            GameMain.LocalPlayer2.saut = key_bis;
+                            MakeControl(key_bis);
+                        }
+
+                        else if (touche_bis == "attack1" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis)
+                        {
+                            GameMain.LocalPlayer2.attaque1 = key_bis;
+                            MakeControl(key_bis);
+                        }
                     }
                 }
+            }
+
+            else
+            {
+                color = Color.Blue;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(ChangeControls.blank, boarders, color);
-            //spriteBatch.Draw(ChangeControls.blank, white, Color.White);
             spriteBatch.DrawString(ChangeControls.font, clé, new Vector2(x + 10, y + 5), Color.Black); 
         }
 

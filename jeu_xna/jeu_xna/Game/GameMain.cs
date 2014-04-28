@@ -63,6 +63,8 @@ namespace jeu_xna
             ready = Content.Load<Texture2D>(@"Sprites\Game\ready");
             fight = Content.Load<Texture2D>(@"Sprites\Game\fight");
             game_over = Content.Load<Texture2D>(@"Sprites\Game\game_over");
+
+            ChangeControls.LoadContent(Content);
         }
 
         // UPDATE & DRAW
@@ -79,7 +81,7 @@ namespace jeu_xna
                 WasKeyDown_Escape = true;
             }
 
-            else if (keyboard.IsKeyDown(Keys.Escape) && (State.CurrentGameState == GameState.Pause || State.CurrentGameState == GameState.Options) && !WasKeyDown_Escape)
+            else if (keyboard.IsKeyDown(Keys.Escape) && (State.CurrentGameState == GameState.Pause || State.CurrentGameState == GameState.Options || State.CurrentGameState == GameState.Commandes) && !WasKeyDown_Escape)
             {
                 State.CurrentGameState = GameState.Playing;
                 WasKeyDown_Escape = true;
@@ -122,6 +124,7 @@ namespace jeu_xna
                     if (option.isClicked)
                     {
                         State.CurrentGameState = GameState.Options;
+                        Options.was_cliqued = true;
                     }
 
                     else if (retour.isClicked)
@@ -145,6 +148,10 @@ namespace jeu_xna
 
                 case GameState.Options:
                     Options.Update();
+                    break;
+
+                case GameState.Commandes:
+                    ChangeControls.Update(keyboard);
                     break;
             }
 
@@ -179,6 +186,8 @@ namespace jeu_xna
                 Console.WriteLine("attack player 2 = false\n");
             Console.WriteLine("frame_counter_is_attacked 1: " + LocalPlayer1.frame_counter_is_attacked);
             Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
+            //if (ChangeControls.left1.clé == "Q")
+                Console.WriteLine(ChangeControls.left1.clé + "\n");
             #endregion
         }
 
@@ -259,6 +268,9 @@ namespace jeu_xna
                     Options.Draw(spriteBatch, Content);
                     break;
 
+                case GameState.Commandes:
+                    ChangeControls.Draw(spriteBatch);
+                    break;
             }
         }
     }
