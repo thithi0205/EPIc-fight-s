@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework;
 
 namespace jeu_xna
 {
@@ -21,7 +22,7 @@ namespace jeu_xna
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
         {
-            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"), new Attack(1, 1, 10, new Texture2D[]{Content.Load<Texture2D>(@"Sprites\Personnages\attaque_1")}, 5, 5, 114, 114));
+            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\attaque_1"), 5, 5, 114, 114, 117, 1));
 
             fields[0] = Content.Load<Texture2D>(@"Sprites\Maps\map1");
             fields[1] = Content.Load<Texture2D>(@"Sprites\Maps\map2");

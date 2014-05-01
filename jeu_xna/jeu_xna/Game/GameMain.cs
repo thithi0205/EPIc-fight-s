@@ -70,6 +70,7 @@ namespace jeu_xna
         // UPDATE & DRAW
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
+            //Console.Clear();
             GameMain.option.Update(MainMenu.mouse);
             GameMain.retour.Update(MainMenu.mouse);
             GameMain.menu_principal.Update(MainMenu.mouse);
@@ -159,10 +160,10 @@ namespace jeu_xna
             #region Debuging
             Console.Clear();
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
-            Console.WriteLine("joueur 1 : x = " + LocalPlayer1.Hitbox.X + " ; y = " + LocalPlayer1.Hitbox.Y + "\n");
+            Console.WriteLine("joueur 1 : x = " + LocalPlayer1.Hitbox.X + " ; y = " + LocalPlayer1.Hitbox.Y);
             Console.WriteLine("joueur 2 : x = " + LocalPlayer2.Hitbox.X + " ; y = " + LocalPlayer2.Hitbox.Y + "\n");
-            Console.WriteLine("CAN_JUMP joueur 1 : " + LocalPlayer1.can_jump + " joueur 2 : " + LocalPlayer2.can_jump);
-            Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
+            Console.WriteLine("CAN_JUMP joueur 1 : " + LocalPlayer1.can_jump + " joueur 2 : " + LocalPlayer2.can_jump + "\n");
+            Console.WriteLine("volume musique : " + Options.mediaplayer_volume);
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
             if (State.CurrentGameState == GameState.Playing)
                 Console.WriteLine("Playing\n");
@@ -186,8 +187,8 @@ namespace jeu_xna
                 Console.WriteLine("attack player 2 = false\n");
             Console.WriteLine("frame_counter_is_attacked 1: " + LocalPlayer1.frame_counter_is_attacked);
             Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
-            //if (ChangeControls.left1.clé == "Q")
-                Console.WriteLine(ChangeControls.left1.clé + "\n");
+            Console.WriteLine("life player 1 : " + LocalPlayer1.vie);
+            Console.WriteLine("life player 2 : " + LocalPlayer2.vie + "\n");
             #endregion
         }
 

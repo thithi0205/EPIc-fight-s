@@ -44,24 +44,28 @@ namespace jeu_xna
         int Timer; //timer pour l'animation du personnage
         int Timer_sound; //timer pour les bruitages du personnage
 
-        int Speed = 3;
-        int AnimationSpeed = 14;
-        int AnimationSound = 24;
+        int Speed;
+        int AnimationSpeed;
+        int AnimationSound;
 
         //saut
         int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
         public Keys attaque1;
-        Attack attaque_1, current_attack;
+        public Attack attaque_1, current_attack;
         public Rectangle attaque;
-        public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter;
-        public int frame_counter, frame_counter_is_attacked;
+        public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, frame_attack_counter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
+        public int frame_counter, frame_counter_is_attacked, frame_attack; //frame_attack = dès que cette valeur dépasse 1, alors n'attaque n'a plus lieu
 
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1)
         {
             vie = 100; //vie initiale du personnage
+
+            Speed = 5;
+            AnimationSpeed = 14;
+            AnimationSound = 24;
 
             this.name = name;
             this.player_number = player_number;
@@ -115,6 +119,9 @@ namespace jeu_xna
             frame_counter = 0;
             frame_counter_is_attacked = 0;
             display_caracter = true;
+            frame_attack = 0;
+            frame_attack_counter = false;
+            has_attaqued = false;
         }
 
         // METHODS
@@ -162,6 +169,8 @@ namespace jeu_xna
         //DEPLACEMENT DU PERSONNAGE
         public void Update(MouseState MouseState, KeyboardState keyboard)
         {
+            if(current_attack != null)
+            Console.WriteLine(current_attack.displayed_picture);
             if (is_jumping) //accélération du déplacement sur l'axe des adscisses pendant le saut
             {
                 Speed = 10;
@@ -225,9 +234,10 @@ namespace jeu_xna
                 attaque.Width = attaque_1.width;
                 attaque.Height = attaque_1.height;
                 current_attack = attaque_1;
-                is_attacking = true;
+                frame_attack_counter = true;
                 can_attack = false;
                 can_display_attack = true;
+                current_attack.displayed_picture = 0;
             }
 
             if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
@@ -278,13 +288,27 @@ namespace jeu_xna
 
             Saut(); //gestion du saut
 
-            if (frame_counter <= 30 && attack)
+            if (frame_counter <= 20 && attack)
             {
-                if (frame_counter > 1)
+                if (current_attack.displayed_picture == current_attack.frame_attack && frame_attack != 1 && !has_attaqued)
                 {
-                    is_attacking = false;
+                    is_attacking = true;
+                    frame_attack++;
+                    has_attaqued = true;
                 }
 
+                else
+                {
+                    is_attacking = false;
+                    frame_attack = 0;
+                    frame_attack_counter = false;
+                } 
+
+                if (frame_counter % 2 == 0 && current_attack.displayed_picture < current_attack.nb_frames)
+                {
+                    current_attack.displayed_picture++;
+                }
+                
                 frame_counter++;
             }
 
@@ -303,10 +327,11 @@ namespace jeu_xna
             {
                 can_attack = true;
                 frame_counter = 0;
-                attack = false; 
+                attack = false;
+                has_attaqued = false;
             } 
 
-            if (current_attack != null && is_attacking)
+            if (current_attack != null && is_attacking && frame_attack == 1)
             {
                 Attack.attacking(player_number, current_attack); //gestion des attaques
             }
@@ -396,7 +421,9 @@ namespace jeu_xna
             {
                 if (frame_counter <= 20 && can_display_attack)
                 {
-                    spriteBatch.Draw(current_attack.frames[0], new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames[0].Width, current_attack.frames[0].Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                    //spriteBatch.Draw(current_attack.frames, new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames.Width, current_attack.frames.Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                    current_attack.draw(Hitbox.X, Hitbox.Y, spriteBatch, current_attack.frames, Effect);
+
                 }
 
                 else

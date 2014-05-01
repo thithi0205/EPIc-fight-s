@@ -10,24 +10,29 @@ namespace jeu_xna
 {
     class Attack
     {
-        public int nb_frames, dégat_min, dégat_max, width, height, x, y;
-        public Texture2D[] frames;
+        public int nb_frames, largeur_image; //largeur_image = largeur maximale de la texture de l'attaque, frame_attack = frame qui correspond au moment où l'attaque sera effectuée
+        public int dégat_min, dégat_max, x, y, width, height, frame_attack; 
+        public int displayed_picture; //permet de sélectionner la texture de l'attaque à afficher
+        public Texture2D frames; //textures de l'attaque
 
-        public Attack(int nb_frames, int dégat_min, int dégat_max, Texture2D[] frames, int width, int height, int x, int y)
+        public Attack(int nb_frames, int dégat_min, int dégat_max, Texture2D frames, int x, int y, int width, int height, int largeur_image, int frame_attack)
         {
             this.nb_frames = nb_frames;
             this.dégat_min = dégat_min;
             this.dégat_max = dégat_max;
             this.frames = frames;
-            this.width = width;
-            this.height = height;
+            displayed_picture = 0;
+            this.largeur_image = largeur_image;
+            this.frame_attack = frame_attack;
             this.x = x;
             this.y = y;
+            this.width = width;
+            this.height = height;
         }
 
-        public static void draw(int x, int y, SpriteBatch spriteBatch, Texture2D texture)
+        public void draw(int x, int y, SpriteBatch spriteBatch, Texture2D texture, SpriteEffects effect)
         {
-            spriteBatch.Draw(texture, new Vector2(x, y), Color.White); 
+            spriteBatch.Draw(texture, new Rectangle(x, y, largeur_image, 200), new Rectangle((displayed_picture - 1) * largeur_image, 0, largeur_image, 200), Color.White, 0f, Vector2.Zero, effect, 0f);
         }
 
         public static void attacking(int player_number, Attack current_attack)
