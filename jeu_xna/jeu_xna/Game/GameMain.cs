@@ -48,8 +48,8 @@ namespace jeu_xna
             picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
 
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2);
-            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2, VarTemp.attack1_3);
+            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2, VarTemp.attack2_3);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");

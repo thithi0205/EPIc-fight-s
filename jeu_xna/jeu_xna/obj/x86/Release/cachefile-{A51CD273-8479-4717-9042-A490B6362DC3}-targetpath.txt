@@ -35,3 +35,4 @@ Content\Controls.xnb
 Content\Sprites\MainMenu\Options\bouton_commandes.xnb
 Content\Sprites\MainMenu\Options\Font\touches.xnb
 Content\Sprites\Personnages\attaque_2.xnb
+Content\Sprites\Personnages\attaque_3.xnb

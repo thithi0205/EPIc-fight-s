@@ -52,15 +52,15 @@ namespace jeu_xna
         int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
-        public Keys attaque1, attaque2;
-        public Attack attaque_1, attaque_2, current_attack;
+        public Keys attaque1, attaque2, attaque3;
+        public Attack attaque_1, attaque_2, attaque_3, current_attack;
         public Rectangle attaque;
         public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, frame_attack_counter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
         public int frame_counter, frame_counter_is_attacked, frame_attack; //frame_attack = dès que cette valeur dépasse 1, alors n'attaque n'a plus lieu
         public TextureCaracter texturecaracter;
 
         // CONSTRUCTOR
-        public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2)
+        public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
         {
             vie = 100; //vie initiale du personnage
 
@@ -111,6 +111,7 @@ namespace jeu_xna
             //VARIABLES POUR LES ATTAQUES
             this.attaque1 = attaque1;
             this.attaque2 = attaque2;
+            this.attaque3 = attaque3;
             this.texturecaracter = texturecaracter;
             is_attacking = false;
             is_attacked = false;
@@ -126,6 +127,7 @@ namespace jeu_xna
             has_attaqued = false;
             attaque_1 = texturecaracter.attaque1;
             attaque_2 = texturecaracter.attaque2;
+            attaque_3 = texturecaracter.attaque3;
         }
 
         // METHODS
@@ -220,8 +222,10 @@ namespace jeu_xna
 
             }
 
+            #region Attaques
             if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked)
             {
+                current_attack = attaque_1;
                 attack = true;
 
                 if (Effect == SpriteEffects.FlipHorizontally)
@@ -237,15 +241,15 @@ namespace jeu_xna
                 attaque.Y = Hitbox.Y + attaque_1.y;
                 attaque.Width = attaque_1.width;
                 attaque.Height = attaque_1.height;
-                current_attack = attaque_1;
                 frame_attack_counter = true;
                 can_attack = false;
                 can_display_attack = true;
                 current_attack.displayed_picture = 0;
             }
 
-            if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked)
+            else if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked)
             {
+                current_attack = attaque_2;
                 attack = true;
 
                 if (Effect == SpriteEffects.FlipHorizontally)
@@ -261,12 +265,36 @@ namespace jeu_xna
                 attaque.Y = Hitbox.Y + attaque_2.y;
                 attaque.Width = attaque_2.width;
                 attaque.Height = attaque_2.height;
-                current_attack = attaque_2;
                 frame_attack_counter = true;
                 can_attack = false;
                 can_display_attack = true;
                 current_attack.displayed_picture = 0;
             }
+
+            else if (keyboard.IsKeyDown(attaque3) && can_attack && !is_attacked)
+            {
+                current_attack = attaque_3;
+                attack = true;
+
+                if (Effect == SpriteEffects.FlipHorizontally)
+                {
+                    attaque.X = Hitbox.X + (Hitbox.Width - attaque_3.largeur_image);
+                }
+
+                else
+                {
+                    attaque.X = Hitbox.X + attaque_3.x;
+                }
+
+                attaque.Y = Hitbox.Y + attaque_3.y;
+                attaque.Width = attaque_3.width;
+                attaque.Height = attaque_3.height;
+                frame_attack_counter = true;
+                can_attack = false;
+                can_display_attack = true;
+                current_attack.displayed_picture = 0;
+            }
+            #endregion
 
             if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
             {
@@ -316,6 +344,14 @@ namespace jeu_xna
 
             Saut(); //gestion du saut
 
+            if (current_attack != null)
+            {
+                if (frame_counter % 9 == 0 && current_attack.displayed_picture < current_attack.nb_frames && attack)
+                {
+                    current_attack.displayed_picture++;
+                }
+            }
+
             if (frame_counter <= 20 && attack)
             {
                 if (current_attack.displayed_picture == current_attack.frame_attack && frame_attack != 1 && !has_attaqued)
@@ -331,32 +367,29 @@ namespace jeu_xna
                     frame_attack = 0;
                     frame_attack_counter = false;
                 } 
-
-                if (frame_counter % 4 == 0 && current_attack.displayed_picture < current_attack.nb_frames)
-                {
-                    current_attack.displayed_picture++;
-                }
                 
                 frame_counter++;
             }
 
             else if (frame_counter >= 20)
             {
-                current_attack = null;
-                can_display_attack = false;
+                //current_attack = null;
+                //can_display_attack = false;
             }
 
-            if (frame_counter >= 20 && frame_counter <= 40)
+            if (frame_counter >= 20 && frame_counter <= 50)
             {
                 frame_counter++;
             }
 
-            else if (frame_counter >= 40)
+            else if (frame_counter >= 50)
             {
                 can_attack = true;
                 frame_counter = 0;
                 attack = false;
                 has_attaqued = false;
+                current_attack = null;
+                can_display_attack = false;
             } 
 
             if (current_attack != null && is_attacking && frame_attack == 1)
@@ -447,7 +480,7 @@ namespace jeu_xna
 
             if (display_caracter) //permet de faire clignoter le personnage attaqué
             {
-                if (frame_counter <= 20 && can_display_attack)
+                if (frame_counter <= 50 && can_display_attack)
                 {
                     if (Effect == SpriteEffects.FlipHorizontally)
                     {
