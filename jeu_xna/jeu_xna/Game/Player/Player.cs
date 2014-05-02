@@ -52,14 +52,15 @@ namespace jeu_xna
         int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
-        public Keys attaque1;
-        public Attack attaque_1, current_attack;
+        public Keys attaque1, attaque2;
+        public Attack attaque_1, attaque_2, current_attack;
         public Rectangle attaque;
         public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, frame_attack_counter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
         public int frame_counter, frame_counter_is_attacked, frame_attack; //frame_attack = dès que cette valeur dépasse 1, alors n'attaque n'a plus lieu
+        public TextureCaracter texturecaracter;
 
         // CONSTRUCTOR
-        public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1)
+        public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2)
         {
             vie = 100; //vie initiale du personnage
 
@@ -109,7 +110,8 @@ namespace jeu_xna
 
             //VARIABLES POUR LES ATTAQUES
             this.attaque1 = attaque1;
-            attaque_1 = texturecaracter.attaque1;
+            this.attaque2 = attaque2;
+            this.texturecaracter = texturecaracter;
             is_attacking = false;
             is_attacked = false;
             can_attack = true;
@@ -122,6 +124,8 @@ namespace jeu_xna
             frame_attack = 0;
             frame_attack_counter = false;
             has_attaqued = false;
+            attaque_1 = texturecaracter.attaque1;
+            attaque_2 = texturecaracter.attaque2;
         }
 
         // METHODS
@@ -222,7 +226,7 @@ namespace jeu_xna
 
                 if (Effect == SpriteEffects.FlipHorizontally)
                 {
-                    attaque.X = Hitbox.X;
+                    attaque.X = Hitbox.X + (Hitbox.Width - attaque_1.largeur_image);
                 }
 
                 else
@@ -234,6 +238,30 @@ namespace jeu_xna
                 attaque.Width = attaque_1.width;
                 attaque.Height = attaque_1.height;
                 current_attack = attaque_1;
+                frame_attack_counter = true;
+                can_attack = false;
+                can_display_attack = true;
+                current_attack.displayed_picture = 0;
+            }
+
+            if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked)
+            {
+                attack = true;
+
+                if (Effect == SpriteEffects.FlipHorizontally)
+                {
+                    attaque.X = Hitbox.X + (Hitbox.Width - attaque_2.largeur_image);
+                }
+
+                else
+                {
+                    attaque.X = Hitbox.X + attaque_2.x;
+                }
+
+                attaque.Y = Hitbox.Y + attaque_2.y;
+                attaque.Width = attaque_2.width;
+                attaque.Height = attaque_2.height;
+                current_attack = attaque_2;
                 frame_attack_counter = true;
                 can_attack = false;
                 can_display_attack = true;
@@ -304,7 +332,7 @@ namespace jeu_xna
                     frame_attack_counter = false;
                 } 
 
-                if (frame_counter % 2 == 0 && current_attack.displayed_picture < current_attack.nb_frames)
+                if (frame_counter % 4 == 0 && current_attack.displayed_picture < current_attack.nb_frames)
                 {
                     current_attack.displayed_picture++;
                 }
@@ -421,14 +449,22 @@ namespace jeu_xna
             {
                 if (frame_counter <= 20 && can_display_attack)
                 {
-                    //spriteBatch.Draw(current_attack.frames, new Rectangle(Hitbox.X, Hitbox.Y, 117, 200), new Rectangle(0, 0, current_attack.frames.Width, current_attack.frames.Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
-                    current_attack.draw(Hitbox.X, Hitbox.Y, spriteBatch, current_attack.frames, Effect);
-
+                    if (Effect == SpriteEffects.FlipHorizontally)
+                    {
+                        current_attack.draw((Hitbox.Width - current_attack.largeur_image) + Hitbox.X, Hitbox.Y, spriteBatch, current_attack.frames, Effect);
+                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                    }
+                    
+                    else
+                    {
+                        current_attack.draw(Hitbox.X, Hitbox.Y, spriteBatch, current_attack.frames, Effect);
+                    }
                 }
 
                 else
                 {
                     spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                    //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                 }
             }    
         }

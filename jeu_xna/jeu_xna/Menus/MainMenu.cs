@@ -44,7 +44,7 @@ namespace jeu_xna
         {
             ChoiceMenuCaracter.Initialise();
             Options.is_mainmenu = true;
-            State.CurrentGameState = GameState.MainMenu;
+            VarTemp.CurrentGameState = GameState.MainMenu;
             IsMouseVisible = true;
             base.Initialize();
         }
@@ -113,15 +113,15 @@ namespace jeu_xna
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
-            if (State.CurrentGameState == GameState.MainMenu)
+            if (VarTemp.CurrentGameState == GameState.MainMenu)
                 Console.WriteLine("MainMenu\n");
-            else if (State.CurrentGameState == GameState.Options)
+            else if (VarTemp.CurrentGameState == GameState.Options)
                 Console.WriteLine("Options\n");
-            else if (State.CurrentGameState == GameState.Playing)
+            else if (VarTemp.CurrentGameState == GameState.Playing)
                 Console.WriteLine("Playing\n");
-            else if (State.CurrentGameState == GameState.ChoiceMenuCaracter)
+            else if (VarTemp.CurrentGameState == GameState.ChoiceMenuCaracter)
                 Console.WriteLine("ChoiceMenuCaracter\n");
-            else if (State.CurrentGameState == GameState.ChoiceMenuBattlefield)
+            else if (VarTemp.CurrentGameState == GameState.ChoiceMenuBattlefield)
                 Console.WriteLine("ChoiceMenuBattlefield\n");
             #endregion
 
@@ -132,19 +132,19 @@ namespace jeu_xna
             quitter.Update(mouse);
             #endregion
 
-            switch (State.CurrentGameState)
+            switch (VarTemp.CurrentGameState)
             {
                 case GameState.MainMenu:
                     //MISE A JOUR DU MENU PRINCIPAL
                     #region MainMenu update
                     if (play.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
-                        State.CurrentGameState = GameState.ChoiceMenuCaracter;
+                        VarTemp.CurrentGameState = GameState.ChoiceMenuCaracter;
                     }
 
                     else if (option.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
-                        State.CurrentGameState = GameState.Options;
+                        VarTemp.CurrentGameState = GameState.Options;
                     }
 
                     else if (quitter.isClicked && !ChoiceMenuCaracter.was_cliqued)
@@ -178,11 +178,11 @@ namespace jeu_xna
             #region mise à jour bouton Menu principal choix personnages et terrain de combat
             mainmenu.Update(mouse);
 
-            if (State.CurrentGameState == GameState.ChoiceMenuCaracter || State.CurrentGameState == GameState.ChoiceMenuBattlefield)
+            if (VarTemp.CurrentGameState == GameState.ChoiceMenuCaracter || VarTemp.CurrentGameState == GameState.ChoiceMenuBattlefield)
             {
                 if (mainmenu.isClicked)
                 {
-                    State.CurrentGameState = GameState.MainMenu;
+                    VarTemp.CurrentGameState = GameState.MainMenu;
                     ChoiceMenuCaracter.was_cliqued = true;
                     ChoiceMenuBattlefield.choisi = false;
                     ChoiceMenuCaracter.player = 1;
@@ -204,7 +204,7 @@ namespace jeu_xna
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
-            switch (State.CurrentGameState)
+            switch (VarTemp.CurrentGameState)
             {
                 case GameState.MainMenu:
 
@@ -236,7 +236,7 @@ namespace jeu_xna
                     break;
             }
 
-            if (State.CurrentGameState == GameState.ChoiceMenuCaracter || State.CurrentGameState == GameState.ChoiceMenuBattlefield)
+            if (VarTemp.CurrentGameState == GameState.ChoiceMenuCaracter || VarTemp.CurrentGameState == GameState.ChoiceMenuBattlefield)
             {
                 mainmenu.Draw(spriteBatch);
             }

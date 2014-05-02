@@ -51,12 +51,12 @@ namespace jeu_xna
             {
                 if (is_mainmenu)
                 {
-                    State.CurrentGameState = GameState.MainMenu;
+                    VarTemp.CurrentGameState = GameState.MainMenu;
                 }
 
                 else   
                 {
-                    State.CurrentGameState = GameState.Pause;
+                    VarTemp.CurrentGameState = GameState.Pause;
                 }
             }
 
@@ -104,7 +104,7 @@ namespace jeu_xna
 
             else if (bouton_commande.isClicked)
             {
-                State.CurrentGameState = GameState.Commandes;
+                VarTemp.CurrentGameState = GameState.Commandes;
             }
 
             else if (MainMenu.mouse.LeftButton == ButtonState.Released && MainMenu.mouse.RightButton == ButtonState.Released)

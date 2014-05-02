@@ -14,7 +14,7 @@ namespace jeu_xna
         static SpriteFont player, commandes, touche, commande_display;
         static Texture2D background;
         public static Texture2D blank;
-        public static ControlsButton left1, right1, up1, attack1, left2, right2, up2, attack2;
+        public static ControlsButton left1, right1, up1, attack1_1, attack1_2, left2, right2, up2, attack2_1, attack2_2;
         public static SpriteFont font;
 
         public static void LoadContent(ContentManager Content)
@@ -28,12 +28,14 @@ namespace jeu_xna
             left1 = new ControlsButton(GameMain.LocalPlayer1.gauche, 200, 210, "left", 1);
             right1 = new ControlsButton(GameMain.LocalPlayer1.droite, 200, 260, "right", 1);
             up1 = new ControlsButton(GameMain.LocalPlayer1.saut, 200, 310, "up", 1);
-            attack1 = new ControlsButton(GameMain.LocalPlayer1.attaque1, 200, 360, "attack1", 1);
+            attack1_1 = new ControlsButton(GameMain.LocalPlayer1.attaque1, 200, 360, "attack1", 1);
+            attack1_2 = new ControlsButton(GameMain.LocalPlayer1.attaque2, 200, 410, "attack2", 1);
 
             left2 = new ControlsButton(GameMain.LocalPlayer2.gauche, 670, 210, "left", 2);
             right2 = new ControlsButton(GameMain.LocalPlayer2.droite, 670, 260, "right", 2);
             up2 = new ControlsButton(GameMain.LocalPlayer2.saut, 670, 310, "up", 2);
-            attack2 = new ControlsButton(GameMain.LocalPlayer2.attaque1, 670, 360, "attack1", 2);
+            attack2_1 = new ControlsButton(GameMain.LocalPlayer2.attaque1, 670, 360, "attack1", 2);
+            attack2_2 = new ControlsButton(GameMain.LocalPlayer2.attaque2, 670, 410, "attack2", 2);
 
             font = Content.Load<SpriteFont>("Controls");
             touche = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\touches");
@@ -45,16 +47,18 @@ namespace jeu_xna
             ChangeControls.left1.Update(keyboard);
             ChangeControls.right1.Update(keyboard);
             ChangeControls.up1.Update(keyboard);
-            ChangeControls.attack1.Update(keyboard);
+            ChangeControls.attack1_1.Update(keyboard);
+            ChangeControls.attack2_1.Update(keyboard);
 
             ChangeControls.left2.Update(keyboard);
             ChangeControls.right2.Update(keyboard);
             ChangeControls.up2.Update(keyboard);
-            ChangeControls.attack2.Update(keyboard);
+            ChangeControls.attack2_1.Update(keyboard);
+            ChangeControls.attack2_2.Update(keyboard);
 
             if (Options.bouton_retour.isClicked)
             {
-                State.CurrentGameState = GameState.Options;
+                VarTemp.CurrentGameState = GameState.Options;
                 Options.was_cliqued = true;
             }
         }
@@ -68,17 +72,20 @@ namespace jeu_xna
             spriteBatch.DrawString(touche, "droite :", new Vector2(20, 250), Color.Black);
             spriteBatch.DrawString(touche, "saut :", new Vector2(20, 300), Color.Black);
             spriteBatch.DrawString(touche, "attaque 1 :", new Vector2(20, 350), Color.Black);
+            spriteBatch.DrawString(touche, "attaque 2 :", new Vector2(20, 400), Color.Black);
             spriteBatch.DrawString(commande_display, "Commandes", new Vector2(300, 20), Color.Black);
 
             left1.Draw(spriteBatch);
             right1.Draw(spriteBatch);
             up1.Draw(spriteBatch);
-            attack1.Draw(spriteBatch);
+            attack1_1.Draw(spriteBatch);
+            attack1_2.Draw(spriteBatch);
 
             left2.Draw(spriteBatch);
             right2.Draw(spriteBatch);
             up2.Draw(spriteBatch);
-            attack2.Draw(spriteBatch);
+            attack2_1.Draw(spriteBatch);
+            attack2_2.Draw(spriteBatch);
 
             Options.bouton_retour.Draw(spriteBatch);
         }
@@ -148,54 +155,76 @@ namespace jeu_xna
 
                     if (player_number_bis == 1)
                     {
-                        if (touche_bis == "left" && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        if (touche_bis == "left" && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer1.gauche = key_bis;
+                            VarTemp.left1 = key_bis;
                             MakeControl(key_bis);
                         }
 
-                        else if (touche_bis == "right" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        else if (touche_bis == "right" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer1.droite = key_bis;
+                            VarTemp.right1 = key_bis;
                             MakeControl(key_bis);
                         }
 
-                        else if (touche_bis == "up" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        else if (touche_bis == "up" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer1.saut = key_bis;
+                            VarTemp.up1 = key_bis;
                             MakeControl(key_bis);
                         }
 
-                        else if (touche_bis == "attack1" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        else if (touche_bis == "attack1" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer1.attaque1 = key_bis;
+                            VarTemp.attack1_1 = key_bis;
+                            MakeControl(key_bis);
+                        }
+
+                        else if (touche_bis == "attack2" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
+                        {
+                            GameMain.LocalPlayer1.attaque2 = key_bis;
+                            VarTemp.attack1_2 = key_bis;
                             MakeControl(key_bis);
                         }
                     }
 
                     if (player_number_bis == 2)
                     {
-                        if (touche_bis == "left" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        if (touche_bis == "left" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer2.gauche = key_bis;
+                            VarTemp.left2 = key_bis;
                             MakeControl(key_bis);
                         }
 
-                        else if (touche_bis == "right" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        else if (touche_bis == "right" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer2.droite = key_bis;
+                            VarTemp.right2 = key_bis;
                             MakeControl(key_bis);
                         }
 
-                        else if (touche_bis == "up" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.attack2.key_bis)
+                        else if (touche_bis == "up" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.attack2_1.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer2.saut = key_bis;
+                            VarTemp.up2 = key_bis;
                             MakeControl(key_bis);
                         }
 
-                        else if (touche_bis == "attack1" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis)
+                        else if (touche_bis == "attack1" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack1_2.key_bis && key_bis != ChangeControls.attack2_2.key_bis)
                         {
                             GameMain.LocalPlayer2.attaque1 = key_bis;
+                            VarTemp.attack2_1 = key_bis;
+                            MakeControl(key_bis);
+                        }
+
+                        else if (touche_bis == "attack2" && key_bis != ChangeControls.left1.key_bis && key_bis != ChangeControls.right1.key_bis && key_bis != ChangeControls.up1.key_bis && key_bis != ChangeControls.attack1_1.key_bis && key_bis != ChangeControls.left2.key_bis && key_bis != ChangeControls.right2.key_bis && key_bis != ChangeControls.up2.key_bis && key_bis != ChangeControls.attack1_2.key_bis)
+                        {
+                            GameMain.LocalPlayer2.attaque2 = key_bis;
+                            VarTemp.attack2_2 = key_bis;
                             MakeControl(key_bis);
                         }
                     }
@@ -476,6 +505,10 @@ namespace jeu_xna
 
                 case Keys.F24:
                     clé = "F24";
+                    break;
+
+                case Keys.G:
+                    clé = "G";
                     break;
 
                 case Keys.H:

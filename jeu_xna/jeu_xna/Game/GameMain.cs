@@ -48,8 +48,8 @@ namespace jeu_xna
             picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
 
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, Keys.Z, Keys.D, Keys.Q, "Player 1", 1, Content, Keys.F);
-            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, Keys.Up, Keys.Right, Keys.Left, "Player 2", 2, Content, Keys.RightShift);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2);
+            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
@@ -76,15 +76,15 @@ namespace jeu_xna
             GameMain.menu_principal.Update(MainMenu.mouse);
             GameMain.quitter.Update(MainMenu.mouse);
 
-            if (keyboard.IsKeyDown(Keys.Escape) && State.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
+            if (keyboard.IsKeyDown(Keys.Escape) && VarTemp.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
             {
-                State.CurrentGameState = GameState.Pause;
+                VarTemp.CurrentGameState = GameState.Pause;
                 WasKeyDown_Escape = true;
             }
 
-            else if (keyboard.IsKeyDown(Keys.Escape) && (State.CurrentGameState == GameState.Pause || State.CurrentGameState == GameState.Options || State.CurrentGameState == GameState.Commandes) && !WasKeyDown_Escape)
+            else if (keyboard.IsKeyDown(Keys.Escape) && (VarTemp.CurrentGameState == GameState.Pause || VarTemp.CurrentGameState == GameState.Options || VarTemp.CurrentGameState == GameState.Commandes) && !WasKeyDown_Escape)
             {
-                State.CurrentGameState = GameState.Playing;
+                VarTemp.CurrentGameState = GameState.Playing;
                 WasKeyDown_Escape = true;
             }
 
@@ -93,7 +93,7 @@ namespace jeu_xna
                 WasKeyDown_Escape = false;
             }
 
-            switch (State.CurrentGameState)
+            switch (VarTemp.CurrentGameState)
             {
                 case GameState.Playing:
                     if (timer_combat_secondes >= 0)
@@ -124,18 +124,18 @@ namespace jeu_xna
                 case GameState.Pause:
                     if (option.isClicked)
                     {
-                        State.CurrentGameState = GameState.Options;
+                        VarTemp.CurrentGameState = GameState.Options;
                         Options.was_cliqued = true;
                     }
 
                     else if (retour.isClicked)
                     {
-                        State.CurrentGameState = GameState.Playing;
+                        VarTemp.CurrentGameState = GameState.Playing;
                     }
 
                     else if (menu_principal.isClicked)
                     {
-                        State.CurrentGameState = GameState.MainMenu;
+                        VarTemp.CurrentGameState = GameState.MainMenu;
                         Program.thread_menu = new Thread(new ThreadStart(Program.Menu));
                         Program.thread_menu.Start();
                         MainMenu.thread_jeu.Abort();
@@ -165,11 +165,11 @@ namespace jeu_xna
             Console.WriteLine("CAN_JUMP joueur 1 : " + LocalPlayer1.can_jump + " joueur 2 : " + LocalPlayer2.can_jump + "\n");
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume);
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
-            if (State.CurrentGameState == GameState.Playing)
+            if (VarTemp.CurrentGameState == GameState.Playing)
                 Console.WriteLine("Playing\n");
-            else if (State.CurrentGameState == GameState.Pause)
+            else if (VarTemp.CurrentGameState == GameState.Pause)
                 Console.WriteLine("Pause\n");
-            else if (State.CurrentGameState == GameState.Options)
+            else if (VarTemp.CurrentGameState == GameState.Options)
                 Console.WriteLine("Options\n");
             if (!WasKeyDown_Escape)
                 Console.WriteLine("escape not pressed\n");
@@ -194,7 +194,7 @@ namespace jeu_xna
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            switch (State.CurrentGameState)
+            switch (VarTemp.CurrentGameState)
             {
                 case GameState.Playing:
                     spriteBatch.Draw(Ressources.fields[terrain_choisi], new Rectangle(0, 0, 800, 480), Color.White);
@@ -248,7 +248,7 @@ namespace jeu_xna
                         else
                         {
                             fps_counter = 0;
-                            State.CurrentGameState = GameState.MainMenu;
+                            VarTemp.CurrentGameState = GameState.MainMenu;
                             Program.thread_menu = new Thread(new ThreadStart(Program.Menu));
                             Program.thread_menu.Start();
                             MainMenu.thread_jeu.Abort();

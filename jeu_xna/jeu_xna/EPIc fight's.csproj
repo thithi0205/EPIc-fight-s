@@ -119,7 +119,7 @@
     <Compile Include="Menus\MenuButton.cs" />
     <Compile Include="Game\Player\Player.cs" />
     <Compile Include="Menus\Options.cs" />
-    <Compile Include="Menus\State.cs" />
+    <Compile Include="Menus\VarTemp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Menus\MainMenu.cs" />

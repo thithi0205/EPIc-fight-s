@@ -12,7 +12,7 @@ namespace jeu_xna
         {
             Program.thread_menu = new Thread(new ThreadStart(Menu));
 
-            if (State.CurrentGameState == GameState.MainMenu)
+            if (VarTemp.CurrentGameState == GameState.MainMenu)
             {
                 thread_menu.Start();
             }

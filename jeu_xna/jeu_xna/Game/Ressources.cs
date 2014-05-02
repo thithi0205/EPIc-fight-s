@@ -22,7 +22,7 @@ namespace jeu_xna
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
         {
-            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\attaque_1"), 5, 5, 114, 114, 117, 1));
+            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\attaque_1"), 114, 114, 5, 5, 117, 1), new Attack(3, 1, 20, Content.Load<Texture2D>(@"Sprites\Personnages\attaque_2"), 125, 45, 5, 5, 167, 3));
 
             fields[0] = Content.Load<Texture2D>(@"Sprites\Maps\map1");
             fields[1] = Content.Load<Texture2D>(@"Sprites\Maps\map2");
@@ -49,14 +49,15 @@ namespace jeu_xna
     {
         public Texture2D personnage, identity;
         public SoundEffect jump;
-        public Attack attaque1;
+        public Attack attaque1, attaque2;
 
-        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque1)
+        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque1, Attack attaque2)
         {
             this.personnage = personnage;
             this.identity = identity;
             this.jump = jump;
             this.attaque1 = attaque1;
+            this.attaque2 = attaque2;
         }
     }
 }
