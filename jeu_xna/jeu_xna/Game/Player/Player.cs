@@ -66,9 +66,9 @@ namespace jeu_xna
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
         {
-            vie = 5; //vie initiale du personnage
+            vie = 100; //vie initiale du personnage
 
-            Speed = 100;
+            Speed = 5;
             AnimationSpeed = 14;
             AnimationSound = 24;
 
@@ -181,8 +181,6 @@ namespace jeu_xna
         //DEPLACEMENT DU PERSONNAGE
         public void Update(MouseState MouseState, KeyboardState keyboard)
         {
-            if(current_attack != null)
-            Console.WriteLine(current_attack.displayed_picture);
             if (is_jumping) //accélération du déplacement sur l'axe des adscisses pendant le saut
             {
                 Speed = 10;
@@ -193,6 +191,7 @@ namespace jeu_xna
                 Speed = 5;
             }
 
+            #region directions + saut
             if (keyboard.IsKeyDown(gauche) && !is_attacked && !is_dead)
             {
                 Hitbox.X -= Speed;
@@ -227,6 +226,7 @@ namespace jeu_xna
                 }
 
             }
+#endregion
 
             #region Attaques
             if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked && !is_dead)
