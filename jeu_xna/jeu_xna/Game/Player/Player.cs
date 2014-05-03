@@ -60,8 +60,11 @@ namespace jeu_xna
         public TextureCaracter texturecaracter;
 
         //mort
-        public int dead_frames_counter_display, dead_frames_counter;
+        public int dead_alive_frames_counter_display, dead_alive_frames_counter;
         public bool is_dead;
+
+        //victoire
+        public bool win;
 
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
@@ -131,9 +134,12 @@ namespace jeu_xna
             temp = 0;
 
             //VARIABLES POUR LA MORT
-            dead_frames_counter_display = 0;
-            dead_frames_counter = 0;
+            dead_alive_frames_counter_display = 0;
+            dead_alive_frames_counter = 0;
             is_dead = false;
+
+            //VARIABLES POUR LA VICTOIRE
+            win = false;
         }
 
         // METHODS
@@ -224,9 +230,8 @@ namespace jeu_xna
                     Hitbox.Y -= jump_speed_initial;
                     can_jump = 0;
                 }
-
+            #endregion
             }
-#endregion
 
             #region Attaques
             if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked && !is_dead)
@@ -375,22 +380,40 @@ namespace jeu_xna
             #endregion
 
             #region Personnage mort
-
-            if (vie == 0)
+            if (!win)
             {
-                is_dead = true;
-            }
-
-            if (is_dead)
-            {
-                dead_frames_counter++;
-
-                if (dead_frames_counter % 10 == 0 && dead_frames_counter_display < (texturecaracter.mort.nb_frames - 1))
+                if (vie == 0)
                 {
-                    dead_frames_counter_display++;
+                    is_dead = true;
+                }
+
+                if (is_dead)
+                {
+                    dead_alive_frames_counter++;
+
+                    if (dead_alive_frames_counter % 10 == 0 && dead_alive_frames_counter_display < (texturecaracter.mort.nb_frames - 1))
+                    {
+                        dead_alive_frames_counter_display++;
+                    }
                 }
             }
+            #endregion
 
+            #region Victoire
+            if (win)
+            {
+                dead_alive_frames_counter++;
+
+                if (dead_alive_frames_counter % 10 == 0 && dead_alive_frames_counter_display == 0)
+                {
+                    dead_alive_frames_counter_display++;
+                }
+
+                else if (dead_alive_frames_counter % 10 == 0 && dead_alive_frames_counter_display == 1)
+                {
+                    dead_alive_frames_counter_display--;
+                }
+            }
             #endregion
         }
 
@@ -470,13 +493,21 @@ namespace jeu_xna
                 {
                     if (vie != 0)
                     {
-                        spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
-                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                        if (!win)
+                        {
+                            spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                            //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                        }
+
+                        else
+                        {
+                            texturecaracter.victoire.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display);
+                        }
                     }
 
                     else
                     {
-                        texturecaracter.mort.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_frames_counter_display);
+                        texturecaracter.mort.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display);
                     }
                 }
             }    
@@ -607,12 +638,12 @@ namespace jeu_xna
     }
 
 
-    class Dead
+    class Dead_victory
     {
         public Texture2D dead_frames;
         public int nb_frames, largeur_image;
 
-        public Dead(Texture2D dead_frames, int largeur_image, int nb_frames)
+        public Dead_victory(Texture2D dead_frames, int largeur_image, int nb_frames)
         {
             this.dead_frames = dead_frames;
             this.nb_frames = nb_frames;

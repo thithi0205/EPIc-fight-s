@@ -187,10 +187,10 @@ namespace jeu_xna
             Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
             Console.WriteLine("life player 1 : " + LocalPlayer1.vie);
             Console.WriteLine("life player 2 : " + LocalPlayer2.vie + "\n");
-            if (LocalPlayer1.can_attack)
-                Console.WriteLine("player 1 can_attack = true");
-            else if (!LocalPlayer1.can_attack)
-                Console.WriteLine("player 1 can_attack = false\n");
+            if (LocalPlayer1.win)
+                Console.WriteLine("player 1 win");
+            else if (LocalPlayer2.win)
+                Console.WriteLine("player 2 win\n");
 
             #endregion
         }
@@ -241,6 +241,16 @@ namespace jeu_xna
 
                     if (LocalPlayer1.vie == 0 || LocalPlayer2.vie == 0)
                     {
+                        if (LocalPlayer1.vie != 0)
+                        {
+                            LocalPlayer1.win = true;
+                        }
+
+                        else if (LocalPlayer2.vie != 0)
+                        {
+                            LocalPlayer2.win = true;
+                        }
+
                         if (fps_counter <= 180)
                         {
                             fps_counter++;

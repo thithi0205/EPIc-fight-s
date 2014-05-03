@@ -344,6 +344,15 @@
       <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\mort.xnb</Output>
       <Time>2014-05-03T15:17:37.3477776+02:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\victoire.png</Source>
+      <Name>Sprites\Personnages\Personnage1\victoire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\victoire.xnb</Output>
+      <Time>2014-05-03T17:02:01.6402938+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
