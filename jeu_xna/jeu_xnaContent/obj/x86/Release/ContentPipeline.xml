@@ -119,24 +119,6 @@
       <Time>2014-03-23T15:11:08.6689332+01:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\Personnages\identité1.png</Source>
-      <Name>Sprites\Personnages\identité1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\identité1.xnb</Output>
-      <Time>2014-03-23T19:16:27.4646709+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Personnages\personnage1.png</Source>
-      <Name>Sprites\Personnages\personnage1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\personnage1.xnb</Output>
-      <Time>2014-04-22T17:50:00.3598391+02:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\Game\ready.png</Source>
       <Name>Sprites\Game\ready</Name>
       <Importer>TextureImporter</Importer>
@@ -153,24 +135,6 @@
       <Options>None</Options>
       <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb</Output>
       <Time>2014-04-23T16:02:44.6198672+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Personnages\attaque_1.png</Source>
-      <Name>Sprites\Personnages\attaque_1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\attaque_1.xnb</Output>
-      <Time>2014-04-23T16:18:39.7890703+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Personnage\jump1.wav</Source>
-      <Name>Sounds\Personnage\jump1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump1.xnb</Output>
-      <Time>2014-02-12T23:21:09.5100249+01:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Personnage\step1.wav</Source>
@@ -318,22 +282,58 @@
       <Time>2014-04-28T16:33:38.5709003+02:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\Personnages\attaque_2.png</Source>
-      <Name>Sprites\Personnages\attaque_2</Name>
+      <Source>Sprites\Personnages\Personnage1\identité1.png</Source>
+      <Name>Sprites\Personnages\Personnage1\identité1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\attaque_2.xnb</Output>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\identité1.xnb</Output>
+      <Time>2014-03-23T19:16:27.4646709+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\personnage1.png</Source>
+      <Name>Sprites\Personnages\Personnage1\personnage1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\personnage1.xnb</Output>
+      <Time>2014-04-22T17:50:00.3598391+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\attaque_1.png</Source>
+      <Name>Sprites\Personnages\Personnage1\attaque_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb</Output>
+      <Time>2014-04-23T16:18:39.7890703+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\attaque_2.png</Source>
+      <Name>Sprites\Personnages\Personnage1\attaque_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_2.xnb</Output>
       <Time>2014-05-02T16:34:17.4195178+02:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\Personnages\attaque_3.png</Source>
-      <Name>Sprites\Personnages\attaque_3</Name>
+      <Source>Sprites\Personnages\Personnage1\attaque_3.png</Source>
+      <Name>Sprites\Personnages\Personnage1\attaque_3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\attaque_3.xnb</Output>
-      <Time>2014-05-02T23:09:55.0787845+02:00</Time>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_3.xnb</Output>
+      <Time>2014-05-03T11:05:53.8932855+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage1\jump1.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\jump1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb</Output>
+      <Time>2014-02-12T23:21:09.5100249+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

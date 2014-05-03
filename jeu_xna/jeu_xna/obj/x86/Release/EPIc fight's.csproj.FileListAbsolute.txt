@@ -11,12 +11,8 @@ D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Con
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_quitter.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_menu-principal.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\BlankTexture.xnb
-D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\identité1.xnb
-D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\personnage1.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\ready.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb
-D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\attaque_1.xnb
-D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump1.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\step1.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump_end.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb
@@ -40,5 +36,9 @@ D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Con
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb
-D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\attaque_2.xnb
-D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\attaque_3.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\identité1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\personnage1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_2.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_3.xnb
+D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb

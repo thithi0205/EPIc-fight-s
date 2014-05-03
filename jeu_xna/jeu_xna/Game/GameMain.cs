@@ -22,7 +22,7 @@ namespace jeu_xna
         static int fps_counter;
 
         public static MenuButton option, retour, menu_principal, quitter;
-        static Texture2D background, picture_identity, ready, fight, game_over;
+        static Texture2D background, ready, fight, game_over;
         static SpriteFont chrono, pause;
 
         // CONSTRUCTOR
@@ -45,8 +45,6 @@ namespace jeu_xna
 
         public static void LoadContent(ContentManager Content)
         {
-            picture_identity = Content.Load<Texture2D>(@"Sprites\Personnages\identité1");
-
             //CREATION DES JOUEURS
             LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2, VarTemp.attack1_3);
             LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2, VarTemp.attack2_3);
@@ -189,6 +187,11 @@ namespace jeu_xna
             Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
             Console.WriteLine("life player 1 : " + LocalPlayer1.vie);
             Console.WriteLine("life player 2 : " + LocalPlayer2.vie + "\n");
+            if (LocalPlayer1.can_attack)
+                Console.WriteLine("player 1 can_attack = true");
+            else if (!LocalPlayer1.can_attack)
+                Console.WriteLine("player 1 can_attack = false\n");
+
             #endregion
         }
 
@@ -223,7 +226,6 @@ namespace jeu_xna
                                 was_displayed = true;
                             }
                         }
-
                     }
 
                     else

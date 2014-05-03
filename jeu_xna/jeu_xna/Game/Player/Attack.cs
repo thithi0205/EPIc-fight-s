@@ -32,7 +32,7 @@ namespace jeu_xna
 
         public void draw(int x, int y, SpriteBatch spriteBatch, Texture2D texture, SpriteEffects effect)
         {
-            spriteBatch.Draw(texture, new Rectangle(x, y, largeur_image, 200), new Rectangle((displayed_picture - 1) * largeur_image, 0, largeur_image, 200), Color.White, 0f, Vector2.Zero, effect, 0f);
+            spriteBatch.Draw(texture, new Rectangle(x, y, largeur_image, texture.Height), new Rectangle((displayed_picture - 1) * largeur_image, 0, largeur_image, texture.Height), Color.White, 0f, Vector2.Zero, effect, 0f);
         }
 
         public static void attacking(int player_number, Attack current_attack)

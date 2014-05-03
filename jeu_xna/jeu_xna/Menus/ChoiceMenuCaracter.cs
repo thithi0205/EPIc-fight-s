@@ -27,7 +27,7 @@ namespace jeu_xna
         public static void LoadContent(ContentManager Content)
         {
             BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
-            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\identité1"), BlankTexture, 100, 100);
+            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), BlankTexture, 100, 100);
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             choix = Content.Load<SpriteFont>("choix");
             terrain = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_terrain"), new Vector2(600, 500));

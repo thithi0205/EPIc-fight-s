@@ -24,8 +24,7 @@ namespace jeu_xna
         public string name;
         SpriteFont display_name;
         int player_number;
-        Texture2D photo_identité;
-        Texture2D BlankTexture; //nécéssaire pour la barre de vie
+        Texture2D photo_identité, BlankTexture;
         SoundEffect jump_sound; //son joué au début du saut
 
         public int can_jump = 0;
@@ -53,10 +52,10 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         public Keys attaque1, attaque2, attaque3;
-        public Attack attaque_1, attaque_2, attaque_3, current_attack;
+        public Attack current_attack;
         public Rectangle attaque;
-        public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, frame_attack_counter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
-        public int frame_counter, frame_counter_is_attacked, frame_attack; //frame_attack = dès que cette valeur dépasse 1, alors n'attaque n'a plus lieu
+        public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
+        public int frame_counter, frame_counter_is_attacked, frame_attack, temp; //frame_attack = dès que cette valeur dépasse 1, alors n'attaque n'a plus lieu
         public TextureCaracter texturecaracter;
 
         // CONSTRUCTOR
@@ -123,11 +122,8 @@ namespace jeu_xna
             frame_counter_is_attacked = 0;
             display_caracter = true;
             frame_attack = 0;
-            frame_attack_counter = false;
             has_attaqued = false;
-            attaque_1 = texturecaracter.attaque1;
-            attaque_2 = texturecaracter.attaque2;
-            attaque_3 = texturecaracter.attaque3;
+            temp = 0;
         }
 
         // METHODS
@@ -225,74 +221,20 @@ namespace jeu_xna
             #region Attaques
             if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked)
             {
-                current_attack = attaque_1;
-                attack = true;
-
-                if (Effect == SpriteEffects.FlipHorizontally)
-                {
-                    attaque.X = Hitbox.X + (Hitbox.Width - attaque_1.largeur_image);
-                }
-
-                else
-                {
-                    attaque.X = Hitbox.X + attaque_1.x;
-                }
-
-                attaque.Y = Hitbox.Y + attaque_1.y;
-                attaque.Width = attaque_1.width;
-                attaque.Height = attaque_1.height;
-                frame_attack_counter = true;
-                can_attack = false;
-                can_display_attack = true;
-                current_attack.displayed_picture = 0;
+                current_attack = texturecaracter.attaque1;
+                PrepareAttack();
             }
 
             else if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked)
             {
-                current_attack = attaque_2;
-                attack = true;
-
-                if (Effect == SpriteEffects.FlipHorizontally)
-                {
-                    attaque.X = Hitbox.X + (Hitbox.Width - attaque_2.largeur_image);
-                }
-
-                else
-                {
-                    attaque.X = Hitbox.X + attaque_2.x;
-                }
-
-                attaque.Y = Hitbox.Y + attaque_2.y;
-                attaque.Width = attaque_2.width;
-                attaque.Height = attaque_2.height;
-                frame_attack_counter = true;
-                can_attack = false;
-                can_display_attack = true;
-                current_attack.displayed_picture = 0;
+                current_attack = texturecaracter.attaque2;
+                PrepareAttack();
             }
 
             else if (keyboard.IsKeyDown(attaque3) && can_attack && !is_attacked)
             {
-                current_attack = attaque_3;
-                attack = true;
-
-                if (Effect == SpriteEffects.FlipHorizontally)
-                {
-                    attaque.X = Hitbox.X + (Hitbox.Width - attaque_3.largeur_image);
-                }
-
-                else
-                {
-                    attaque.X = Hitbox.X + attaque_3.x;
-                }
-
-                attaque.Y = Hitbox.Y + attaque_3.y;
-                attaque.Width = attaque_3.width;
-                attaque.Height = attaque_3.height;
-                frame_attack_counter = true;
-                can_attack = false;
-                can_display_attack = true;
-                current_attack.displayed_picture = 0;
+                current_attack = texturecaracter.attaque3;
+                PrepareAttack();
             }
             #endregion
 
@@ -344,17 +286,15 @@ namespace jeu_xna
 
             Saut(); //gestion du saut
 
+            #region gestion des attaques
             if (current_attack != null)
             {
                 if (frame_counter % 9 == 0 && current_attack.displayed_picture < current_attack.nb_frames && attack)
                 {
                     current_attack.displayed_picture++;
                 }
-            }
 
-            if (frame_counter <= 20 && attack)
-            {
-                if (current_attack.displayed_picture == current_attack.frame_attack && frame_attack != 1 && !has_attaqued)
+                if (current_attack.displayed_picture == current_attack.frame_attack && frame_attack != 1 && !has_attaqued) 
                 {
                     is_attacking = true;
                     frame_attack++;
@@ -363,18 +303,13 @@ namespace jeu_xna
 
                 else
                 {
-                    is_attacking = false;
                     frame_attack = 0;
-                    frame_attack_counter = false;
-                } 
-                
-                frame_counter++;
-            }
+                }
 
-            else if (frame_counter >= 20)
-            {
-                //current_attack = null;
-                //can_display_attack = false;
+                if (frame_counter <= 20)
+                {
+                    frame_counter++;
+                }
             }
 
             if (frame_counter >= 20 && frame_counter <= 50)
@@ -382,15 +317,21 @@ namespace jeu_xna
                 frame_counter++;
             }
 
-            else if (frame_counter >= 50)
+            else if (frame_counter >= 50 && frame_counter < 80)
             {
-                can_attack = true;
-                frame_counter = 0;
+                frame_counter ++;
                 attack = false;
                 has_attaqued = false;
                 current_attack = null;
                 can_display_attack = false;
-            } 
+                is_attacking = false;
+            }
+
+            else if (frame_counter == 80) //blocage des attaques pendant 0,5 seconde
+            {
+                frame_counter = 0;
+                can_attack = true;
+            }
 
             if (current_attack != null && is_attacking && frame_attack == 1)
             {
@@ -421,6 +362,7 @@ namespace jeu_xna
                     is_attacked = false;
                 }
             }
+            #endregion
         }
 
         //GESTION DU SAUT
@@ -484,20 +426,21 @@ namespace jeu_xna
                 {
                     if (Effect == SpriteEffects.FlipHorizontally)
                     {
-                        current_attack.draw((Hitbox.Width - current_attack.largeur_image) + Hitbox.X, Hitbox.Y, spriteBatch, current_attack.frames, Effect);
-                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                        current_attack.draw((Hitbox.Width - current_attack.largeur_image) + Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);
+                        spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                     }
                     
                     else
                     {
-                        current_attack.draw(Hitbox.X, Hitbox.Y, spriteBatch, current_attack.frames, Effect);
+                        current_attack.draw(Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);
+                        spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                     }
                 }
 
                 else
                 {
                     spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
-                    //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                    spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                 }
             }    
         }
@@ -588,6 +531,41 @@ namespace jeu_xna
             {
                 spriteBatch.Draw(photo_identité, PictureRectangle, new Rectangle(0, 0, 50, 50), Color.White, 0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0f);
             }
+        }
+
+        public void PrepareAttack()
+        {
+            attack = true;
+
+            if (Effect == SpriteEffects.FlipHorizontally)
+            {
+                if (current_attack == texturecaracter.attaque1)
+                {
+                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image);
+                }
+
+                else if (current_attack == texturecaracter.attaque2)
+                {
+                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image + 35);
+                }
+
+                else if (current_attack == texturecaracter.attaque3)
+                {
+                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image + 90);
+                }
+            }
+
+            else
+                {
+                    attaque.X = Hitbox.X + current_attack.x;
+                }
+
+            attaque.Y = Hitbox.Y + current_attack.y;
+            attaque.Width = current_attack.width;
+            attaque.Height = current_attack.height;
+            can_attack = false;
+            can_display_attack = true;
+            current_attack.displayed_picture = 0;
         }
     }
 }

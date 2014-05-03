@@ -49,7 +49,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sounds\Personnage\jump1.wav">
+    <Compile Include="Sounds\Personnage\Personnage1\jump1.wav">
       <Name>jump1</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -176,7 +176,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\Personnages\identité1.png">
+    <Compile Include="Sprites\Personnages\Personnage1\identité1.png">
       <Name>identité1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -198,7 +198,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\Personnages\personnage1.png">
+    <Compile Include="Sprites\Personnages\Personnage1\personnage1.png">
       <Name>personnage1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -219,7 +219,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\Personnages\attaque_1.png">
+    <Compile Include="Sprites\Personnages\Personnage1\attaque_1.png">
       <Name>attaque_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -283,14 +283,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\Personnages\attaque_2.png">
+    <Compile Include="Sprites\Personnages\Personnage1\attaque_2.png">
       <Name>attaque_2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\Personnages\attaque_3.png">
+    <Compile Include="Sprites\Personnages\Personnage1\attaque_3.png">
       <Name>attaque_3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

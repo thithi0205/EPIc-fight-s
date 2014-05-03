@@ -33,7 +33,7 @@ namespace jeu_xna
             moins_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(250, 300));
             bouton_retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(20, 520));
             bouton_commande = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_commandes"), new Vector2(20, 380));
-            test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\jump1");
+            test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1");
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             volume = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume");
             volume_musique = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_musique");
