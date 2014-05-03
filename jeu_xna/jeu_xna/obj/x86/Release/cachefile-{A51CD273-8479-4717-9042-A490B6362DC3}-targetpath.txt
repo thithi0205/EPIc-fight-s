@@ -36,3 +36,4 @@ Content\Sprites\Personnages\Personnage1\attaque_1.xnb
 Content\Sprites\Personnages\Personnage1\attaque_2.xnb
 Content\Sprites\Personnages\Personnage1\attaque_3.xnb
 Content\Sounds\Personnage\Personnage1\jump1.xnb
+Content\Sprites\Personnages\Personnage1\mort.xnb

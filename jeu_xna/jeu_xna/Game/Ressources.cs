@@ -22,7 +22,7 @@ namespace jeu_xna
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
         {
-            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_1"), 114, 114, 5, 5, 117, 1), new Attack(3, 1, 20, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_2"), 125, 45, 5, 5, 167, 3), new Attack(5, 1, 35, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_3"), 125, 190, 5, 5, 223, 4));
+            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_1"), 114, 114, 5, 5, 117, 1), new Attack(3, 1, 20, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_2"), 125, 45, 5, 5, 167, 3), new Attack(5, 1, 35, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_3"), 125, 190, 5, 5, 223, 4), new Dead(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\mort"), 228, 3));
 
             fields[0] = Content.Load<Texture2D>(@"Sprites\Maps\map1");
             fields[1] = Content.Load<Texture2D>(@"Sprites\Maps\map2");
@@ -50,8 +50,9 @@ namespace jeu_xna
         public Texture2D personnage, identity;
         public SoundEffect jump;
         public Attack attaque1, attaque2, attaque3;
+        public Dead mort;
 
-        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque1, Attack attaque2, Attack attaque3)
+        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque1, Attack attaque2, Attack attaque3, Dead mort)
         {
             this.personnage = personnage;
             this.identity = identity;
@@ -59,6 +60,7 @@ namespace jeu_xna
             this.attaque1 = attaque1;
             this.attaque2 = attaque2;
             this.attaque3 = attaque3;
+            this.mort = mort;
         }
     }
 }

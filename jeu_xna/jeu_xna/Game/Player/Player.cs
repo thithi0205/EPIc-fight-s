@@ -51,6 +51,7 @@ namespace jeu_xna
         int jump_speed, jump_speed_initial;
         bool jump, is_jumping;
 
+        //attaques
         public Keys attaque1, attaque2, attaque3;
         public Attack current_attack;
         public Rectangle attaque;
@@ -58,12 +59,16 @@ namespace jeu_xna
         public int frame_counter, frame_counter_is_attacked, frame_attack, temp; //frame_attack = dès que cette valeur dépasse 1, alors n'attaque n'a plus lieu
         public TextureCaracter texturecaracter;
 
+        //mort
+        public int dead_frames_counter_display, dead_frames_counter;
+        public bool is_dead;
+
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
         {
-            vie = 100; //vie initiale du personnage
+            vie = 5; //vie initiale du personnage
 
-            Speed = 5;
+            Speed = 100;
             AnimationSpeed = 14;
             AnimationSound = 24;
 
@@ -124,6 +129,11 @@ namespace jeu_xna
             frame_attack = 0;
             has_attaqued = false;
             temp = 0;
+
+            //VARIABLES POUR LA MORT
+            dead_frames_counter_display = 0;
+            dead_frames_counter = 0;
+            is_dead = false;
         }
 
         // METHODS
@@ -183,7 +193,7 @@ namespace jeu_xna
                 Speed = 5;
             }
 
-            if (keyboard.IsKeyDown(gauche) && !is_attacked)
+            if (keyboard.IsKeyDown(gauche) && !is_attacked && !is_dead)
             {
                 Hitbox.X -= Speed;
                 Direction = Direction.Left;
@@ -194,7 +204,7 @@ namespace jeu_xna
                 }
             }
 
-            else if (keyboard.IsKeyDown(droite) && !is_attacked)
+            else if (keyboard.IsKeyDown(droite) && !is_attacked && !is_dead)
             {
                 Hitbox.X += Speed;
                 Direction = Direction.Right;
@@ -205,7 +215,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyDown(saut) && !is_attacked)
+            if (keyboard.IsKeyDown(saut) && !is_attacked && !is_dead)
             {
                 if (KeyDown_up == false && !jump1)
                 {
@@ -219,26 +229,26 @@ namespace jeu_xna
             }
 
             #region Attaques
-            if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked)
+            if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked && !is_dead)
             {
                 current_attack = texturecaracter.attaque1;
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked)
+            else if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked && !is_dead)
             {
                 current_attack = texturecaracter.attaque2;
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque3) && can_attack && !is_attacked)
+            else if (keyboard.IsKeyDown(attaque3) && can_attack && !is_attacked && !is_dead)
             {
                 current_attack = texturecaracter.attaque3;
                 PrepareAttack();
             }
             #endregion
 
-            if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut))
+            if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut) && !is_dead)
             {
                 Frame = 1;
                 Timer = 0;
@@ -363,6 +373,25 @@ namespace jeu_xna
                 }
             }
             #endregion
+
+            #region Personnage mort
+
+            if (vie == 0)
+            {
+                is_dead = true;
+            }
+
+            if (is_dead)
+            {
+                dead_frames_counter++;
+
+                if (dead_frames_counter % 10 == 0 && dead_frames_counter_display < (texturecaracter.mort.nb_frames - 1))
+                {
+                    dead_frames_counter_display++;
+                }
+            }
+
+            #endregion
         }
 
         //GESTION DU SAUT
@@ -427,20 +456,28 @@ namespace jeu_xna
                     if (Effect == SpriteEffects.FlipHorizontally)
                     {
                         current_attack.draw((Hitbox.Width - current_attack.largeur_image) + Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);
-                        spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                     }
                     
                     else
                     {
                         current_attack.draw(Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);
-                        spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                     }
                 }
 
                 else
                 {
-                    spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
-                    spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                    if (vie != 0)
+                    {
+                        spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                    }
+
+                    else
+                    {
+                        texturecaracter.mort.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_frames_counter_display);
+                    }
                 }
             }    
         }
@@ -566,6 +603,25 @@ namespace jeu_xna
             can_attack = false;
             can_display_attack = true;
             current_attack.displayed_picture = 0;
+        }
+    }
+
+
+    class Dead
+    {
+        public Texture2D dead_frames;
+        public int nb_frames, largeur_image;
+
+        public Dead(Texture2D dead_frames, int largeur_image, int nb_frames)
+        {
+            this.dead_frames = dead_frames;
+            this.nb_frames = nb_frames;
+            this.largeur_image = largeur_image;
+        }
+
+        public void Draw(SpriteBatch spriteBatch, SpriteEffects effect, int x, int y, int largeur_hitbox, int frame_displayed)
+        {
+            spriteBatch.Draw(dead_frames, new Rectangle((largeur_hitbox - largeur_image) + x, (200 - dead_frames.Height) + y, largeur_image, dead_frames.Height), new Rectangle(frame_displayed * largeur_image, 0, largeur_image, dead_frames.Height), Color.White, 0f, Vector2.Zero, effect, 0f);
         }
     }
 }

@@ -241,7 +241,7 @@ namespace jeu_xna
 
                     if (LocalPlayer1.vie == 0 || LocalPlayer2.vie == 0)
                     {
-                        if (fps_counter <= 120)
+                        if (fps_counter <= 180)
                         {
                             fps_counter++;
                             spriteBatch.Draw(game_over, new Vector2(330, 240), Color.White);
