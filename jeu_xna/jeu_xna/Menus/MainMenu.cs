@@ -231,9 +231,7 @@ namespace jeu_xna
                     ChoiceMenuBattlefield.Draw(spriteBatch);
                     break;
 
-                case GameState.Playing:
-                    //affichage géré par le deuxième thread (thread_jeu)
-                    break;
+                //si GameState.Playing -> affichage du jeu géré par le deuxième thread
             }
 
             if (VarTemp.CurrentGameState == GameState.ChoiceMenuCaracter || VarTemp.CurrentGameState == GameState.ChoiceMenuBattlefield)
