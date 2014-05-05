@@ -108,6 +108,7 @@ namespace jeu_xna
             #endregion
 
             //DEBUGgING
+            /*
             #region Debugging
             Console.Clear();
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
@@ -124,6 +125,7 @@ namespace jeu_xna
             else if (VarTemp.CurrentGameState == GameState.ChoiceMenuBattlefield)
                 Console.WriteLine("ChoiceMenuBattlefield\n");
             #endregion
+             */
 
             //BOUTONS DU MENU PRINCIPAL
             #region MainMenu buttons
@@ -131,6 +133,7 @@ namespace jeu_xna
             option.Update(mouse);
             quitter.Update(mouse);
             #endregion
+           
 
             switch (VarTemp.CurrentGameState)
             {

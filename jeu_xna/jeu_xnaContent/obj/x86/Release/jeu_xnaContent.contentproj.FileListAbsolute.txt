@@ -1,1 +1,3 @@
 D:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xnaContent\obj\x86\Release\jeu_xnaContent.contentprojResolveAssemblyReference.cache
+E:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xnaContent\obj\x86\Release\jeu_xnaContent.contentprojResolveAssemblyReference.cache
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xnaContent\obj\x86\Release\jeu_xnaContent.contentprojResolveAssemblyReference.cache

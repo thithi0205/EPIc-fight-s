@@ -68,7 +68,6 @@ namespace jeu_xna
         // UPDATE & DRAW
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
-            //Console.Clear();
             GameMain.option.Update(MainMenu.mouse);
             GameMain.retour.Update(MainMenu.mouse);
             GameMain.menu_principal.Update(MainMenu.mouse);
@@ -155,6 +154,7 @@ namespace jeu_xna
             }
 
             //DEBUGGING
+            /*
             #region Debuging
             Console.Clear();
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
@@ -193,6 +193,7 @@ namespace jeu_xna
                 Console.WriteLine("player 2 win\n");
 
             #endregion
+             */
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -208,7 +209,7 @@ namespace jeu_xna
                     {
                         if (timer_combat_secondes < 0)
                         {
-                            spriteBatch.DrawString(chrono, "- " + timer_combat_minutes + " : 0" + (timer_combat_secondes) * (-1), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
+                            spriteBatch.DrawString(chrono, "0 : 00", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                             spriteBatch.Draw(ready, new Vector2(350, 260), Color.White);
                         }
 

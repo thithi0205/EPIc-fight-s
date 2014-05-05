@@ -52,7 +52,7 @@ namespace jeu_xna
         bool jump, is_jumping;
 
         //attaques
-        public Keys attaque1, attaque2, attaque3;
+        public Keys attaque1, attaque2, attaque3, attack_temp;
         public Attack current_attack;
         public Rectangle attaque;
         public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
@@ -132,6 +132,7 @@ namespace jeu_xna
             frame_attack = 0;
             has_attaqued = false;
             temp = 0;
+            attack_temp = attaque1;
 
             //VARIABLES POUR LA MORT
             dead_alive_frames_counter_display = 0;
@@ -234,20 +235,41 @@ namespace jeu_xna
             }
 
             #region Attaques
-            if (keyboard.IsKeyDown(attaque1) && can_attack && !is_attacked && !is_dead)
+            if ((keyboard.IsKeyDown(attaque1) && (can_attack || attack_temp != attaque1) && !is_attacked && !is_dead))
             {
+                if (attack_temp != attaque1)
+                {
+                    frame_attack = 0;
+                    frame_counter = 0;
+                }
+
+                attack_temp = attaque1;
                 current_attack = texturecaracter.attaque1;
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque2) && can_attack && !is_attacked && !is_dead)
+            else if (keyboard.IsKeyDown(attaque2) && (can_attack || attack_temp != attaque2) && !is_attacked && !is_dead)
             {
+                if (attack_temp != attaque2)
+                {
+                    frame_attack = 0;
+                    frame_counter = 0;
+                }
+
+                attack_temp = attaque2;
                 current_attack = texturecaracter.attaque2;
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque3) && can_attack && !is_attacked && !is_dead)
+            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead)
             {
+                if (attack_temp != attaque3)
+                {
+                    frame_attack = 0;
+                    frame_counter = 0;
+                }
+
+                attack_temp = attaque3;
                 current_attack = texturecaracter.attaque3;
                 PrepareAttack();
             }
@@ -478,14 +500,16 @@ namespace jeu_xna
                 {
                     if (Effect == SpriteEffects.FlipHorizontally)
                     {
-                        current_attack.draw((Hitbox.Width - current_attack.largeur_image) + Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);
-                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
+                        //spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
+                        //spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
+                        current_attack.draw((Hitbox.Width - current_attack.largeur_image) + Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);   
                     }
                     
                     else
                     {
+                        //spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
+                        //spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
                         current_attack.draw(Hitbox.X, Hitbox.Y - current_attack.frames.Height + Hitbox.Height, spriteBatch, current_attack.frames, Effect);
-                        //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                     }
                 }
 
@@ -495,8 +519,9 @@ namespace jeu_xna
                     {
                         if (!win)
                         {
+                            spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
+                            spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
                             spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
-                            //spriteBatch.Draw(BlankTexture, attaque, Color.Red);
                         }
 
                         else
@@ -614,12 +639,12 @@ namespace jeu_xna
 
                 else if (current_attack == texturecaracter.attaque2)
                 {
-                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image + 35);
+                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image + 23);
                 }
 
                 else if (current_attack == texturecaracter.attaque3)
                 {
-                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image + 90);
+                    attaque.X = Hitbox.X + (Hitbox.Width - current_attack.largeur_image + 10);
                 }
             }
 

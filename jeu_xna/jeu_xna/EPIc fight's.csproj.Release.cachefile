@@ -11,8 +11,21 @@ Content\Sprites\MainMenu\Options\bouton_retour.xnb
 Content\Sprites\MainMenu\bouton_quitter.xnb
 Content\Sprites\MainMenu\bouton_menu-principal.xnb
 Content\Sprites\Personnages\BlankTexture.xnb
+Content\Sprites\Personnages\Personnage1\identité1.xnb
+Content\Sprites\Personnages\Personnage1\personnage1.xnb
 Content\Sprites\Game\ready.xnb
 Content\Sprites\Game\fight.xnb
+Content\Sprites\Personnages\Personnage1\attaque_1.xnb
+Content\Sprites\Game\game_over.xnb
+Content\Sprites\MainMenu\epic_fight's.xnb
+Content\Sprites\MainMenu\bouton_terrain.xnb
+Content\Sprites\Maps\map2.xnb
+Content\Sprites\MainMenu\Options\bouton_commandes.xnb
+Content\Sprites\Personnages\Personnage1\attaque_2.xnb
+Content\Sprites\Personnages\Personnage1\attaque_3.xnb
+Content\Sprites\Personnages\Personnage1\mort.xnb
+Content\Sprites\Personnages\Personnage1\victoire.xnb
+Content\Sounds\Personnage\Personnage1\jump1.xnb
 Content\Sounds\Personnage\step1.xnb
 Content\Sounds\Personnage\jump_end.xnb
 Content\Sounds\Musique\Son Game 1.xnb
@@ -21,20 +34,7 @@ Content\chronomètre.xnb
 Content\display_name.xnb
 Content\choix.xnb
 Content\Sprites\MainMenu\Options\Font\pause.xnb
-Content\Sprites\Game\game_over.xnb
-Content\Sprites\MainMenu\epic_fight's.xnb
 Content\team.xnb
-Content\Sprites\MainMenu\bouton_terrain.xnb
-Content\Sprites\Maps\map2.xnb
 Content\Controls.xnb
-Content\Sprites\MainMenu\Options\bouton_commandes.xnb
 Content\Sprites\MainMenu\Options\Font\touches.xnb
-Content\Sprites\Personnages\Personnage1\identité1.xnb
-Content\Sprites\Personnages\Personnage1\personnage1.xnb
-Content\Sprites\Personnages\Personnage1\attaque_1.xnb
-Content\Sprites\Personnages\Personnage1\attaque_2.xnb
-Content\Sprites\Personnages\Personnage1\attaque_3.xnb
-Content\Sounds\Personnage\Personnage1\jump1.xnb
-Content\Sprites\Personnages\Personnage1\mort.xnb
-Content\Sprites\Personnages\Personnage1\victoire.xnb
 Content\Sounds\Musique\Son Game 1.wma
