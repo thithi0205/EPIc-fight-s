@@ -519,8 +519,8 @@ namespace jeu_xna
                     {
                         if (!win)
                         {
-                            spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
-                            spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
+                            //spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
+                            //spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
                             spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
                         }
 
