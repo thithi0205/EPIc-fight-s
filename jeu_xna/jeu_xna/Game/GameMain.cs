@@ -234,8 +234,11 @@ namespace jeu_xna
                         spriteBatch.DrawString(chrono, timer_combat_minutes + " : " + timer_combat_secondes, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width / 2) - 55, ((Game1.graphics1.GraphicsDevice.Viewport.Height + 480) / 2) - 25), Color.White);
                     }
 
-                    LocalPlayer1.GenerateBar(LocalPlayer1.vie, 100, spriteBatch);
-                    LocalPlayer2.GenerateBar(LocalPlayer2.vie, 100, spriteBatch);
+                    LocalPlayer1.GenerateBar(LocalPlayer1.vie, 100, Color.Red, spriteBatch, 40, 560);
+                    LocalPlayer2.GenerateBar(LocalPlayer2.vie, 100, Color.Red, spriteBatch, Game1.graphics1.GraphicsDevice.Viewport.Width - 290, 560);
+
+                    LocalPlayer1.GenerateBar(LocalPlayer1.energy, 100, Color.Blue, spriteBatch, 40, 580);
+                    LocalPlayer2.GenerateBar(LocalPlayer2.energy, 100, Color.Blue, spriteBatch, Game1.graphics1.GraphicsDevice.Viewport.Width - 290, 580);
 
                     LocalPlayer1.GeneratePicture(spriteBatch);
                     LocalPlayer2.GeneratePicture(spriteBatch);

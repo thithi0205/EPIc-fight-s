@@ -19,7 +19,7 @@ namespace jeu_xna
     class Player
     {
         // FIELDS
-        public int vie;
+        public int vie, energy;
 
         public string name;
         SpriteFont display_name;
@@ -70,6 +70,7 @@ namespace jeu_xna
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
         {
             vie = 100; //vie initiale du personnage
+            energy = 0;
 
             Speed = 5;
             AnimationSpeed = 14;
@@ -261,7 +262,7 @@ namespace jeu_xna
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead)
+            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead && energy == 100)
             {
                 if (attack_temp != attaque3)
                 {
@@ -269,6 +270,7 @@ namespace jeu_xna
                     frame_counter = 0;
                 }
 
+                energy = 0;
                 attack_temp = attaque3;
                 current_attack = texturecaracter.attaque3;
                 PrepareAttack();
@@ -538,10 +540,8 @@ namespace jeu_xna
             }    
         }
 
-        public void GenerateBar(int Current, int Max, SpriteBatch spriteBatch)
+        public void GenerateBar(int Current, int Max, Color couleur, SpriteBatch spriteBatch, int x, int y)
         {
-            int x = 0;
-            int y = 560;
             int BarWidth = 250;
             int BarHeight = 10;
             int BoarderOffSet = 2;
@@ -550,8 +550,6 @@ namespace jeu_xna
 
             if (player_number == 1)
             {
-                x = 40;
-
                 if (GameMain.LocalPlayer1.vie < 0)
                 {
                     GameMain.LocalPlayer1.vie = 0;
@@ -560,8 +558,6 @@ namespace jeu_xna
 
             else if (player_number == 2)
             {
-                x = Game1.graphics1.GraphicsDevice.Viewport.Width - BarWidth - 40;
-
                 if (GameMain.LocalPlayer2.vie < 0)
                 {
                     GameMain.LocalPlayer2.vie = 0;
@@ -581,7 +577,7 @@ namespace jeu_xna
 
             spriteBatch.Draw(BlankTexture, RecBoarder, Color.White);
             spriteBatch.Draw(BlankTexture, RecBackGround, Color.Gray);
-            spriteBatch.Draw(BlankTexture, RecFill, Color.Red);
+            spriteBatch.Draw(BlankTexture, RecFill, couleur);
         }
 
         public void GeneratePicture(SpriteBatch spriteBatch)

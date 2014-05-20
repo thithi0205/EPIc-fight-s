@@ -1,0 +1,40 @@
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.exe
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.pdb
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Form1.resources
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Properties.Resources.resources
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csproj.GenerateResource.Cache
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.exe
+c:\users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.pdb
+C:\Users\epita\documents\visual studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csprojResolveAssemblyReference.cache
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.exe
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.pdb
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.exe
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.pdb
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csprojResolveAssemblyReference.cache
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Form1.resources
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Properties.Resources.resources
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csproj.GenerateResource.Cache
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.exe
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.pdb
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.exe
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.pdb
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Form1.resources
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Properties.Resources.resources
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csproj.GenerateResource.Cache
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csprojResolveAssemblyReference.cache
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.exe.manifest
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.exe.manifest
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.application
+C:\Users\Sébastien\Documents\Visual Studio 2010\Projects\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.application
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.exe
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.pdb
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.exe.manifest
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.application
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.exe
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\bin\Debug\EPICFightsLauncher.pdb
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csprojResolveAssemblyReference.cache
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Form1.resources
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.Properties.Resources.resources
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.csproj.GenerateResource.Cache
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.exe.manifest
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\EPICFightsLauncher\EPICFightsLauncher\obj\x86\Debug\EPICFightsLauncher.application
