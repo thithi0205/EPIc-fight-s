@@ -42,8 +42,10 @@ namespace jeu_xna
                 if (GameMain.LocalPlayer1.attaque.Intersects(GameMain.LocalPlayer2.Hitbox) && !GameMain.LocalPlayer2.is_dead) //le joueur 1 attaque le joueur 2
                 {
                     Random degat = new Random();
+                    Random energy_minus = new Random();
                     GameMain.LocalPlayer2.vie = GameMain.LocalPlayer2.vie - degat.Next(current_attack.dégat_min, current_attack.dégat_max);
                     GameMain.LocalPlayer2.is_attacked = true;
+                    GameMain.LocalPlayer2.energy = GameMain.LocalPlayer2.energy - energy_minus.Next(1, 30);
 
                     if (current_attack != GameMain.LocalPlayer1.texturecaracter.attaque3)
                     {
@@ -55,6 +57,11 @@ namespace jeu_xna
                     {
                         GameMain.LocalPlayer1.energy = 100;
                     }
+
+                    if (GameMain.LocalPlayer2.energy < 0)
+                    {
+                        GameMain.LocalPlayer2.energy = 0;
+                    }
                 }
             }
 
@@ -63,8 +70,10 @@ namespace jeu_xna
                 if (GameMain.LocalPlayer2.attaque.Intersects(GameMain.LocalPlayer1.Hitbox) && !GameMain.LocalPlayer1.is_dead) //le joueur 2 attaque le joueur 1
                 {
                     Random degat = new Random();
+                    Random energy_minus = new Random();
                     GameMain.LocalPlayer1.vie = GameMain.LocalPlayer1.vie - degat.Next(current_attack.dégat_min, current_attack.dégat_max);
                     GameMain.LocalPlayer1.is_attacked = true;
+                    GameMain.LocalPlayer1.energy = GameMain.LocalPlayer1.energy - energy_minus.Next(1, 30);
 
                     if (current_attack != GameMain.LocalPlayer2.texturecaracter.attaque3)
                     {
@@ -75,6 +84,11 @@ namespace jeu_xna
                     if (GameMain.LocalPlayer2.energy > 100)
                     {
                         GameMain.LocalPlayer2.energy = 100;
+                    }
+
+                    if (GameMain.LocalPlayer1.energy < 0)
+                    {
+                        GameMain.LocalPlayer1.energy = 0;
                     }
                 }
             }
