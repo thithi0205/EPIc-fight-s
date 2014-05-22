@@ -310,7 +310,6 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="Sprites\MainMenu\localnetwork\bouton_local.jpg">
       <Name>bouton_local</Name>

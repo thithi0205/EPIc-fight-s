@@ -154,7 +154,7 @@ namespace jeu_xna
             }
 
             //DEBUGGING
-            /*
+            
             #region Debuging
             Console.Clear();
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
@@ -185,15 +185,14 @@ namespace jeu_xna
                 Console.WriteLine("attack player 2 = false\n");
             Console.WriteLine("frame_counter_is_attacked 1: " + LocalPlayer1.frame_counter_is_attacked);
             Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
-            Console.WriteLine("life player 1 : " + LocalPlayer1.vie);
-            Console.WriteLine("life player 2 : " + LocalPlayer2.vie + "\n");
+            Console.WriteLine("life player 1 : " + LocalPlayer1.vie + "     energy player 1 : " + LocalPlayer1.energy);
+            Console.WriteLine("life player 2 : " + LocalPlayer2.vie + "     energy player 2 : " + LocalPlayer2.energy + "\n");
             if (LocalPlayer1.win)
                 Console.WriteLine("player 1 win");
             else if (LocalPlayer2.win)
                 Console.WriteLine("player 2 win\n");
-
             #endregion
-             */
+             
         }
 
         public void Draw(SpriteBatch spriteBatch)

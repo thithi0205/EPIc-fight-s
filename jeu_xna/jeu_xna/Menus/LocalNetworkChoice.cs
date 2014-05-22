@@ -50,7 +50,7 @@ namespace jeu_xna
             local.Draw(spriteBatch);
             network.Draw(spriteBatch);
             retour.Draw(spriteBatch);
-            spriteBatch.DrawString(font, "Choix du mode de jeu", new Vector2(190, 20), Color.Black);
+            spriteBatch.DrawString(font, "Choix du mode de jeu", new Vector2(170, 20), Color.Black);
         }
     }
 }

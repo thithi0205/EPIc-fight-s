@@ -50,20 +50,6 @@ namespace jeu_xna
 
         public static void Update(KeyboardState keyboard)
         {
-            ChangeControls.left1.Update(keyboard);
-            ChangeControls.right1.Update(keyboard);
-            ChangeControls.up1.Update(keyboard);
-            ChangeControls.attack1_1.Update(keyboard);
-            ChangeControls.attack1_2.Update(keyboard);
-            ChangeControls.attack1_3.Update(keyboard);
-
-            ChangeControls.left2.Update(keyboard);
-            ChangeControls.right2.Update(keyboard);
-            ChangeControls.up2.Update(keyboard);
-            ChangeControls.attack2_1.Update(keyboard);
-            ChangeControls.attack2_2.Update(keyboard);
-            ChangeControls.attack2_3.Update(keyboard);
-
             if (Options.bouton_retour.isClicked)
             {
                 VarTemp.CurrentGameState = GameState.Options;

@@ -360,7 +360,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_local.xnb</Output>
-      <Time>2014-05-22T13:47:10.8203588+02:00</Time>
+      <Time>2014-05-22T14:43:51.8724299+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\localnetwork\bouton_reseau.jpg</Source>
@@ -369,7 +369,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb</Output>
-      <Time>2014-05-22T13:47:10.8603588+02:00</Time>
+      <Time>2014-05-22T14:43:51.92243+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
