@@ -37,4 +37,6 @@ Content\Sprites\MainMenu\Options\Font\pause.xnb
 Content\team.xnb
 Content\Controls.xnb
 Content\Sprites\MainMenu\Options\Font\touches.xnb
+Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
+Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
 Content\Sounds\Musique\Son Game 1.wma

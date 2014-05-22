@@ -14,7 +14,8 @@ namespace jeu_xna
         Options,
         Commandes,
         Playing,
-        Pause
+        Pause,
+        LocalNetworkChoice
     }
 
     class VarTemp

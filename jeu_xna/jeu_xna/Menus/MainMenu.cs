@@ -18,7 +18,7 @@ namespace jeu_xna
         SpriteBatch spriteBatch;
         public static Thread thread_jeu;
 
-        static Texture2D background, epic_fight_s;
+        public static Texture2D background, epic_fight_s;
         static SpriteFont team;
 
         public static MouseState mouse;
@@ -78,6 +78,8 @@ namespace jeu_xna
             background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             epic_fight_s = Content.Load<Texture2D>(@"Sprites\MainMenu\epic_fight's");
             team = Content.Load<SpriteFont>("team");
+
+            LocalNetworkChoice.LoadContent(Content);
         }
 
         //UNLOADCONTENT
@@ -108,7 +110,7 @@ namespace jeu_xna
             #endregion
 
             //DEBUGgING
-            /*
+            
             #region Debugging
             Console.Clear();
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
@@ -124,8 +126,10 @@ namespace jeu_xna
                 Console.WriteLine("ChoiceMenuCaracter\n");
             else if (VarTemp.CurrentGameState == GameState.ChoiceMenuBattlefield)
                 Console.WriteLine("ChoiceMenuBattlefield\n");
+            else if (VarTemp.CurrentGameState == GameState.LocalNetworkChoice)
+                Console.WriteLine("LocalNetworkChoice\n");
             #endregion
-             */
+             
 
             //BOUTONS DU MENU PRINCIPAL
             #region MainMenu buttons
@@ -133,7 +137,10 @@ namespace jeu_xna
             option.Update(mouse);
             quitter.Update(mouse);
             #endregion
-           
+
+            LocalNetworkChoice.local.Update(mouse);
+            LocalNetworkChoice.network.Update(mouse);
+            LocalNetworkChoice.retour.Update(mouse);
 
             switch (VarTemp.CurrentGameState)
             {
@@ -142,7 +149,8 @@ namespace jeu_xna
                     #region MainMenu update
                     if (play.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
-                        VarTemp.CurrentGameState = GameState.ChoiceMenuCaracter;
+                        VarTemp.CurrentGameState = GameState.LocalNetworkChoice;
+                        ChoiceMenuCaracter.was_cliqued = true;
                     }
 
                     else if (option.isClicked && !ChoiceMenuCaracter.was_cliqued)
@@ -175,6 +183,10 @@ namespace jeu_xna
                     thread_jeu.Start();
                     IsMouseVisible = false;
                     Program.thread_menu.Abort();
+                    break;
+
+                case GameState.LocalNetworkChoice:
+                    LocalNetworkChoice.Update();
                     break;
             }
 
@@ -232,6 +244,10 @@ namespace jeu_xna
 
                 case GameState.ChoiceMenuBattlefield:
                     ChoiceMenuBattlefield.Draw(spriteBatch);
+                    break;
+
+                case GameState.LocalNetworkChoice:
+                    LocalNetworkChoice.Draw(spriteBatch);
                     break;
 
                 //si GameState.Playing -> affichage du jeu géré par le deuxième thread

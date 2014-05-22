@@ -182,3 +182,5 @@ D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\EPIc fight's.csprojR
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\jeu_xna.exe
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\jeu_xna.pdb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
