@@ -25,6 +25,8 @@ Content\Sprites\Personnages\Personnage1\attaque_2.xnb
 Content\Sprites\Personnages\Personnage1\attaque_3.xnb
 Content\Sprites\Personnages\Personnage1\mort.xnb
 Content\Sprites\Personnages\Personnage1\victoire.xnb
+Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
+Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
 Content\Sounds\Personnage\Personnage1\jump1.xnb
 Content\Sounds\Personnage\step1.xnb
 Content\Sounds\Personnage\jump_end.xnb
@@ -37,6 +39,5 @@ Content\Sprites\MainMenu\Options\Font\pause.xnb
 Content\team.xnb
 Content\Controls.xnb
 Content\Sprites\MainMenu\Options\Font\touches.xnb
-Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
-Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
+Content\Sprites\Personnages\caracter.xnb
 Content\Sounds\Musique\Son Game 1.wma

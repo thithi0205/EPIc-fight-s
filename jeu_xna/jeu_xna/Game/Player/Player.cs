@@ -21,6 +21,8 @@ namespace jeu_xna
         // FIELDS
         public int vie, energy;
 
+        public SpriteFont name_font;
+
         public string name;
         SpriteFont display_name;
         int player_number;
@@ -142,6 +144,8 @@ namespace jeu_xna
 
             //VARIABLES POUR LA VICTOIRE
             win = false;
+
+            name_font = Content.Load<SpriteFont>(@"Sprites\Personnages\caracter");
         }
 
         // METHODS
@@ -232,8 +236,28 @@ namespace jeu_xna
                     Hitbox.Y -= jump_speed_initial;
                     can_jump = 0;
                 }
-            #endregion
             }
+
+            else if(keyboard.IsKeyDown(Keys.F1))
+            {
+                GameMain.LocalPlayer1.vie = 0; 
+            }
+
+            else if (keyboard.IsKeyDown(Keys.F2))
+            {
+                GameMain.LocalPlayer2.vie = 0;
+            }
+
+            else if (keyboard.IsKeyDown(Keys.F3))
+            {
+                GameMain.LocalPlayer1.energy = 0;
+            }
+
+            else if (keyboard.IsKeyDown(Keys.F4))
+            {
+                GameMain.LocalPlayer2.energy = 0;
+            }
+            #endregion
 
             #region Attaques
             if ((keyboard.IsKeyDown(attaque1) && (can_attack || attack_temp != attaque1) && !is_attacked && !is_dead))
@@ -537,7 +561,17 @@ namespace jeu_xna
                         texturecaracter.mort.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display);
                     }
                 }
-            }    
+            }
+
+            if (Effect == SpriteEffects.None)
+            {
+                spriteBatch.DrawString(name_font, name, new Vector2(Hitbox.X, Hitbox.Y - Hitbox.Height + 180), Color.White);
+            }
+
+            else if (Effect == SpriteEffects.FlipHorizontally)
+            {
+                spriteBatch.DrawString(name_font, name, new Vector2(Hitbox.X + Hitbox.Width - name.Length * 8, Hitbox.Y - Hitbox.Height + 180), Color.White);
+            }
         }
 
         public void GenerateBar(int Current, int Max, Color couleur, SpriteBatch spriteBatch, int x, int y)
