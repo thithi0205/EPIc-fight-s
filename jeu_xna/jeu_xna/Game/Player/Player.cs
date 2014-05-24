@@ -45,16 +45,19 @@ namespace jeu_xna
         int Timer; //timer pour l'animation du personnage
         int Timer_sound; //timer pour les bruitages du personnage
 
-        int Speed;
+        int Speed; 
+        public int limit_jump;
         int AnimationSpeed;
         int AnimationSound;
 
         //saut
-        int jump_speed, jump_speed_initial;
-        bool jump, is_jumping;
+        public int jump_speed, jump_speed_initial;
+        bool jump; 
+        public bool is_jumping; 
+        public bool small_jump;
 
         //attaques
-        public Keys attaque1, attaque2, attaque3, attack_temp;
+        public Keys attaque1, attaque2, attaque3, attack_temp, accroupi;
         public Attack current_attack;
         public Rectangle attaque;
         public bool is_attacking, can_attack, attack, can_display_attack, is_attacked, display_caracter, has_attaqued; //frame_attack_counter = permet à frame_attack de changer de valeur ou non
@@ -68,9 +71,17 @@ namespace jeu_xna
         //victoire
         public bool win;
 
+        public bool is_accroupi;
+
         // CONSTRUCTOR
-        public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
+        public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, Keys accroupi, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
         {
+            limit_jump = 250;
+            small_jump = false;
+
+            this.accroupi = accroupi;
+            is_accroupi = false;
+
             vie = 100; //vie initiale du personnage
             energy = 0;
 
@@ -203,7 +214,7 @@ namespace jeu_xna
                 Speed = 5;
             }
 
-            #region directions + saut
+            #region directions + saut + accroupi
             if (keyboard.IsKeyDown(gauche) && !is_attacked && !is_dead)
             {
                 Hitbox.X -= Speed;
@@ -235,12 +246,26 @@ namespace jeu_xna
                     is_jumping = true;
                     Hitbox.Y -= jump_speed_initial;
                     can_jump = 0;
+                    limit_jump = 20;
+                    small_jump = false;
                 }
             }
 
-            else if(keyboard.IsKeyDown(Keys.F1))
+            else if (keyboard.IsKeyDown(accroupi))
             {
-                GameMain.LocalPlayer1.vie = 0; 
+                Hitbox.Height = texturecaracter.accroupi_hauteur;
+                is_accroupi = true;
+            }
+
+            if (keyboard.IsKeyUp(accroupi))
+            {
+                is_accroupi = false;
+                Hitbox.Height = 200;
+            }
+
+            else if (keyboard.IsKeyDown(Keys.F1))
+            {
+                GameMain.LocalPlayer1.vie = 0;
             }
 
             else if (keyboard.IsKeyDown(Keys.F2))
@@ -468,11 +493,24 @@ namespace jeu_xna
         //GESTION DU SAUT
         private void Saut()
         {
+            if (small_jump)
+            {
+                if (Effect == SpriteEffects.None)
+                {
+                    Hitbox.X -= 10;
+                }
+
+                else if (Effect == SpriteEffects.FlipHorizontally)
+                {
+                    Hitbox.X += 10;
+                }
+            }
+
             if (is_jumping) //est en train de sauter
             {
                 if (!jump) //n'a pas atteint la hauteur maximale du saut
                 {
-                    if (Hitbox.Y > 20) 
+                    if (Hitbox.Y > limit_jump) 
                     {
                         jump_speed_initial -= jump_speed;
                         Hitbox.Y -= jump_speed_initial;
@@ -486,8 +524,17 @@ namespace jeu_xna
 
                 else if (jump)
                 {
-                    jump_speed_initial = 3; 
-                    jump_speed = 11; 
+                    if (small_jump)
+                    {
+                        jump_speed_initial = 0;
+                        jump_speed = 10;
+                    }
+
+                    else if (!small_jump)
+                    {
+                        jump_speed_initial = 3;
+                        jump_speed = 11;
+                    }
 
                     if (Hitbox.Y < 230)
                     {
@@ -503,6 +550,8 @@ namespace jeu_xna
                         jump_speed = 1;
                         is_jumping = false;
                         jump = false;
+                        small_jump = false;
+                        Hitbox.Y = 230;
                     }
                 }
             }
@@ -522,6 +571,11 @@ namespace jeu_xna
 
             if (display_caracter) //permet de faire clignoter le personnage attaqué
             {
+                if (is_accroupi)
+                {
+                    spriteBatch.Draw(texturecaracter.accroupi, Hitbox, Color.White);
+                }
+
                 if (frame_counter <= 50 && can_display_attack)
                 {
                     if (Effect == SpriteEffects.FlipHorizontally)
@@ -543,14 +597,14 @@ namespace jeu_xna
                 {
                     if (vie != 0)
                     {
-                        if (!win)
+                        if (!win && !is_accroupi)
                         {
                             //spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
                             //spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
                             spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
                         }
 
-                        else
+                        if (win)
                         {
                             texturecaracter.victoire.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display);
                         }

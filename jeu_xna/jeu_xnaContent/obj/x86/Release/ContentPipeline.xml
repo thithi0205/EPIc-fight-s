@@ -380,6 +380,15 @@
       <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\caracter.xnb</Output>
       <Time>2014-05-22T15:24:02.375094+02:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\accroupi.png</Source>
+      <Name>Sprites\Personnages\Personnage1\accroupi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb</Output>
+      <Time>2014-05-23T12:44:15.4624347+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

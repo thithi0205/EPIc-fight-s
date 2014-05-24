@@ -22,7 +22,7 @@ namespace jeu_xna
         // LOAD CONTENT
         public static void LoadContent_Sprites(ContentManager Content)
         {
-            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_1"), 45, 114, 70, 100, 117, 1), new Attack(3, 1, 20, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_2"), 50, 45, 90, 30, 167, 3), new Attack(5, 1, 35, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_3"), 115, 100, 100, 100, 223, 4), new Dead_victory(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\mort"), 228, 3), new Dead_victory(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\victoire"), 93, 2));
+            caracters[0] = new TextureCaracter(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\personnage1"), Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1"), new Attack(1, 1, 10, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_1"), 45, 114, 70, 100, 117, 1), new Attack(3, 1, 20, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_2"), 50, 45, 90, 30, 167, 3), new Attack(5, 1, 35, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\attaque_3"), 115, 100, 100, 100, 223, 4), new Dead_victory(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\mort"), 228, 3), new Dead_victory(Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\victoire"), 93, 2), Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\accroupi"), 148);
 
             fields[0] = Content.Load<Texture2D>(@"Sprites\Maps\map1");
             fields[1] = Content.Load<Texture2D>(@"Sprites\Maps\map2");
@@ -47,12 +47,13 @@ namespace jeu_xna
 
     class TextureCaracter
     {
-        public Texture2D personnage, identity;
+        public Texture2D personnage, identity, accroupi;
         public SoundEffect jump;
         public Attack attaque1, attaque2, attaque3;
         public Dead_victory mort, victoire;
+        public int accroupi_hauteur;
 
-        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque1, Attack attaque2, Attack attaque3, Dead_victory mort, Dead_victory victoire)
+        public TextureCaracter(Texture2D personnage, Texture2D identity, SoundEffect jump, Attack attaque1, Attack attaque2, Attack attaque3, Dead_victory mort, Dead_victory victoire, Texture2D accroupi, int accroupi_hauteur)
         {
             this.personnage = personnage;
             this.identity = identity;
@@ -62,6 +63,8 @@ namespace jeu_xna
             this.attaque3 = attaque3;
             this.mort = mort;
             this.victoire = victoire;
+            this.accroupi = accroupi;
+            this.accroupi_hauteur = accroupi_hauteur;
         }
     }
 }

@@ -41,3 +41,4 @@ Content\team.xnb
 Content\Controls.xnb
 Content\Sprites\MainMenu\Options\Font\touches.xnb
 Content\Sprites\Personnages\caracter.xnb
+Content\Sprites\Personnages\Personnage1\accroupi.xnb
