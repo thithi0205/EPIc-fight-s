@@ -76,7 +76,7 @@ namespace jeu_xna
         // CONSTRUCTOR
         public Player(TextureCaracter texturecaracter, int x, int y, Direction direction, Keys saut, Keys droite, Keys gauche, Keys accroupi, string name, int player_number, ContentManager Content, Keys attaque1, Keys attaque2, Keys attaque3)
         {
-            limit_jump = 250;
+            limit_jump = 20;
             small_jump = false;
 
             this.accroupi = accroupi;
@@ -102,7 +102,7 @@ namespace jeu_xna
             this.droite = droite;
 
             this.Joueur = texturecaracter.personnage; //texture du personnage
-            Hitbox = new Rectangle(x, y, 95, 200);
+            Hitbox = new Rectangle(x, y, 95, texturecaracter.personnage.Height);
             Frame = 1; //texture affichée lorsque toutes les touches sont relachées
 
             if (player_number == 2)
@@ -237,7 +237,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyDown(saut) && !is_attacked && !is_dead)
+            if (keyboard.IsKeyDown(saut) && !is_attacked && !is_dead && !is_accroupi)
             {
                 if (KeyDown_up == false && !jump1)
                 {
@@ -248,19 +248,25 @@ namespace jeu_xna
                     can_jump = 0;
                     limit_jump = 20;
                     small_jump = false;
+                    jump_speed_initial = 20;
+                    jump_speed = 1;
                 }
             }
 
-            else if (keyboard.IsKeyDown(accroupi))
+            if (keyboard.IsKeyDown(accroupi) && !is_jumping)
             {
                 Hitbox.Height = texturecaracter.accroupi_hauteur;
+                Hitbox.Width = texturecaracter.accroupi.Width;
+                Hitbox.Y = 230 + (texturecaracter.personnage.Height - texturecaracter.accroupi.Height);
                 is_accroupi = true;
             }
 
-            if (keyboard.IsKeyUp(accroupi))
+            else if (keyboard.IsKeyUp(accroupi) && !is_jumping)
             {
                 is_accroupi = false;
-                Hitbox.Height = 200;
+                Hitbox.Height = texturecaracter.personnage.Height;
+                Hitbox.Width = 95;
+                Hitbox.Y = 230;
             }
 
             else if (keyboard.IsKeyDown(Keys.F1))
@@ -507,9 +513,10 @@ namespace jeu_xna
             }
 
             if (is_jumping) //est en train de sauter
-            {
+            {  
                 if (!jump) //n'a pas atteint la hauteur maximale du saut
                 {
+                    
                     if (Hitbox.Y > limit_jump) 
                     {
                         jump_speed_initial -= jump_speed;
@@ -519,11 +526,12 @@ namespace jeu_xna
                     else
                     {
                         jump = true;
+                        
                     }
                 }
 
-                else if (jump)
-                {
+                else 
+                { 
                     if (small_jump)
                     {
                         jump_speed_initial = 0;
@@ -552,6 +560,7 @@ namespace jeu_xna
                         jump = false;
                         small_jump = false;
                         Hitbox.Y = 230;
+                        limit_jump = 20;
                     }
                 }
             }
@@ -573,7 +582,7 @@ namespace jeu_xna
             {
                 if (is_accroupi)
                 {
-                    spriteBatch.Draw(texturecaracter.accroupi, Hitbox, Color.White);
+                    spriteBatch.Draw(texturecaracter.accroupi, Hitbox, new Rectangle(0, 0, texturecaracter.accroupi.Width, texturecaracter.accroupi.Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
                 }
 
                 if (frame_counter <= 50 && can_display_attack)
@@ -601,30 +610,30 @@ namespace jeu_xna
                         {
                             //spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
                             //spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
-                            spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, 200), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                            spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * 95, 0, 95, texturecaracter.personnage.Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
                         }
 
                         if (win)
                         {
-                            texturecaracter.victoire.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display);
+                            texturecaracter.victoire.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display, texturecaracter.personnage);
                         }
                     }
 
                     else
                     {
-                        texturecaracter.mort.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display);
+                        texturecaracter.mort.Draw(spriteBatch, Effect, Hitbox.X, Hitbox.Y, Hitbox.Width, dead_alive_frames_counter_display, texturecaracter.personnage);
                     }
                 }
             }
 
             if (Effect == SpriteEffects.None)
             {
-                spriteBatch.DrawString(name_font, name, new Vector2(Hitbox.X, Hitbox.Y - Hitbox.Height + 180), Color.White);
+                spriteBatch.DrawString(name_font, name, new Vector2(Hitbox.X, Hitbox.Y - 25), Color.White);
             }
 
             else if (Effect == SpriteEffects.FlipHorizontally)
             {
-                spriteBatch.DrawString(name_font, name, new Vector2(Hitbox.X + Hitbox.Width - name.Length * 8, Hitbox.Y - Hitbox.Height + 180), Color.White);
+                spriteBatch.DrawString(name_font, name, new Vector2(Hitbox.X + Hitbox.Width - name.Length * 8, Hitbox.Y - 25/*Hitbox.Height + 180*/), Color.White);
             }
         }
 
@@ -759,9 +768,9 @@ namespace jeu_xna
             this.largeur_image = largeur_image;
         }
 
-        public void Draw(SpriteBatch spriteBatch, SpriteEffects effect, int x, int y, int largeur_hitbox, int frame_displayed)
+        public void Draw(SpriteBatch spriteBatch, SpriteEffects effect, int x, int y, int largeur_hitbox, int frame_displayed, Texture2D personnage)
         {
-            spriteBatch.Draw(dead_frames, new Rectangle((largeur_hitbox - largeur_image) + x, (200 - dead_frames.Height) + y, largeur_image, dead_frames.Height), new Rectangle(frame_displayed * largeur_image, 0, largeur_image, dead_frames.Height), Color.White, 0f, Vector2.Zero, effect, 0f);
+            spriteBatch.Draw(dead_frames, new Rectangle((largeur_hitbox - largeur_image) + x, (personnage.Height - dead_frames.Height) + y, largeur_image, dead_frames.Height), new Rectangle(frame_displayed * largeur_image, 0, largeur_image, dead_frames.Height), Color.White, 0f, Vector2.Zero, effect, 0f);
         }
     }
 }

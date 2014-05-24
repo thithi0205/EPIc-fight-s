@@ -187,6 +187,7 @@ namespace jeu_xna
             Console.WriteLine("frame_counter_is_attacked 2: " + LocalPlayer2.frame_counter_is_attacked + "\n");
             Console.WriteLine("life player 1 : " + LocalPlayer1.vie + "     energy player 1 : " + LocalPlayer1.energy);
             Console.WriteLine("life player 2 : " + LocalPlayer2.vie + "     energy player 2 : " + LocalPlayer2.energy + "\n");
+            Console.WriteLine("limit_jump 1 : " + LocalPlayer1.limit_jump + "     limit_jump 2 : " + LocalPlayer2.limit_jump + "\n");
             if (LocalPlayer1.win)
                 Console.WriteLine("player 1 win");
             else if (LocalPlayer2.win)
