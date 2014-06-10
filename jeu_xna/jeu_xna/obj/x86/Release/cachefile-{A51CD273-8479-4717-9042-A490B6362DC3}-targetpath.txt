@@ -1,7 +1,5 @@
 Content\Sprites\Maps\map1.xnb
-Content\Sprites\MainMenu\button_jouer.xnb
 Content\Sprites\MainMenu\Options\background.xnb
-Content\Sprites\MainMenu\button_options.xnb
 Content\Sprites\MainMenu\Options\+.xnb
 Content\Sprites\MainMenu\Options\-.xnb
 Content\Sprites\MainMenu\Options\volume.xnb
@@ -17,21 +15,42 @@ Content\Sprites\Game\ready.xnb
 Content\Sprites\Game\fight.xnb
 Content\Sprites\Personnages\Personnage1\attaque_1.xnb
 Content\Sprites\Game\game_over.xnb
-Content\Sprites\MainMenu\epic_fight's.xnb
-Content\Sprites\MainMenu\bouton_terrain.xnb
 Content\Sprites\Maps\map2.xnb
-Content\Sprites\MainMenu\Options\bouton_commandes.xnb
 Content\Sprites\Personnages\Personnage1\attaque_2.xnb
 Content\Sprites\Personnages\Personnage1\attaque_3.xnb
 Content\Sprites\Personnages\Personnage1\mort.xnb
 Content\Sprites\Personnages\Personnage1\victoire.xnb
 Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
 Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
+Content\Sprites\Personnages\Personnage1\accroupi.xnb
+Content\Sprites\Personnages\Personnage1\attaque_4.xnb
+Content\Sprites\MainMenu\banniere.xnb
+Content\Sprites\MainMenu\banniere_couleur.xnb
+Content\Sprites\Personnages\Personnage2\accroupi.xnb
+Content\Sprites\Personnages\Personnage2\attaque_1.xnb
+Content\Sprites\Personnages\Personnage2\attaque_2.xnb
+Content\Sprites\Personnages\Personnage2\attaque_3.xnb
+Content\Sprites\Personnages\Personnage2\attaque_4.xnb
+Content\Sprites\Personnages\Personnage2\identité2.xnb
+Content\Sprites\Personnages\Personnage2\mort.xnb
+Content\Sprites\Personnages\Personnage2\personnage_2.xnb
+Content\Sprites\Personnages\Personnage2\victoire.xnb
 Content\Sounds\Personnage\Personnage1\jump1.xnb
 Content\Sounds\Personnage\step1.xnb
 Content\Sounds\Personnage\jump_end.xnb
-Content\Sounds\Musique\Son Game 1.xnb
-Content\Sounds\Musique\Son Game 1.wma
+Content\Sounds\Personnage\Personnage1\attaque1.xnb
+Content\Sounds\Personnage\Personnage1\attaque2.xnb
+Content\Sounds\Personnage\Personnage1\attaque3.xnb
+Content\Sounds\Personnage\Personnage1\attaque4.xnb
+Content\Sounds\Personnage\Personnage1\death1.xnb
+Content\Sounds\Personnage\Personnage1\pain.xnb
+Content\Sounds\Personnage\Personnage2\attaque1.xnb
+Content\Sounds\Personnage\Personnage2\attaque2.xnb
+Content\Sounds\Personnage\Personnage2\attaque3.xnb
+Content\Sounds\Personnage\Personnage2\attaque4.xnb
+Content\Sounds\Personnage\Personnage2\death.xnb
+Content\Sounds\Personnage\Personnage2\jump.xnb
+Content\Sounds\Personnage\Personnage2\pain.xnb
 Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
 Content\chronomètre.xnb
 Content\display_name.xnb
@@ -41,4 +60,16 @@ Content\team.xnb
 Content\Controls.xnb
 Content\Sprites\MainMenu\Options\Font\touches.xnb
 Content\Sprites\Personnages\caracter.xnb
-Content\Sprites\Personnages\Personnage1\accroupi.xnb
+Content\Sprites\MainMenu\Options\Font\volume_.xnb
+Content\Sounds\Musique\Son Game 1.xnb
+Content\Sounds\Musique\Son Game 1.wma
+Content\Sprites\MainMenu\BlankTexture.xnb
+Content\Sprites\MainMenu\bouton_options.xnb
+Content\Sprites\MainMenu\bouton_terrain.xnb
+Content\Sprites\MainMenu\Main_menu.xnb
+Content\Sprites\MainMenu\Options\bouton_commandes.xnb
+Content\Sprites\MainMenu\bouton_jouer.xnb
+Content\Sprites\Maps\map3.xnb
+Content\Sprites\Maps\map4.xnb
+Content\Sprites\Maps\map5.xnb
+Content\game_over.xnb

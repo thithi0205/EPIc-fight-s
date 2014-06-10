@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace jeu_xna
 {
@@ -14,8 +15,9 @@ namespace jeu_xna
         public int dégat_min, dégat_max, x, y, width, height, frame_attack; 
         public int displayed_picture; //permet de sélectionner la texture de l'attaque à afficher
         public Texture2D frames; //textures de l'attaque
+        public SoundEffect sound_attack;
 
-        public Attack(int nb_frames, int dégat_min, int dégat_max, Texture2D frames, int x, int y, int width, int height, int largeur_image, int frame_attack)
+        public Attack(int nb_frames, int dégat_min, int dégat_max, Texture2D frames, int x, int y, int width, int height, int largeur_image, int frame_attack, SoundEffect sound_attack)
         {
             this.nb_frames = nb_frames;
             this.dégat_min = dégat_min;
@@ -28,6 +30,7 @@ namespace jeu_xna
             this.y = y;
             this.width = width;
             this.height = height;
+            this.sound_attack = sound_attack;
         }
 
         public void draw(int x, int y, SpriteBatch spriteBatch, Texture2D texture, SpriteEffects effect)
@@ -51,6 +54,17 @@ namespace jeu_xna
                     GameMain.LocalPlayer2.Hitbox.Y -= GameMain.LocalPlayer2.jump_speed_initial;
                     GameMain.LocalPlayer2.is_jumping = true;
                     GameMain.LocalPlayer2.jump_speed_initial = 10;
+                    GameMain.LocalPlayer2.texturecaracter.pain.Play();
+
+                    if (GameMain.LocalPlayer1.Effect == SpriteEffects.None)
+                    {
+                        GameMain.LocalPlayer2.small_jump_val = 10;
+                    }
+
+                    else if (GameMain.LocalPlayer1.Effect == SpriteEffects.FlipHorizontally)
+                    {
+                        GameMain.LocalPlayer2.small_jump_val = -10;
+                    }
 
                     if (current_attack != GameMain.LocalPlayer1.texturecaracter.attaque3)
                     {
@@ -84,6 +98,17 @@ namespace jeu_xna
                     GameMain.LocalPlayer1.Hitbox.Y -= GameMain.LocalPlayer1.jump_speed_initial;
                     GameMain.LocalPlayer1.is_jumping = true;
                     GameMain.LocalPlayer1.jump_speed_initial = 10;
+                    GameMain.LocalPlayer1.texturecaracter.pain.Play();
+
+                    if (GameMain.LocalPlayer2.Effect == SpriteEffects.None)
+                    {
+                        GameMain.LocalPlayer1.small_jump_val = 10;
+                    }
+
+                    else if (GameMain.LocalPlayer2.Effect == SpriteEffects.FlipHorizontally)
+                    {
+                        GameMain.LocalPlayer1.small_jump_val = -10;
+                    }
 
                     if (current_attack != GameMain.LocalPlayer2.texturecaracter.attaque3)
                     {

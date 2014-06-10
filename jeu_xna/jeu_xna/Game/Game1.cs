@@ -25,7 +25,7 @@ namespace jeu_xna
             graphics1.PreferredBackBufferHeight = 600;
             graphics1.PreferredBackBufferWidth = 800;
             graphics1.ApplyChanges();
-            //graphics1.ToggleFullScreen();
+            graphics1.ToggleFullScreen();
             Content.RootDirectory = "Content";
         }
 
@@ -34,6 +34,7 @@ namespace jeu_xna
         {
             IsMouseVisible = true;
             Options.is_mainmenu = false;
+            VarTemp.temp = GameState.Playing;
             GameMain.Initialize();
             base.Initialize();
         }
@@ -68,16 +69,21 @@ namespace jeu_xna
             ChangeControls.left1.Update(keyboard);
             ChangeControls.right1.Update(keyboard);
             ChangeControls.up1.Update(keyboard);
+            ChangeControls.down1.Update(keyboard);
             ChangeControls.attack1_1.Update(keyboard);
             ChangeControls.attack1_2.Update(keyboard);
             ChangeControls.attack1_3.Update(keyboard);
+            ChangeControls.attack1_4.Update(keyboard);
 
             ChangeControls.left2.Update(keyboard);
             ChangeControls.right2.Update(keyboard);
             ChangeControls.up2.Update(keyboard);
+            ChangeControls.down2.Update(keyboard);
             ChangeControls.attack2_1.Update(keyboard);
             ChangeControls.attack2_2.Update(keyboard);
             ChangeControls.attack2_3.Update(keyboard);
+            ChangeControls.attack2_4.Update(keyboard);
+            ChangeControls.bouton_retour.Update(MainMenu.mouse);
 
 
             MainMenu.mouse = Mouse.GetState();

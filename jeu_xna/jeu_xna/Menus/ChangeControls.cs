@@ -12,45 +12,50 @@ namespace jeu_xna
     class ChangeControls
     {
         static SpriteFont player, commandes, touche, commande_display;
-        static Texture2D background;
         public static Keys[] cles;
         public static Texture2D blank;
-        public static ControlsButton left1, right1, up1, attack1_1, attack1_2, attack1_3, left2, right2, up2, attack2_1, attack2_2, attack2_3;
+        public static ControlsButton left1, right1, up1, attack1_1, attack1_2, attack1_3, attack1_4, left2, right2, up2, attack2_1, attack2_2, attack2_3, attack2_4, down1, down2;
         public static SpriteFont font;
+        public static MenuButton bouton_retour;
 
         public static void LoadContent(ContentManager Content)
         {
             player = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_musique");
             commandes = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
-            background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
 
             blank = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
 
-            left1 = new ControlsButton(GameMain.LocalPlayer1.gauche, 200, 210, "left", 1);
-            right1 = new ControlsButton(GameMain.LocalPlayer1.droite, 200, 260, "right", 1);
-            up1 = new ControlsButton(GameMain.LocalPlayer1.saut, 200, 310, "up", 1);
-            attack1_1 = new ControlsButton(GameMain.LocalPlayer1.attaque1, 200, 360, "attack1", 1);
-            attack1_2 = new ControlsButton(GameMain.LocalPlayer1.attaque2, 200, 410, "attack2", 1);
-            attack1_3 = new ControlsButton(GameMain.LocalPlayer1.attaque3, 200, 460, "attack3", 1);
+            left1 = new ControlsButton(GameMain.LocalPlayer1.gauche, 200, 190, "left", 1);
+            right1 = new ControlsButton(GameMain.LocalPlayer1.droite, 200, 240, "right", 1);
+            up1 = new ControlsButton(GameMain.LocalPlayer1.saut, 200, 290, "up", 1);
+            down1 = new ControlsButton(GameMain.LocalPlayer1.accroupi, 200, 340, "down", 1);
+            attack1_1 = new ControlsButton(GameMain.LocalPlayer1.attaque1, 200, 390, "attack1", 1);
+            attack1_2 = new ControlsButton(GameMain.LocalPlayer1.attaque2, 200, 440, "attack2", 1);
+            attack1_3 = new ControlsButton(GameMain.LocalPlayer1.attaque3, 200, 490, "attack3", 1);
+            attack1_4 = new ControlsButton(GameMain.LocalPlayer1.attaque4, 200, 540, "attack4", 1);
 
-            left2 = new ControlsButton(GameMain.LocalPlayer2.gauche, 670, 210, "left", 2);
-            right2 = new ControlsButton(GameMain.LocalPlayer2.droite, 670, 260, "right", 2);
-            up2 = new ControlsButton(GameMain.LocalPlayer2.saut, 670, 310, "up", 2);
-            attack2_1 = new ControlsButton(GameMain.LocalPlayer2.attaque1, 670, 360, "attack1", 2);
-            attack2_2 = new ControlsButton(GameMain.LocalPlayer2.attaque2, 670, 410, "attack2", 2);
-            attack2_3 = new ControlsButton(GameMain.LocalPlayer2.attaque3, 670, 460, "attack3", 2);
+            left2 = new ControlsButton(GameMain.LocalPlayer2.gauche, 670, 190, "left", 2);
+            right2 = new ControlsButton(GameMain.LocalPlayer2.droite, 670, 240, "right", 2);
+            up2 = new ControlsButton(GameMain.LocalPlayer2.saut, 670, 290, "up", 2);
+            down2 = new ControlsButton(GameMain.LocalPlayer2.accroupi, 670, 340, "down", 1);
+            attack2_1 = new ControlsButton(GameMain.LocalPlayer2.attaque1, 670, 390, "attack1", 2);
+            attack2_2 = new ControlsButton(GameMain.LocalPlayer2.attaque2, 670, 440, "attack2", 2);
+            attack2_3 = new ControlsButton(GameMain.LocalPlayer2.attaque3, 670, 490, "attack3", 2);
+            attack2_4 = new ControlsButton(GameMain.LocalPlayer2.attaque4, 670, 540, "attack4", 2);
 
             font = Content.Load<SpriteFont>("Controls");
             touche = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\touches");
             commande_display = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
-            cles = new Keys[12];
+            cles = new Keys[16];
+
+            bouton_retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 145) / 2, 520));
 
             Initialise_keys_board(cles);
         }
 
         public static void Update(KeyboardState keyboard)
         {
-            if (Options.bouton_retour.isClicked)
+            if (bouton_retour.isClicked && !Options.was_cliqued)
             {
                 VarTemp.CurrentGameState = GameState.Options;
                 Options.was_cliqued = true;
@@ -59,32 +64,38 @@ namespace jeu_xna
 
         public static void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, Vector2.Zero, Color.White);
-            spriteBatch.DrawString(player, GameMain.LocalPlayer1.name + " :", new Vector2(130, 130), Color.Black);
-            spriteBatch.DrawString(player, GameMain.LocalPlayer2.name + " :", new Vector2(600, 130), Color.Black);
-            spriteBatch.DrawString(touche, "gauche :", new Vector2(20, 200), Color.Black);
-            spriteBatch.DrawString(touche, "droite :", new Vector2(20, 250), Color.Black);
-            spriteBatch.DrawString(touche, "saut :", new Vector2(20, 300), Color.Black);
-            spriteBatch.DrawString(touche, "attaque 1 :", new Vector2(20, 350), Color.Black);
-            spriteBatch.DrawString(touche, "attaque 2 :", new Vector2(20, 400), Color.Black);
-            spriteBatch.DrawString(touche, "attaque 3 :", new Vector2(20, 450), Color.Black);
-            spriteBatch.DrawString(commande_display, "Commandes", new Vector2(300, 20), Color.Black);
+            Menu.Draw(spriteBatch);
+            spriteBatch.DrawString(player, GameMain.LocalPlayer1.name + " :", new Vector2(130, 110), Color.White);
+            spriteBatch.DrawString(player, GameMain.LocalPlayer2.name + " :", new Vector2(600, 110), Color.White);
+            spriteBatch.DrawString(touche, "gauche :", new Vector2(20, 180), Color.White);
+            spriteBatch.DrawString(touche, "droite :", new Vector2(20, 230), Color.White);
+            spriteBatch.DrawString(touche, "saut :", new Vector2(20, 280), Color.White);
+            spriteBatch.DrawString(touche, "bas :", new Vector2(20, 330), Color.White);
+            spriteBatch.DrawString(touche, "attaque 1 :", new Vector2(20, 380), Color.White);
+            spriteBatch.DrawString(touche, "attaque 2 :", new Vector2(20, 430), Color.White);
+            spriteBatch.DrawString(touche, "attaque 3 :", new Vector2(20, 480), Color.White);
+            spriteBatch.DrawString(touche, "attaque 4 :", new Vector2(20, 530), Color.White);
+            spriteBatch.DrawString(Options.options, "Commandes", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - Options.options.MeasureString("Options").Length()) / 2, 0), Color.White);
 
             left1.Draw(spriteBatch);
             right1.Draw(spriteBatch);
             up1.Draw(spriteBatch);
+            down1.Draw(spriteBatch);
             attack1_1.Draw(spriteBatch);
             attack1_2.Draw(spriteBatch);
             attack1_3.Draw(spriteBatch);
+            attack1_4.Draw(spriteBatch);
 
             left2.Draw(spriteBatch);
             right2.Draw(spriteBatch);
             up2.Draw(spriteBatch);
+            down2.Draw(spriteBatch);
             attack2_1.Draw(spriteBatch);
             attack2_2.Draw(spriteBatch);
             attack2_3.Draw(spriteBatch);
+            attack2_4.Draw(spriteBatch);
 
-            Options.bouton_retour.Draw(spriteBatch);
+            bouton_retour.Draw(spriteBatch);
         }
 
         public static void Initialise_keys_board(Keys[] keys)
@@ -93,17 +104,21 @@ namespace jeu_xna
             keys[0] = left1.key_bis;
             keys[1] = up1.key_bis;
             keys[2] = right1.key_bis;
-            keys[3] = attack1_1.key_bis;
-            keys[4] = attack1_2.key_bis;
-            keys[5] = attack1_3.key_bis;
+            keys[3] = down1.key_bis;
+            keys[4] = attack1_1.key_bis;
+            keys[5] = attack1_2.key_bis;
+            keys[6] = attack1_3.key_bis;
+            keys[7] = attack1_4.key_bis;
 
             //JOUEUR 2
-            keys[6] = left2.key_bis;
-            keys[7] = up2.key_bis;
-            keys[8] = right2.key_bis;
-            keys[9] = attack2_1.key_bis;
-            keys[10] = attack2_2.key_bis;
-            keys[11] = attack2_3.key_bis;
+            keys[8] = left2.key_bis;
+            keys[9] = up2.key_bis;
+            keys[10] = right2.key_bis;
+            keys[11] = down2.key_bis;
+            keys[12] = attack2_1.key_bis;
+            keys[13] = attack2_2.key_bis;
+            keys[14] = attack2_3.key_bis;
+            keys[15] = attack2_4.key_bis;
         }
     }
 
@@ -195,11 +210,19 @@ namespace jeu_xna
                             MakeControl(key_bis);
                         }
 
+                        else if (!is_present(key_bis, ChangeControls.cles) && touche_bis == "down")
+                        {
+                            GameMain.LocalPlayer1.accroupi = key_bis;
+                            VarTemp.accroupi_1 = key_bis;
+                            ChangeControls.cles[3] = key_bis; //down1
+                            MakeControl(key_bis);
+                        }
+
                         else if (!is_present(key_bis, ChangeControls.cles) && touche_bis == "attack1")
                         {
                             GameMain.LocalPlayer1.attaque1 = key_bis;
                             VarTemp.attack1_1 = key_bis;
-                            ChangeControls.cles[3] = key_bis; //attack1_1
+                            ChangeControls.cles[4] = key_bis; //attack1_1
                             MakeControl(key_bis);
                         }
 
@@ -207,7 +230,7 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer1.attaque2 = key_bis;
                             VarTemp.attack1_2 = key_bis;
-                            ChangeControls.cles[4] = key_bis; //attack1_2
+                            ChangeControls.cles[5] = key_bis; //attack1_2
                             MakeControl(key_bis);
                         }
 
@@ -215,7 +238,15 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer1.attaque3 = key_bis;
                             VarTemp.attack1_3 = key_bis;
-                            ChangeControls.cles[5] = key_bis; //attack1_3
+                            ChangeControls.cles[6] = key_bis; //attack1_3
+                            MakeControl(key_bis);
+                        }
+
+                        else if (!is_present(key_bis, ChangeControls.cles) && touche_bis == "attack4")
+                        {
+                            GameMain.LocalPlayer1.attaque4 = key_bis;
+                            VarTemp.attack1_4 = key_bis;
+                            ChangeControls.cles[7] = key_bis; //attack1_4
                             MakeControl(key_bis);
                         }
                     }
@@ -226,7 +257,7 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer2.gauche = key_bis;
                             VarTemp.left2 = key_bis;
-                            ChangeControls.cles[6] = key_bis; //left2
+                            ChangeControls.cles[8] = key_bis; //left2
                             MakeControl(key_bis);
                         }
 
@@ -234,7 +265,7 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer2.droite = key_bis;
                             VarTemp.right2 = key_bis;
-                            ChangeControls.cles[7] = key_bis; //right2
+                            ChangeControls.cles[9] = key_bis; //right2
                             MakeControl(key_bis);
                         }
 
@@ -242,7 +273,15 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer2.saut = key_bis;
                             VarTemp.up2 = key_bis;
-                            ChangeControls.cles[8] = key_bis; //up2
+                            ChangeControls.cles[10] = key_bis; //up2
+                            MakeControl(key_bis);
+                        }
+
+                        else if (!is_present(key_bis, ChangeControls.cles) && touche_bis == "down")
+                        {
+                            GameMain.LocalPlayer2.accroupi = key_bis;
+                            VarTemp.accroupi_2 = key_bis;
+                            ChangeControls.cles[11] = key_bis; //down2
                             MakeControl(key_bis);
                         }
 
@@ -250,7 +289,7 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer2.attaque1 = key_bis;
                             VarTemp.attack2_1 = key_bis;
-                            ChangeControls.cles[9] = key_bis; //attack2_1
+                            ChangeControls.cles[12] = key_bis; //attack2_1
                             MakeControl(key_bis);
                         }
 
@@ -258,7 +297,7 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer2.attaque2 = key_bis;
                             VarTemp.attack2_2 = key_bis;
-                            ChangeControls.cles[10] = key_bis; //attack2_2
+                            ChangeControls.cles[13] = key_bis; //attack2_2
                             MakeControl(key_bis);
                         }
 
@@ -266,7 +305,15 @@ namespace jeu_xna
                         {
                             GameMain.LocalPlayer2.attaque3 = key_bis;
                             VarTemp.attack2_3 = key_bis;
-                            ChangeControls.cles[11] = key_bis; //attack2_3
+                            ChangeControls.cles[14] = key_bis; //attack2_3
+                            MakeControl(key_bis);
+                        }
+
+                        else if (!is_present(key_bis, ChangeControls.cles) && touche_bis == "attack4")
+                        {
+                            GameMain.LocalPlayer2.attaque4 = key_bis;
+                            VarTemp.attack2_4 = key_bis;
+                            ChangeControls.cles[15] = key_bis; //attack2_4
                             MakeControl(key_bis);
                         }
                     }
@@ -282,7 +329,7 @@ namespace jeu_xna
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(ChangeControls.blank, boarders, color);
-            spriteBatch.DrawString(ChangeControls.font, clé, new Vector2(x + 10, y + 5), Color.Black); 
+            spriteBatch.DrawString(ChangeControls.font, clé, new Vector2(x + 10, y + 5), Color.White); 
         }
 
         public bool is_present(Keys key, Keys[] clés)

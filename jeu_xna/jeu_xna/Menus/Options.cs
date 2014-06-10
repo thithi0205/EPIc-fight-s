@@ -11,14 +11,14 @@ using Microsoft.Xna.Framework.Media;
 
 namespace jeu_xna
 {
-    public class Options
+    public class Options 
     {
         public static MenuButton plus_musique, moins_musique, plus_bruitages, moins_bruitages, bouton_retour, bouton_commande;
         public static bool was_cliqued, is_mainmenu;
         public static SoundEffect test_volume_bruitage;
         public static float mediaplayer_volume, bruitage_volume;
-        public static Texture2D background, volume, volume_musique, volume_bruitage;
-        public static SpriteFont volume_musique_affichage, options;
+        public static Texture2D volume, volume_musique, volume_bruitage;
+        public static SpriteFont volume_musique_affichage, options, volume_;
 
         public static void Initialise()
         {
@@ -34,12 +34,13 @@ namespace jeu_xna
             bouton_retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(20, 520));
             bouton_commande = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_commandes"), new Vector2(20, 380));
             test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1");
-            background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
             volume = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume");
             volume_musique = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_musique");
             volume_bruitage = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_bruitages");
             volume_musique_affichage = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_musique");
             options = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
+            volume_ = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_");
+            Menu.LoadContent(Content);
         }
 
         public static void Update()
@@ -113,23 +114,51 @@ namespace jeu_xna
             }
         }
 
-        public static void Draw(SpriteBatch spriteBatch, ContentManager Content)
+        public static void Draw(SpriteBatch spriteBatch) //ContentManager Content)
         {
-            int display_mediaplayer_volume = (int)(mediaplayer_volume * 100);
-            int display_bruitages_volume = (int)(bruitage_volume * 100);
-            spriteBatch.Draw(background, Vector2.Zero, Color.White);
-            spriteBatch.Draw(volume, new Vector2(30, 160), Color.White);
-            spriteBatch.Draw(volume_musique, new Vector2(18, 230), Color.White);
-            spriteBatch.Draw(volume_bruitage, new Vector2(22, 290), Color.White);
-            spriteBatch.DrawString(volume_musique_affichage, string.Format(Convert.ToString(display_mediaplayer_volume)), new Vector2(320, 225), Color.Black);
-            spriteBatch.DrawString(volume_musique_affichage, string.Format(Convert.ToString(display_bruitages_volume)), new Vector2(320, 295), Color.Black);
-            spriteBatch.DrawString(options, "Options", new Vector2(320, 20), Color.Black);
+            Menu.Draw(spriteBatch);
+
+            spriteBatch.DrawString(volume_, "Volume :", new Vector2(30, 160), Color.White);
+            if (VarTemp.temp == GameState.MainMenu)
+            {
+                spriteBatch.DrawString(options, "Options", new Vector2((MainMenu.graphics.GraphicsDevice.Viewport.Width - options.MeasureString("Options").Length()) / 2, 0), Color.White); 
+            }
+
+            else if (VarTemp.temp == GameState.Playing)
+            {
+                spriteBatch.DrawString(options, "Options", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - options.MeasureString("Options").Length()) / 2, 0), Color.White); 
+            }
+
+
+            bouton_retour.Draw(spriteBatch);
+
+            Draw_volume(320, 135, spriteBatch);
+
             plus_musique.Draw(spriteBatch);
             moins_musique.Draw(spriteBatch);
             plus_bruitages.Draw(spriteBatch);
             moins_bruitages.Draw(spriteBatch);
-            bouton_retour.Draw(spriteBatch);
             bouton_commande.Draw(spriteBatch);
+        }
+
+        public static void Draw_volume(int x, int y, SpriteBatch spriteBatch)
+        {
+            int display_mediaplayer_volume = (int)(mediaplayer_volume * 100);
+            int display_bruitages_volume = (int)(bruitage_volume * 100);
+            spriteBatch.DrawString(volume_musique_affichage, string.Format(Convert.ToString(display_mediaplayer_volume)), new Vector2(x, y), Color.White);
+            spriteBatch.DrawString(volume_musique_affichage, string.Format(Convert.ToString(display_bruitages_volume)), new Vector2(x, y + 70), Color.White);
+
+            plus_musique.position.X = x + 80;
+            plus_musique.position.Y = y;
+
+            moins_musique.position.X = x - 60;
+            moins_musique.position.Y = y;
+
+            plus_bruitages.position.X = x + 80;
+            plus_bruitages.position.Y = y + 70;
+
+            moins_bruitages.position.X = x - 60;
+            moins_bruitages.position.Y = y + 70;
         }
     }
 }

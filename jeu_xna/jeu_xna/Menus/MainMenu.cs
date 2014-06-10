@@ -18,7 +18,7 @@ namespace jeu_xna
         SpriteBatch spriteBatch;
         public static Thread thread_jeu;
 
-        public static Texture2D background, epic_fight_s;
+        public static Texture2D background, epic_fight_s, banniere_couleur;
         static SpriteFont team;
 
         public static MouseState mouse;
@@ -45,6 +45,7 @@ namespace jeu_xna
             ChoiceMenuCaracter.Initialise();
             Options.is_mainmenu = true;
             VarTemp.CurrentGameState = GameState.MainMenu;
+            VarTemp.temp = GameState.MainMenu;
             IsMouseVisible = true;
             base.Initialize();
         }
@@ -62,9 +63,9 @@ namespace jeu_xna
 
             //BOUTONS DU MENU PRINCIPAL
             #region MainMenu
-            play = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_jouer"), new Vector2(300, graphics.GraphicsDevice.Viewport.Height / 2));
-            option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 400));
-            quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2(300, 500));
+            play = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_jouer"), new Vector2((graphics.GraphicsDevice.Viewport.Width - 154) / 2, graphics.GraphicsDevice.Viewport.Height / 2));
+            option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_options"), new Vector2((graphics.GraphicsDevice.Viewport.Width - 154) / 2, 400));
+            quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2((graphics.GraphicsDevice.Viewport.Width - 154) / 2, 500));
             #endregion
 
             Options.LoadContent(Content);
@@ -75,10 +76,9 @@ namespace jeu_xna
             ChoiceMenuBattlefield.LoadContent(Content);
 
             mainmenu = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(280, 500));
-            background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
-            epic_fight_s = Content.Load<Texture2D>(@"Sprites\MainMenu\epic_fight's");
+            epic_fight_s = Content.Load<Texture2D>(@"Sprites\MainMenu\banniere");
             team = Content.Load<SpriteFont>("team");
-
+            Menu.LoadContent(Content);
             LocalNetworkChoice.LoadContent(Content);
         }
 
@@ -101,12 +101,16 @@ namespace jeu_xna
             Options.bouton_retour.Update(mouse);
 
             ChoiceMenuCaracter.caracter1.Update(mouse);
+            ChoiceMenuCaracter.caracter2.Update(mouse);
             ChoiceMenuCaracter.retour.Update(mouse);
             ChoiceMenuCaracter.terrain.Update(mouse);
 
             ChoiceMenuBattlefield.jouer.Update(mouse);
             ChoiceMenuBattlefield.terrain1.Update(mouse);
             ChoiceMenuBattlefield.terrain2.Update(mouse);
+            ChoiceMenuBattlefield.terrain3.Update(mouse);
+            ChoiceMenuBattlefield.terrain4.Update(mouse);
+            ChoiceMenuBattlefield.terrain5.Update(mouse);
             #endregion
 
             //DEBUGgING
@@ -225,8 +229,8 @@ namespace jeu_xna
 
                     //AFFICHAGE DU MENU PRINCIPAL
                     #region MainMenu draw
-                    spriteBatch.Draw(background, Vector2.Zero, Color.White);
-                    spriteBatch.Draw(epic_fight_s, new Vector2(100, 0), Color.White);
+                    Menu.Draw(spriteBatch);
+                    spriteBatch.Draw(epic_fight_s, new Vector2((MainMenu.graphics.GraphicsDevice.Viewport.Width - epic_fight_s.Width) / 2, 0), Color.White);
                     option.Draw(spriteBatch);
                     play.Draw(spriteBatch);
                     quitter.Draw(spriteBatch);
@@ -235,7 +239,7 @@ namespace jeu_xna
                     break;
 
                 case GameState.Options:
-                    Options.Draw(spriteBatch, Content);
+                    Options.Draw(spriteBatch);
                     break;
 
                 case GameState.ChoiceMenuCaracter:

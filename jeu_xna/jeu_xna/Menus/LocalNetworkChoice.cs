@@ -46,11 +46,11 @@ namespace jeu_xna
 
         public static void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(MainMenu.background, Vector2.Zero, Color.White);
+            Menu.Draw(spriteBatch);
             local.Draw(spriteBatch);
             network.Draw(spriteBatch);
             retour.Draw(spriteBatch);
-            spriteBatch.DrawString(font, "Choix du mode de jeu", new Vector2(170, 20), Color.Black);
+            spriteBatch.DrawString(font, "Choix du mode de jeu", new Vector2((MainMenu.graphics.GraphicsDevice.Viewport.Width - font.MeasureString("Choix du mode de jeu").Length()) / 2, 0), Color.White);
         }
     }
 }

@@ -32,9 +32,9 @@ namespace jeu_xna
 
             if (mouseRectangle.Intersects(rectangle)) //le button devient vert
             {
-                couleur.R = 0;
-                couleur.G = 255;
-                couleur.B = 0;
+                couleur.R = 170;
+                couleur.G = 170;
+                couleur.B = 170;
 
                 if (mouse.LeftButton == ButtonState.Pressed)
                 {
@@ -58,6 +58,11 @@ namespace jeu_xna
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, rectangle, couleur);
+        }
+
+        public void Calcul_de_la_mort(GraphicsDeviceManager graphics)
+        {
+            position.X = (graphics.GraphicsDevice.Viewport.Width - texture.Width) / 2;
         }
     }
 }

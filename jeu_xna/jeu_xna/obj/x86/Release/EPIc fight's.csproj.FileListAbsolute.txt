@@ -91,9 +91,7 @@ E:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\bin\x86\Release\jeu
 E:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\obj\x86\Release\EPIc fight's.csprojResolveAssemblyReference.cache
 E:\epita\projet\jeu_xna - git (Soutenance 2)\jeu_xna\jeu_xna\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map1.xnb
-E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_jouer.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\background.xnb
-E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_options.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\+.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\-.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume.xnb
@@ -109,7 +107,6 @@ E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\game_over.xnb
-E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\epic_fight's.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_terrain.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb
@@ -120,7 +117,6 @@ E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Pers
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\step1.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump_end.xnb
-E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\chronomètre.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\display_name.xnb
@@ -129,7 +125,6 @@ E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Main
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\team.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb
-E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.wma
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\jeu_xna.pdb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\EPIc fight's.csprojResolveAssemblyReference.cache
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
@@ -189,3 +184,162 @@ D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Main
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\caracter.xnb
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb
+D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_4.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_4.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_jouer.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\background.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_options.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\+.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\-.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_bruitages.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_musique.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_retour.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_quitter.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_menu-principal.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\BlankTexture.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\identité1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\personnage1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\ready.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\game_over.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_terrain.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_2.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_3.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\mort.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\victoire.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_4.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\step1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump_end.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\chronomètre.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\display_name.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\choix.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\pause.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\team.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\caracter.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.wma
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\jeu_xna.exe
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\jeu_xna.pdb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\EPIc fight's.csprojResolveAssemblyReference.cache
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\jeu_xna.exe
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\jeu_xna.pdb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere_couleur.xnb
+C:\Users\epita\Desktop\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere_couleur.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.wma
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_jouer.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\background.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_options.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\+.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\-.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_bruitages.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_musique.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_retour.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_quitter.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_menu-principal.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\BlankTexture.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\identité1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\personnage1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\ready.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\game_over.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_terrain.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_2.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_3.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\mort.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\victoire.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_local.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_4.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere_couleur.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\accroupi.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_2.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_3.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_4.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\identité2.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\mort.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\personnage_2.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\victoire.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\step1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump_end.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\chronomètre.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\display_name.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\choix.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\pause.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\team.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\caracter.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.wma
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\jeu_xna.exe
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\jeu_xna.pdb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\EPIc fight's.csprojResolveAssemblyReference.cache
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\jeu_xna.exe
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\obj\x86\Release\jeu_xna.pdb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque2.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque3.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque4.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\death1.xnb
+C:\Users\epita\Desktop\Nouveau dossier\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\pain.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\accroupi.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_1.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_2.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_3.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_4.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\identité2.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\mort.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\personnage_2.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\victoire.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque1.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque2.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque3.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque4.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\death1.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\pain.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque1.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque2.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque3.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque4.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\death.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\jump.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\pain.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\BlankTexture.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_options.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Main_menu.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_jouer.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map3.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map4.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map5.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\game_over.xnb

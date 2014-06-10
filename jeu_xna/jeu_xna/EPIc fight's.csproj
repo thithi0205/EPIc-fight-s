@@ -117,6 +117,7 @@
     <Compile Include="Menus\ChoiceMenuBattlefield.cs" />
     <Compile Include="Menus\ChoiceMenuCaracter.cs" />
     <Compile Include="Menus\LocalNetworkChoice.cs" />
+    <Compile Include="Menus\Menu.cs" />
     <Compile Include="Menus\MenuButton.cs" />
     <Compile Include="Game\Player\Player.cs" />
     <Compile Include="Menus\Options.cs" />
@@ -127,8 +128,8 @@
     <Compile Include="Game\Ressources.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="Game.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\jeu_xnaContent\jeu_xnaContent.contentproj">

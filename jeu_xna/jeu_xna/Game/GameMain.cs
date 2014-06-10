@@ -22,8 +22,8 @@ namespace jeu_xna
         static int fps_counter;
 
         public static MenuButton option, retour, menu_principal, quitter;
-        static Texture2D background, ready, fight, game_over;
-        static SpriteFont chrono, pause;
+        static Texture2D ready, fight;
+        static SpriteFont chrono, game_over; 
 
         // CONSTRUCTOR
         public GameMain(ContentManager Content)
@@ -46,21 +46,24 @@ namespace jeu_xna
         public static void LoadContent(ContentManager Content)
         {
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, VarTemp.accroupi_1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2, VarTemp.attack1_3);
-            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, VarTemp.accroupi_2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2, VarTemp.attack2_3);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, VarTemp.accroupi_1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2, VarTemp.attack1_3, VarTemp.attack1_4);
+            LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, VarTemp.accroupi_2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2, VarTemp.attack2_3, VarTemp.attack2_4);
 
-            option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\button_options"), new Vector2(300, 300));
-            background = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\background");
+            option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_options"), new Vector2(300, 300));
+            option.Calcul_de_la_mort(Game1.graphics1);
+
             chrono = Content.Load<SpriteFont>("chronomètre");
             retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(Game1.graphics1.GraphicsDevice.Viewport.Width - (20 + 145), 520));
             menu_principal = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(255, 200));
+            menu_principal.Calcul_de_la_mort(Game1.graphics1);
+
             quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2(300, 400));
+            quitter.Calcul_de_la_mort(Game1.graphics1);
             Options.LoadContent(Content);
 
-            pause = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
             ready = Content.Load<Texture2D>(@"Sprites\Game\ready");
             fight = Content.Load<Texture2D>(@"Sprites\Game\fight");
-            game_over = Content.Load<Texture2D>(@"Sprites\Game\game_over");
+            game_over = Content.Load<SpriteFont>("game_over");
 
             ChangeControls.LoadContent(Content);
         }
@@ -68,10 +71,10 @@ namespace jeu_xna
         // UPDATE & DRAW
         public void Update(MouseState mouse, KeyboardState keyboard)
         {
-            GameMain.option.Update(MainMenu.mouse);
-            GameMain.retour.Update(MainMenu.mouse);
-            GameMain.menu_principal.Update(MainMenu.mouse);
-            GameMain.quitter.Update(MainMenu.mouse);
+            option.Update(MainMenu.mouse);
+            retour.Update(MainMenu.mouse);
+            menu_principal.Update(MainMenu.mouse);
+            quitter.Update(MainMenu.mouse);
 
             if (keyboard.IsKeyDown(Keys.Escape) && VarTemp.CurrentGameState == GameState.Playing && !WasKeyDown_Escape)
             {
@@ -258,7 +261,16 @@ namespace jeu_xna
                         if (fps_counter <= 180)
                         {
                             fps_counter++;
-                            spriteBatch.Draw(game_over, new Vector2(330, 240), Color.White);
+
+                            if (LocalPlayer1.win)
+                            {
+                                spriteBatch.DrawString(game_over, LocalPlayer1.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer1.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer1.name + " wins !").Y) / 2), new Color(146, 22, 22));
+                            }
+
+                            else if (LocalPlayer2.win)
+                            {
+                                spriteBatch.DrawString(game_over, LocalPlayer2.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer2.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer2.name + " wins !").Y) / 2), new Color(146, 22, 22));
+                            }
                         }
 
                         else
@@ -273,8 +285,8 @@ namespace jeu_xna
                     break;
 
                 case GameState.Pause:
-                    spriteBatch.Draw(background, Vector2.Zero, Color.White);
-                    spriteBatch.DrawString(pause, "PAUSE", new Vector2(330, 20), Color.Black);
+                    Menu.Draw(spriteBatch);
+                    spriteBatch.DrawString(Options.options, "PAUSE", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - Options.options.MeasureString("PAUSE").Length()) / 2, 0), Color.White);
                     option.Draw(spriteBatch);
                     retour.Draw(spriteBatch);
                     menu_principal.Draw(spriteBatch);
@@ -282,7 +294,7 @@ namespace jeu_xna
                     break;
 
                 case GameState.Options:
-                    Options.Draw(spriteBatch, Content);
+                    Options.Draw(spriteBatch);
                     break;
 
                 case GameState.Commandes:

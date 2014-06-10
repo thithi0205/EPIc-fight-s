@@ -7,17 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map1.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map1.xnb</Output>
       <Time>2014-02-05T23:18:39.1304454+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\MainMenu\button_jouer.jpg</Source>
-      <Name>Sprites\MainMenu\button_jouer</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_jouer.xnb</Output>
-      <Time>2014-03-12T16:39:19.0443044+01:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\Options\background.jpg</Source>
@@ -25,17 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\background.xnb</Output>
-      <Time>2014-03-15T16:37:59.0336267+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\MainMenu\button_options.jpg</Source>
-      <Name>Sprites\MainMenu\button_options</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\button_options.xnb</Output>
-      <Time>2014-03-12T17:24:39.1980923+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\background.xnb</Output>
+      <Time>2014-06-10T15:28:00.1132317+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\Options\+.jpg</Source>
@@ -43,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\+.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\+.xnb</Output>
       <Time>2014-03-13T23:36:56.5313375+01:00</Time>
     </Item>
     <Item>
@@ -52,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\-.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\-.xnb</Output>
       <Time>2014-03-13T23:36:56.4935869+01:00</Time>
     </Item>
     <Item>
@@ -61,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume.xnb</Output>
-      <Time>2014-03-13T23:36:56.5726247+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume.xnb</Output>
+      <Time>2014-06-10T15:28:00.4122488+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\Options\volume_bruitages.jpg</Source>
@@ -70,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_bruitages.xnb</Output>
-      <Time>2014-03-13T23:36:56.6262737+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_bruitages.xnb</Output>
+      <Time>2014-06-10T15:28:00.4812527+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\Options\volume_musique.jpg</Source>
@@ -79,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_musique.xnb</Output>
-      <Time>2014-03-13T23:36:56.6922861+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\volume_musique.xnb</Output>
+      <Time>2014-06-10T15:28:00.5682577+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\Options\bouton_retour.jpg</Source>
@@ -88,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_retour.xnb</Output>
-      <Time>2014-03-16T14:05:37.9000079+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_retour.xnb</Output>
+      <Time>2014-06-10T15:47:06.1387806+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\bouton_quitter.jpg</Source>
@@ -97,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_quitter.xnb</Output>
-      <Time>2014-03-21T20:20:11.2918073+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_quitter.xnb</Output>
+      <Time>2014-06-10T15:27:24.2271791+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\bouton_menu-principal.jpg</Source>
@@ -106,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_menu-principal.xnb</Output>
-      <Time>2014-03-21T21:24:58.2192431+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_menu-principal.xnb</Output>
+      <Time>2014-06-10T15:27:23.9611639+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Personnages\BlankTexture.jpg</Source>
@@ -115,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\BlankTexture.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\BlankTexture.xnb</Output>
       <Time>2014-03-23T15:11:08.6689332+01:00</Time>
     </Item>
     <Item>
@@ -124,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\identité1.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\identité1.xnb</Output>
       <Time>2014-03-23T19:16:27.4646709+01:00</Time>
     </Item>
     <Item>
@@ -133,7 +115,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\personnage1.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\personnage1.xnb</Output>
       <Time>2014-04-22T17:50:00.3598391+02:00</Time>
     </Item>
     <Item>
@@ -142,7 +124,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\ready.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\ready.xnb</Output>
       <Time>2014-04-23T15:45:58.8814288+02:00</Time>
     </Item>
     <Item>
@@ -151,7 +133,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\fight.xnb</Output>
       <Time>2014-04-23T16:02:44.6198672+02:00</Time>
     </Item>
     <Item>
@@ -160,7 +142,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_1.xnb</Output>
       <Time>2014-04-23T16:18:39.7890703+02:00</Time>
     </Item>
     <Item>
@@ -169,26 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\game_over.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Game\game_over.xnb</Output>
       <Time>2014-04-26T17:03:02.2775118+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\MainMenu\epic_fight's.png</Source>
-      <Name>Sprites\MainMenu\epic_fight's</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\epic_fight's.xnb</Output>
-      <Time>2014-04-26T18:01:25.5055896+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\MainMenu\bouton_terrain.png</Source>
-      <Name>Sprites\MainMenu\bouton_terrain</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_terrain.xnb</Output>
-      <Time>2014-04-26T18:35:53.3661731+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Maps\map2.jpg</Source>
@@ -196,17 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map2.xnb</Output>
       <Time>2014-04-26T18:44:17.6651441+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\MainMenu\Options\bouton_commandes.png</Source>
-      <Name>Sprites\MainMenu\Options\bouton_commandes</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb</Output>
-      <Time>2014-04-28T14:31:55.8235926+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Personnages\Personnage1\attaque_2.png</Source>
@@ -214,7 +169,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_2.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_2.xnb</Output>
       <Time>2014-05-02T16:34:17.4195178+02:00</Time>
     </Item>
     <Item>
@@ -223,7 +178,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_3.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_3.xnb</Output>
       <Time>2014-05-03T11:05:53.8932855+02:00</Time>
     </Item>
     <Item>
@@ -232,7 +187,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\mort.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\mort.xnb</Output>
       <Time>2014-05-03T15:17:37.3477776+02:00</Time>
     </Item>
     <Item>
@@ -241,7 +196,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\victoire.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\victoire.xnb</Output>
       <Time>2014-05-03T17:02:01.6402938+02:00</Time>
     </Item>
     <Item>
@@ -250,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_local.xnb</Output>
-      <Time>2014-05-22T14:43:51.8724299+02:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_local.xnb</Output>
+      <Time>2014-06-10T15:41:52.7178539+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\localnetwork\bouton_reseau.jpg</Source>
@@ -259,8 +214,125 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb</Output>
-      <Time>2014-05-22T14:43:51.92243+02:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\localnetwork\bouton_reseau.xnb</Output>
+      <Time>2014-06-10T15:41:52.7598563+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\accroupi.png</Source>
+      <Name>Sprites\Personnages\Personnage1\accroupi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb</Output>
+      <Time>2014-05-24T22:46:48.8535092+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage1\attaque_4.png</Source>
+      <Name>Sprites\Personnages\Personnage1\attaque_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\attaque_4.xnb</Output>
+      <Time>2014-05-26T16:45:32.4399675+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\banniere.png</Source>
+      <Name>Sprites\MainMenu\banniere</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere.xnb</Output>
+      <Time>2014-06-10T15:27:23.5001375+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\banniere_couleur.png</Source>
+      <Name>Sprites\MainMenu\banniere_couleur</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\banniere_couleur.xnb</Output>
+      <Time>2014-06-10T15:27:23.5801421+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\accroupi.png</Source>
+      <Name>Sprites\Personnages\Personnage2\accroupi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\accroupi.xnb</Output>
+      <Time>2014-06-10T11:14:19.8010368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\attaque_1.png</Source>
+      <Name>Sprites\Personnages\Personnage2\attaque_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_1.xnb</Output>
+      <Time>2014-06-10T11:14:19.8010368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\attaque_2.png</Source>
+      <Name>Sprites\Personnages\Personnage2\attaque_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_2.xnb</Output>
+      <Time>2014-06-10T11:14:19.8110368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\attaque_3.png</Source>
+      <Name>Sprites\Personnages\Personnage2\attaque_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_3.xnb</Output>
+      <Time>2014-06-10T11:14:19.8110368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\attaque_4.png</Source>
+      <Name>Sprites\Personnages\Personnage2\attaque_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_4.xnb</Output>
+      <Time>2014-06-10T11:14:19.8210368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\identité2.png</Source>
+      <Name>Sprites\Personnages\Personnage2\identité2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\identité2.xnb</Output>
+      <Time>2014-06-10T11:14:19.8210368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\mort.png</Source>
+      <Name>Sprites\Personnages\Personnage2\mort</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\mort.xnb</Output>
+      <Time>2014-06-10T11:14:19.8210368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\personnage_2.png</Source>
+      <Name>Sprites\Personnages\Personnage2\personnage_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\personnage_2.xnb</Output>
+      <Time>2014-06-10T11:14:19.8310368+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Personnages\Personnage2\victoire.png</Source>
+      <Name>Sprites\Personnages\Personnage2\victoire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\victoire.xnb</Output>
+      <Time>2014-06-10T11:14:19.8310368+02:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Personnage\Personnage1\jump1.wav</Source>
@@ -268,7 +340,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\jump1.xnb</Output>
       <Time>2014-02-12T23:21:09.5100249+01:00</Time>
     </Item>
     <Item>
@@ -277,7 +349,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\step1.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\step1.xnb</Output>
       <Time>2014-02-12T23:30:59.6327125+01:00</Time>
     </Item>
     <Item>
@@ -286,18 +358,125 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump_end.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\jump_end.xnb</Output>
       <Time>2014-02-27T18:17:47.8728202+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\Musique\Son Game 1.mp3</Source>
-      <Name>Sounds\Musique\Son Game 1</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Source>Sounds\Personnage\Personnage1\attaque1.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\attaque1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb</Output>
-      <Extra>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.wma</Extra>
-      <Time>2014-02-27T18:04:30.0042261+01:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque1.xnb</Output>
+      <Time>2014-06-10T11:39:59.4221615+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage1\attaque2.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\attaque2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque2.xnb</Output>
+      <Time>2014-06-10T11:39:59.4221615+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage1\attaque3.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\attaque3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque3.xnb</Output>
+      <Time>2014-06-10T11:39:59.4221615+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage1\attaque4.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\attaque4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\attaque4.xnb</Output>
+      <Time>2014-06-10T11:39:59.4221615+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage1\death1.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\death1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\death1.xnb</Output>
+      <Time>2014-06-10T11:39:59.4421615+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage1\pain.wav</Source>
+      <Name>Sounds\Personnage\Personnage1\pain</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage1\pain.xnb</Output>
+      <Time>2014-06-10T12:40:04.7159016+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\attaque1.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\attaque1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque1.xnb</Output>
+      <Time>2014-06-10T14:09:25.084626+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\attaque2.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\attaque2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque2.xnb</Output>
+      <Time>2014-06-10T14:09:25.1746261+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\attaque3.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\attaque3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque3.xnb</Output>
+      <Time>2014-06-10T14:09:25.2546262+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\attaque4.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\attaque4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\attaque4.xnb</Output>
+      <Time>2014-06-10T14:09:26.2546276+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\death.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\death</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\death.xnb</Output>
+      <Time>2014-06-10T14:09:26.5846281+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\jump.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\jump</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\jump.xnb</Output>
+      <Time>2014-06-10T14:09:26.6546282+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Personnage\Personnage2\pain.wav</Source>
+      <Name>Sounds\Personnage\Personnage2\pain</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Personnage\Personnage2\pain.xnb</Output>
+      <Time>2014-06-10T14:09:26.7746284+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MainMenu\Options\Font\volume_musique.spritefont</Source>
@@ -305,7 +484,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_musique.xnb</Output>
       <Time>2014-03-15T18:16:33.5733871+01:00</Time>
     </Item>
     <Item>
@@ -314,7 +493,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\chronomètre.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\chronomètre.xnb</Output>
       <Time>2014-03-21T20:10:20.9276376+01:00</Time>
     </Item>
     <Item>
@@ -323,7 +502,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\display_name.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\display_name.xnb</Output>
       <Time>2014-03-22T18:02:01.741668+01:00</Time>
     </Item>
     <Item>
@@ -332,7 +511,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\choix.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\choix.xnb</Output>
       <Time>2014-03-28T22:51:43.3420908+01:00</Time>
     </Item>
     <Item>
@@ -341,8 +520,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\pause.xnb</Output>
-      <Time>2014-03-31T00:22:22.9706357+02:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\pause.xnb</Output>
+      <Time>2014-06-10T13:24:31.7398998+02:00</Time>
     </Item>
     <Item>
       <Source>team.spritefont</Source>
@@ -350,7 +529,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\team.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\team.xnb</Output>
       <Time>2014-04-26T18:16:28.9626109+02:00</Time>
     </Item>
     <Item>
@@ -359,7 +538,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Controls.xnb</Output>
       <Time>2014-04-27T21:48:44.3814146+02:00</Time>
     </Item>
     <Item>
@@ -368,7 +547,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\touches.xnb</Output>
       <Time>2014-04-28T16:33:38.5709003+02:00</Time>
     </Item>
     <Item>
@@ -377,17 +556,117 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\caracter.xnb</Output>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\caracter.xnb</Output>
       <Time>2014-05-22T15:24:02.375094+02:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\Personnages\Personnage1\accroupi.png</Source>
-      <Name>Sprites\Personnages\Personnage1\accroupi</Name>
+      <Source>Sprites\MainMenu\Options\Font\volume_.spritefont</Source>
+      <Name>Sprites\MainMenu\Options\Font\volume_</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_.xnb</Output>
+      <Time>2014-06-09T11:40:50.671403+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Musique\Son Game 1.mp3</Source>
+      <Name>Sounds\Musique\Son Game 1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.xnb</Output>
+      <Extra>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\Musique\Son Game 1.wma</Extra>
+      <Time>2014-06-09T14:30:01.2296953+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\BlankTexture.jpg</Source>
+      <Name>Sprites\MainMenu\BlankTexture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage1\accroupi.xnb</Output>
-      <Time>2014-05-24T22:46:48.8535092+02:00</Time>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\BlankTexture.xnb</Output>
+      <Time>2014-06-10T15:27:23.6931486+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_options.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_options.xnb</Output>
+      <Time>2014-06-10T15:27:24.0261676+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_terrain.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_terrain</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_terrain.xnb</Output>
+      <Time>2014-06-10T15:27:24.3851881+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Main_menu.png</Source>
+      <Name>Sprites\MainMenu\Main_menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Main_menu.xnb</Output>
+      <Time>2014-06-10T15:27:24.557198+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\Options\bouton_commandes.jpg</Source>
+      <Name>Sprites\MainMenu\Options\bouton_commandes</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\bouton_commandes.xnb</Output>
+      <Time>2014-06-10T15:28:00.1672348+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\bouton_jouer.jpg</Source>
+      <Name>Sprites\MainMenu\bouton_jouer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\bouton_jouer.xnb</Output>
+      <Time>2014-06-10T15:40:43.0058666+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Maps\map3.jpg</Source>
+      <Name>Sprites\Maps\map3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map3.xnb</Output>
+      <Time>2014-06-10T16:06:17.7105396+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Maps\map4.jpg</Source>
+      <Name>Sprites\Maps\map4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map4.xnb</Output>
+      <Time>2014-06-10T16:37:19.3374324+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Maps\map5.jpg</Source>
+      <Name>Sprites\Maps\map5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Maps\map5.xnb</Output>
+      <Time>2014-06-10T16:37:19.5174326+02:00</Time>
+    </Item>
+    <Item>
+      <Source>game_over.spritefont</Source>
+      <Name>game_over</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\game_over.xnb</Output>
+      <Time>2014-06-10T16:59:27.3494491+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -395,39 +674,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Release</BuildConfiguration>
       <CompressContent>true</CompressContent>
-      <RootDirectory>D:\epita\projet\Soutenance2\jeu_xna\jeu_xnaContent\</RootDirectory>
-      <LoggerRootDirectory>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\epita\projet\Soutenance2\jeu_xna\jeu_xnaContent\obj\x86\Release\</IntermediateDirectory>
-      <OutputDirectory>D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\</OutputDirectory>
+      <RootDirectory>E:\epita\projet\Soutenance2\jeu_xna\jeu_xnaContent\</RootDirectory>
+      <LoggerRootDirectory>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\epita\projet\Soutenance2\jeu_xna\jeu_xnaContent\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-12-09T13:20:31.4868081+01:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-08-03T17:33:58.6222029+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
