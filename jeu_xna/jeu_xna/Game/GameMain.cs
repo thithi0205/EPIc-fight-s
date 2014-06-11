@@ -24,7 +24,7 @@ namespace jeu_xna
         static Texture2D ready, fight;
         static SpriteFont chrono, game_over;
 
-        public static bool EndGame, send_once;
+        public static bool EndGame, send_once, can_display_score;
 
         public GameMain()
         { }
@@ -41,6 +41,7 @@ namespace jeu_xna
             was_displayed = false;
             EndGame = false;
             send_once = true;
+            can_display_score = true;
         }
 
         public static void LoadContent(ContentManager Content)
@@ -275,19 +276,36 @@ namespace jeu_xna
                         {
                             spriteBatch.DrawString(game_over, LocalPlayer1.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer1.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer1.name + " wins !").Y) / 2), new Color(146, 22, 22));
 
-                            if (send_once && VarTemp.is_connected)
+                            try
                             {
-                                send_once = false;
-                                VarTemp.victory = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/victory.php");
-                                VarTemp.victoire_defaite = VarTemp.victory.Connect("victoire");
-                                VarTemp.string_board_bis = VarTemp.victoire_defaite.Split(new Char[] { ':' });
-                                VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board_bis[0]);
-                                VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board_bis[1]);
+                                if (send_once && VarTemp.is_connected)
+                                {
+                                    send_once = false;
+                                    VarTemp.victory = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/victory.php");
+                                    VarTemp.victoire_defaite = VarTemp.victory.Connect("victoire");
+                                    VarTemp.string_board_bis = VarTemp.victoire_defaite.Split(new Char[] { ':' });
+                                    VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board_bis[0]);
+                                    VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board_bis[1]);
+                                    can_display_score = true;
+                                }
+                            }
+
+                            catch
+                            {
+                                can_display_score = false;
                             }
 
                             if (VarTemp.is_connected)
                             {
-                                spriteBatch.DrawString(game_over, "Number of victories : " + VarTemp.nb_victory + "\nNumber of defats : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Number of victories : " + VarTemp.nb_victory).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                if (can_display_score)
+                                {
+                                    spriteBatch.DrawString(game_over, "Number of victories : " + VarTemp.nb_victory + "\nNumber of defats : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Number of victories : " + VarTemp.nb_victory).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                }
+
+                                else
+                                {
+                                    spriteBatch.DrawString(game_over, "Connection error", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Connection error").Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                }
                             }
                         }
 

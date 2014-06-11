@@ -114,7 +114,7 @@ namespace jeu_xna
             }
         }
 
-        public static void Draw(SpriteBatch spriteBatch) //ContentManager Content)
+        public static void Draw(SpriteBatch spriteBatch) 
         {
             Menu.Draw(spriteBatch);
 

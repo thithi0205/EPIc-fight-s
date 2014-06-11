@@ -86,7 +86,7 @@ namespace jeu_xna
             is_accroupi = false;
 
             vie = 100; //vie initiale du personnage
-            energy = 100;
+            energy = 0;
 
             Speed = 5;
             AnimationSpeed = 14;

@@ -68,7 +68,7 @@ namespace jeu_xna
             play = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_jouer"), new Vector2((graphics.GraphicsDevice.Viewport.Width - 154) / 2, graphics.GraphicsDevice.Viewport.Height / 2));
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_options"), new Vector2((graphics.GraphicsDevice.Viewport.Width - 154) / 2, 400));
             quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2((graphics.GraphicsDevice.Viewport.Width - 154) / 2, 500));
-            profil = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\profil"), new Vector2(50, 520));
+            profil = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\profil"), new Vector2(50, quitter.position.Y));
             #endregion
 
             Options.LoadContent(Content);
@@ -83,7 +83,6 @@ namespace jeu_xna
             team = Content.Load<SpriteFont>("team");
             Menu.LoadContent(Content);
             LocalNetworkChoice.LoadContent(Content);
-            ProfilPlayer.LoadContent(Content);
 
             if (Program.test.Length == 0)
             {
@@ -95,26 +94,42 @@ namespace jeu_xna
 
             else
             {
-                VarTemp.connexion = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/info_joueur.php"); //pseudo, mail, victoire, defaite
-                VarTemp.player_caracteristic = VarTemp.connexion.Connect();
-
-                if (VarTemp.player_caracteristic != "erreur_connexion")
+                try
                 {
-                    VarTemp.string_board = VarTemp.player_caracteristic.Split(new Char[] { ':' });
-                    VarTemp.is_connected = true;
-                    VarTemp.player = VarTemp.string_board[0];
-                    VarTemp.mail = VarTemp.string_board[1];
-                    VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board[2]);
-                    VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board[3]);
+                    VarTemp.connexion = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/info_joueur.php"); //pseudo, mail, victoire, defaite
+                    VarTemp.player_caracteristic = VarTemp.connexion.Connect();
+
+                    if (VarTemp.player_caracteristic != "erreur_connexion")
+                    {
+                        VarTemp.string_board = VarTemp.player_caracteristic.Split(new Char[] { ':' });
+                        VarTemp.is_connected = true;
+                        VarTemp.player = VarTemp.string_board[0];
+                        VarTemp.mail = VarTemp.string_board[1];
+                        VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board[2]);
+                        VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board[3]);
+                    }
+
+                    else
+                    {
+                        VarTemp.is_connected = false;
+                        VarTemp.connexion = null;
+                        VarTemp.victory = null;
+                        VarTemp.player = "player 1";
+                    }
                 }
 
-                else
+                catch
                 {
                     VarTemp.is_connected = false;
                     VarTemp.connexion = null;
-                    VarTemp.victory = null; 
+                    VarTemp.victory = null;
                     VarTemp.player = "player 1";
                 }
+            }
+
+            if (VarTemp.is_connected)
+            {
+                ProfilPlayer.LoadContent(Content);
             }
         }
 
@@ -148,7 +163,10 @@ namespace jeu_xna
             ChoiceMenuBattlefield.terrain4.Update(mouse);
             ChoiceMenuBattlefield.terrain5.Update(mouse);
 
-            ProfilPlayer.retour.Update(mouse);
+            if (VarTemp.is_connected)
+            {
+                ProfilPlayer.retour.Update(mouse);
+            }
             #endregion
 
             //DEBUGgING
@@ -156,6 +174,7 @@ namespace jeu_xna
             #region Debugging
             Console.Clear();
             Console.WriteLine(VarTemp.player);
+            Console.WriteLine("mail : " + VarTemp.string_board[1]);
             /*Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
@@ -291,7 +310,12 @@ namespace jeu_xna
                     option.Draw(spriteBatch);
                     play.Draw(spriteBatch);
                     quitter.Draw(spriteBatch);
-                    profil.Draw(spriteBatch);
+
+                    if (VarTemp.is_connected)
+                    {
+                        profil.Draw(spriteBatch);
+                    }
+
                     spriteBatch.DrawString(team, "By Ubidah !", new Vector2(730, 580), Color.Black);
                     #endregion
                     break;
