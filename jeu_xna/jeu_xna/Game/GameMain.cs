@@ -19,16 +19,15 @@ namespace jeu_xna
         public static int personnage_choisi1, personnage_choisi2, terrain_choisi;
         static bool WasKeyDown_Escape, was_displayed; 
         public static int timer_fps, timer_combat_secondes, timer_combat_minutes;
-        static int fps_counter;
 
-        public static MenuButton option, retour, menu_principal, quitter;
+        public static MenuButton option, retour, menu_principal, quitter, menu_principal_fin;
         static Texture2D ready, fight;
-        static SpriteFont chrono, game_over; 
+        static SpriteFont chrono, game_over;
 
-        // CONSTRUCTOR
-        public GameMain(ContentManager Content)
-        {
-        }
+        public static bool EndGame, send_once;
+
+        public GameMain()
+        { }
 
         // METHODS
         public static new void Initialize()
@@ -40,13 +39,14 @@ namespace jeu_xna
             timer_combat_minutes = 0;
             WasKeyDown_Escape = false;
             was_displayed = false;
-            fps_counter = 0;
+            EndGame = false;
+            send_once = true;
         }
 
         public static void LoadContent(ContentManager Content)
         {
             //CREATION DES JOUEURS
-            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, VarTemp.accroupi_1, "Player 1", 1, Content, VarTemp.attack1_1, VarTemp.attack1_2, VarTemp.attack1_3, VarTemp.attack1_4);
+            LocalPlayer1 = new Player(Ressources.caracters[personnage_choisi1], 275, 230, Direction.Right, VarTemp.up1, VarTemp.right1, VarTemp.left1, VarTemp.accroupi_1, VarTemp.player, 1, Content, VarTemp.attack1_1, VarTemp.attack1_2, VarTemp.attack1_3, VarTemp.attack1_4);
             LocalPlayer2 = new Player(Ressources.caracters[personnage_choisi2], 425, 230, Direction.Left, VarTemp.up2, VarTemp.right2, VarTemp.left2, VarTemp.accroupi_2, "Player 2", 2, Content, VarTemp.attack2_1, VarTemp.attack2_2, VarTemp.attack2_3, VarTemp.attack2_4);
 
             option = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_options"), new Vector2(300, 300));
@@ -55,6 +55,9 @@ namespace jeu_xna
             chrono = Content.Load<SpriteFont>("chronomètre");
             retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(Game1.graphics1.GraphicsDevice.Viewport.Width - (20 + 145), 520));
             menu_principal = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(255, 200));
+            menu_principal_fin = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_menu-principal"), new Vector2(1, 1));
+            menu_principal_fin.Calcul_de_la_mort(Game1.graphics1);
+            menu_principal_fin.position.Y = (Ressources.fields[terrain_choisi].Height / 2) + 50;
             menu_principal.Calcul_de_la_mort(Game1.graphics1);
 
             quitter = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_quitter"), new Vector2(300, 400));
@@ -116,10 +119,20 @@ namespace jeu_xna
                         {
                             timer_combat_secondes++;
                         }
-                        
+
                         timer_fps = 0;
                     }
-                    break;
+
+                else
+                {
+                    if (menu_principal_fin.isClicked)
+                    {
+                        Program.thread_menu = new Thread(new ThreadStart(Program.Menu));
+                        Program.thread_menu.Start();
+                        MainMenu.thread_jeu.Abort();
+                    }
+                }
+                break;
 
                 case GameState.Pause:
                     if (option.isClicked)
@@ -258,29 +271,47 @@ namespace jeu_xna
                             LocalPlayer2.win = true;
                         }
 
-                        if (fps_counter <= 180)
+                        if (LocalPlayer1.win)
                         {
-                            fps_counter++;
+                            spriteBatch.DrawString(game_over, LocalPlayer1.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer1.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer1.name + " wins !").Y) / 2), new Color(146, 22, 22));
 
-                            if (LocalPlayer1.win)
+                            if (send_once && VarTemp.is_connected)
                             {
-                                spriteBatch.DrawString(game_over, LocalPlayer1.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer1.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer1.name + " wins !").Y) / 2), new Color(146, 22, 22));
+                                send_once = false;
+                                VarTemp.victory = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/victory.php");
+                                VarTemp.victoire_defaite = VarTemp.victory.Connect("victoire");
+                                VarTemp.string_board_bis = VarTemp.victoire_defaite.Split(new Char[] { ':' });
+                                VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board_bis[0]);
+                                VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board_bis[1]);
                             }
 
-                            else if (LocalPlayer2.win)
+                            if (VarTemp.is_connected)
                             {
-                                spriteBatch.DrawString(game_over, LocalPlayer2.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer2.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer2.name + " wins !").Y) / 2), new Color(146, 22, 22));
+                                spriteBatch.DrawString(game_over, "Number of victories : " + VarTemp.nb_victory + "\nNumber of defats : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Number of victories : " + VarTemp.nb_victory).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
                             }
                         }
 
-                        else
+                        else if (LocalPlayer2.win)
                         {
-                            fps_counter = 0;
-                            VarTemp.CurrentGameState = GameState.MainMenu;
-                            Program.thread_menu = new Thread(new ThreadStart(Program.Menu));
-                            Program.thread_menu.Start();
-                            MainMenu.thread_jeu.Abort();
+                            spriteBatch.DrawString(game_over, LocalPlayer2.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer2.name + " wins !").Length()) / 2, (480 - game_over.MeasureString(LocalPlayer2.name + " wins !").Y) / 2), new Color(146, 22, 22));
+                            
+                            if (send_once && VarTemp.is_connected)
+                            {
+                                send_once = false;
+                                VarTemp.victory = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/victory.php");
+                                VarTemp.victoire_defaite = VarTemp.victory.Connect("defaite");
+                                VarTemp.string_board_bis = VarTemp.victoire_defaite.Split(new Char[] { ':' });
+                                VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board_bis[0]);
+                                VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board_bis[1]);
+                            }
+
+                            if (VarTemp.is_connected)
+                            {
+                                spriteBatch.DrawString(game_over, "Number of victories : " + VarTemp.nb_victory + "\nNumber of defeats : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Number of victories : " + VarTemp.nb_victory).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                            }
                         }
+
+                        menu_principal_fin.Draw(spriteBatch);
                     }
                     break;
 

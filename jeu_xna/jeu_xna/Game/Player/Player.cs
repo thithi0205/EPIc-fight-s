@@ -86,7 +86,7 @@ namespace jeu_xna
             is_accroupi = false;
 
             vie = 100; //vie initiale du personnage
-            energy = 0;
+            energy = 100;
 
             Speed = 5;
             AnimationSpeed = 14;
@@ -286,12 +286,12 @@ namespace jeu_xna
 
             else if (keyboard.IsKeyDown(Keys.F3))
             {
-                GameMain.LocalPlayer1.energy = 0;
+                GameMain.LocalPlayer1.energy = 100;
             }
 
             else if (keyboard.IsKeyDown(Keys.F4))
             {
-                GameMain.LocalPlayer2.energy = 0;
+                GameMain.LocalPlayer2.energy = 100;
             }
             #endregion
 
@@ -324,7 +324,7 @@ namespace jeu_xna
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead && energy == 100) //attaque la plus puissante, necessite enrgie maximale pour pouvoir l'utiliser 
+            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead && energy != 0) //attaque la plus puissante, necessite enrgie maximale pour pouvoir l'utiliser 
             {
                 if (attack_temp != attaque3)
                 {
@@ -333,7 +333,7 @@ namespace jeu_xna
                 }
 
                 texturecaracter.attaque3.sound_attack.Play();
-                energy = 0;
+                energy -= 25;
                 attack_temp = attaque3;
                 current_attack = texturecaracter.attaque3;
                 PrepareAttack();
@@ -510,8 +510,22 @@ namespace jeu_xna
 
                 if (!can_read_music)
                 {
+                    Random random = new Random();
+                    int i = random.Next(1, 3);
                     MediaPlayer.Stop();
+
+                    if (i == 1)
+                    {
+                        Ressources.victoire1.Play();
+                    }
+
+                    else if (i == 2)
+                    {
+                        Ressources.victoire2.Play();
+                    }
+
                     can_read_music = true;
+                    GameMain.EndGame = true;
                 }
 
                 if (dead_alive_frames_counter % 10 == 0 && dead_alive_frames_counter_display == 0)

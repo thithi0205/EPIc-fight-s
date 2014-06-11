@@ -278,7 +278,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\Personnages\Personnage2\attaque_2.xnb</Output>
-      <Time>2014-06-10T11:14:19.8110368+02:00</Time>
+      <Time>2014-06-11T14:54:15.810685+02:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Personnages\Personnage2\attaque_3.png</Source>
@@ -666,7 +666,34 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\game_over.xnb</Output>
-      <Time>2014-06-10T16:59:27.3494491+02:00</Time>
+      <Time>2014-06-11T16:43:09.1848946+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\win1.wav</Source>
+      <Name>Sounds\win1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\win1.xnb</Output>
+      <Time>2014-06-11T10:48:00.3524803+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\win2.wav</Source>
+      <Name>Sounds\win2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\win2.xnb</Output>
+      <Time>2014-06-11T10:48:00.594984+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MainMenu\profil.jpg</Source>
+      <Name>Sprites\MainMenu\profil</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\profil.xnb</Output>
+      <Time>2014-06-11T17:10:04.3342759+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

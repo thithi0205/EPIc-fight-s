@@ -73,3 +73,6 @@ Content\Sprites\Maps\map3.xnb
 Content\Sprites\Maps\map4.xnb
 Content\Sprites\Maps\map5.xnb
 Content\game_over.xnb
+Content\Sounds\win1.xnb
+Content\Sounds\win2.xnb
+Content\Sprites\MainMenu\profil.xnb
