@@ -74,6 +74,7 @@ Content\Sprites\MainMenu\Options\Font\touches.xnb
 Content\Sprites\Personnages\caracter.xnb
 Content\Sprites\MainMenu\Options\Font\volume_.xnb
 Content\game_over.xnb
+Content\profil_writer.xnb
 Content\Sounds\Musique\Son Game 1.xnb
 Content\Sounds\Musique\Son Game 1.wma
-Content\profil_writer.xnb
+Content\nom_personnage.xnb

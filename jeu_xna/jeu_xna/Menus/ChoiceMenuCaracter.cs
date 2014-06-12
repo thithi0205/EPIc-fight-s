@@ -16,6 +16,7 @@ namespace jeu_xna
         public static int player;
         public static MenuButton terrain, retour;
         public static bool was_cliqued;
+        public static SpriteFont name_caracter;
 
         public static void Initialise()
         {
@@ -26,10 +27,11 @@ namespace jeu_xna
         public static void LoadContent(ContentManager Content)
         {
             BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
-            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), BlankTexture, 100, 100);
-            caracter2 = new RectangleMaker(caracter1.RecBoarder.Width + caracter1.RecBoarder.X + 30, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage2\identité2"), BlankTexture, 100, 100);
+            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), BlankTexture, 100, 100, "Kaktus");
+            caracter2 = new RectangleMaker(caracter1.RecBoarder.Width + caracter1.RecBoarder.X + 30, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage2\identité2"), BlankTexture, 100, 100, "Brutus");
             terrain = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_terrain"), new Vector2(600, 500));
             retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(50, 500));
+            name_caracter = Content.Load<SpriteFont>("nom_personnage");
         }
 
         public static void Update()
@@ -98,8 +100,8 @@ namespace jeu_xna
         public static void Draw(SpriteBatch spriteBatch)
         {
             Menu.Draw(spriteBatch);
-            caracter1.draw(spriteBatch);
-            caracter2.draw(spriteBatch);
+            caracter1.draw(spriteBatch, name_caracter);
+            caracter2.draw(spriteBatch, name_caracter);
 
             if (player == 2)
             {
@@ -122,14 +124,15 @@ namespace jeu_xna
     public class RectangleMaker
     {
         int BoarderOffSet, y;
-        public int x;
+        public int x, width, heigh;
         public bool is_clicked;
         Texture2D caracter, BlankTexture;
         Rectangle rectangle, background;
         public Rectangle RecBoarder;
         Color boarder;
+        string name;
 
-        public RectangleMaker(int x, int y, Texture2D caracter, Texture2D BlankTexture, int width, int heigh)
+        public RectangleMaker(int x, int y, Texture2D caracter, Texture2D BlankTexture, int width, int heigh, string name)
         {
             this.x = x;
             this.y = y;
@@ -137,6 +140,9 @@ namespace jeu_xna
             this.caracter = caracter;
             this.BlankTexture = BlankTexture;
             boarder = Color.Gray;
+            this.name = name;
+            this.width = width;
+            this.heigh = heigh;
 
             BoarderOffSet = 2;
 
@@ -184,11 +190,12 @@ namespace jeu_xna
             }
         }
 
-        public void draw(SpriteBatch spriteBatch)
+        public void draw(SpriteBatch spriteBatch, SpriteFont name_caracter)
         {
             spriteBatch.Draw(BlankTexture, RecBoarder, boarder);
             spriteBatch.Draw(BlankTexture, background, Color.Gray);
             spriteBatch.Draw(caracter, rectangle, Color.White);
+            spriteBatch.DrawString(name_caracter, name, new Vector2((Math.Abs((width - name_caracter.MeasureString(name).Length())) / 2) + x, y + heigh + 10), Color.White);
         }
     }
 }

@@ -613,7 +613,7 @@ namespace jeu_xna
 
             else if (player_number == 2)
             {
-                spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X, 500), Color.White);
+                spriteBatch.DrawString(display_name, name, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - 380) + display_name.MeasureString(name).X + 22, 500), Color.White);
             }
 
             if (display_caracter) //permet de faire clignoter le personnage attaqué

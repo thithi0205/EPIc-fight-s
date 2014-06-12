@@ -114,7 +114,6 @@ namespace jeu_xna
                         VarTemp.is_connected = false;
                         VarTemp.connexion = null;
                         VarTemp.victory = null;
-                        VarTemp.player = "player 1";
                     }
                 }
 
@@ -123,7 +122,6 @@ namespace jeu_xna
                     VarTemp.is_connected = false;
                     VarTemp.connexion = null;
                     VarTemp.victory = null;
-                    VarTemp.player = "player 1";
                 }
             }
 

@@ -24,11 +24,11 @@ namespace jeu_xna
         public static void LoadContent(ContentManager Content)
         {
             blanck = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
-            terrain1 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - 640) / 2, 100, Content.Load<Texture2D>(@"Sprites\Maps\map1"), blanck, 200, 120);
-            terrain2 = new RectangleMaker(terrain1.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map2"), blanck, 200, 120);
-            terrain3 = new RectangleMaker(terrain2.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map3"), blanck, 200, 120);
-            terrain4 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - 420) / 2, terrain1.RecBoarder.Width + 40, Content.Load<Texture2D>(@"Sprites\Maps\map4"), blanck, 200, 120);
-            terrain5 = new RectangleMaker(terrain4.x + 220, terrain1.RecBoarder.Width + 40, Content.Load<Texture2D>(@"Sprites\Maps\map5"), blanck, 200, 120);
+            terrain1 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - 640) / 2, 100, Content.Load<Texture2D>(@"Sprites\Maps\map1"), blanck, 200, 120, "Western");
+            terrain2 = new RectangleMaker(terrain1.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map2"), blanck, 200, 120, "L'entre de Bouda");
+            terrain3 = new RectangleMaker(terrain2.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map3"), blanck, 200, 120, "Le labo MTI");
+            terrain4 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - 420) / 2, terrain1.RecBoarder.Width + 80, Content.Load<Texture2D>(@"Sprites\Maps\map4"), blanck, 200, 120, "Pique-nique");
+            terrain5 = new RectangleMaker(terrain4.x + 220, terrain1.RecBoarder.Width + 80, Content.Load<Texture2D>(@"Sprites\Maps\map5"), blanck, 200, 120, "Code 666 EPITA");
             jouer = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_jouer"), new Vector2(600, 500));
         }
 
@@ -97,11 +97,11 @@ namespace jeu_xna
         {
             Menu.Draw(spriteBatch);
             spriteBatch.DrawString(Options.options, "Choix du terrain de combat", new Vector2((MainMenu.graphics.GraphicsDevice.Viewport.Width - Options.options.MeasureString("Choix du terrain de combat").Length()) / 2, 0), Color.White);
-            terrain1.draw(spriteBatch);
-            terrain2.draw(spriteBatch);
-            terrain3.draw(spriteBatch);
-            terrain4.draw(spriteBatch);
-            terrain5.draw(spriteBatch);
+            terrain1.draw(spriteBatch, ChoiceMenuCaracter.name_caracter);
+            terrain2.draw(spriteBatch, ChoiceMenuCaracter.name_caracter);
+            terrain3.draw(spriteBatch, ChoiceMenuCaracter.name_caracter);
+            terrain4.draw(spriteBatch, ChoiceMenuCaracter.name_caracter);
+            terrain5.draw(spriteBatch, ChoiceMenuCaracter.name_caracter);
             ChoiceMenuCaracter.retour.Draw(spriteBatch);
 
             if (choisi)

@@ -380,3 +380,5 @@ D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sounds\win2.
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\Sprites\MainMenu\Options\Font\volume_.xnb
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\game_over.xnb
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\profil_writer.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\profil_writer.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\nom_personnage.xnb
