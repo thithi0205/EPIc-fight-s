@@ -49,7 +49,17 @@ namespace jeu_xna
                     GameMain.LocalPlayer2.vie = GameMain.LocalPlayer2.vie - degat.Next(current_attack.dégat_min, current_attack.dégat_max);
                     GameMain.LocalPlayer2.is_attacked = true;
                     GameMain.LocalPlayer2.energy = GameMain.LocalPlayer2.energy - energy_minus.Next(1, 30);
-                    GameMain.LocalPlayer2.limit_jump = 200;
+
+                    if (!GameMain.LocalPlayer2.is_accroupi)
+                    {
+                        GameMain.LocalPlayer2.limit_jump = 200;
+                    }
+
+                    else
+                    {
+                        GameMain.LocalPlayer2.limit_jump = 300;
+                    }
+
                     GameMain.LocalPlayer2.small_jump = true;
                     GameMain.LocalPlayer2.Hitbox.Y -= GameMain.LocalPlayer2.jump_speed_initial;
                     GameMain.LocalPlayer2.is_jumping = true;
@@ -93,7 +103,17 @@ namespace jeu_xna
                     GameMain.LocalPlayer1.vie = GameMain.LocalPlayer1.vie - degat.Next(current_attack.dégat_min, current_attack.dégat_max);
                     GameMain.LocalPlayer1.is_attacked = true;
                     GameMain.LocalPlayer1.energy = GameMain.LocalPlayer1.energy - energy_minus.Next(1, 30);
-                    GameMain.LocalPlayer1.limit_jump = 200;
+
+                    if (!GameMain.LocalPlayer1.is_accroupi)
+                    {
+                        GameMain.LocalPlayer1.limit_jump = 200;
+                    }
+
+                    else
+                    {
+                        GameMain.LocalPlayer1.limit_jump = 300;
+                    }
+
                     GameMain.LocalPlayer1.small_jump = true;
                     GameMain.LocalPlayer1.Hitbox.Y -= GameMain.LocalPlayer1.jump_speed_initial;
                     GameMain.LocalPlayer1.is_jumping = true;

@@ -84,7 +84,7 @@ namespace jeu_xna
             Menu.LoadContent(Content);
             LocalNetworkChoice.LoadContent(Content);
 
-            if (Program.test.Length == 0)
+            if (Program.test.Length == 0 || Convert.ToInt32(Program.test[0]) == 0)
             {
                 VarTemp.is_connected = false;
                 VarTemp.connexion = null;
@@ -96,7 +96,7 @@ namespace jeu_xna
             {
                 try
                 {
-                    VarTemp.connexion = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/info_joueur.php"); //pseudo, mail, victoire, defaite
+                    VarTemp.connexion = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/info_joueur.php"); //pseudo, mail, victoire, defaite, date d'inscription
                     VarTemp.player_caracteristic = VarTemp.connexion.Connect();
 
                     if (VarTemp.player_caracteristic != "erreur_connexion")
@@ -107,6 +107,7 @@ namespace jeu_xna
                         VarTemp.mail = VarTemp.string_board[1];
                         VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board[2]);
                         VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board[3]);
+                        VarTemp.date_inscription = VarTemp.string_board[4];
                     }
 
                     else
@@ -172,7 +173,7 @@ namespace jeu_xna
             #region Debugging
             Console.Clear();
             Console.WriteLine(VarTemp.player);
-            Console.WriteLine("mail : " + VarTemp.string_board[1]);
+            //Console.WriteLine("mail : " + VarTemp.string_board[1]);
             /*Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");

@@ -40,7 +40,7 @@ namespace jeu_xna
             Menu.Draw(spriteBatch);
             retour.Draw(spriteBatch);
             spriteBatch.DrawString(profil_title, "Profil", new Vector2((MainMenu.graphics.GraphicsDevice.Viewport.Width - profil_title.MeasureString("Profil").Length()) / 2, 0), Color.White);
-            spriteBatch.DrawString(profil_writer, "PSEUDO DU JOUEUR : " + VarTemp.player + "\n\nADRESSE MAIL : " + VarTemp.mail + "\n\nNOMBRE DE VICTOIRES : " + VarTemp.nb_victory + "\n\nNOMBRE DE DEFAITES : " + VarTemp.nb_defaites, new Vector2(50, 100), Color.White);
+            spriteBatch.DrawString(profil_writer, "PSEUDO DU JOUEUR : " + VarTemp.player + "\n\nADRESSE MAIL : " + VarTemp.mail +"\n\nDATE D'INSCRIPTION : " + VarTemp.date_inscription + "\n\nNOMBRE DE VICTOIRES : " + VarTemp.nb_victory + "\n\nNOMBRE DE DEFAITES : " + VarTemp.nb_defaites, new Vector2(50, 100), Color.White);
         }
     }
 }

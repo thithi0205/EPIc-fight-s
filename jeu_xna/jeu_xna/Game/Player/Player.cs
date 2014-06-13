@@ -218,9 +218,9 @@ namespace jeu_xna
             {
                 Speed = 5;
             }
-
+            
             #region directions + saut + accroupi
-            if (keyboard.IsKeyDown(gauche) && !is_attacked && !is_dead)
+            if (keyboard.IsKeyDown(gauche) && !is_attacked && !is_dead && !GameMain.EndGame && !is_accroupi)
             {
                 Hitbox.X -= Speed;
                 Direction = Direction.Left;
@@ -231,7 +231,7 @@ namespace jeu_xna
                 }
             }
 
-            else if (keyboard.IsKeyDown(droite) && !is_attacked && !is_dead)
+            else if (keyboard.IsKeyDown(droite) && !is_attacked && !is_dead && !GameMain.EndGame && !is_accroupi)
             {
                 Hitbox.X += Speed;
                 Direction = Direction.Right;
@@ -242,7 +242,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyDown(saut) && !is_attacked && !is_dead && !is_accroupi)
+            if (keyboard.IsKeyDown(saut) && !is_attacked && !is_dead && !is_accroupi && !GameMain.EndGame)
             {
                 if (KeyDown_up == false && !jump1)
                 {
@@ -258,7 +258,7 @@ namespace jeu_xna
                 }
             }
 
-            if (keyboard.IsKeyDown(accroupi) && !is_jumping)
+            if (keyboard.IsKeyDown(accroupi) && !is_jumping && !GameMain.EndGame)
             {
                 Hitbox.Height = texturecaracter.accroupi_hauteur;
                 Hitbox.Width = texturecaracter.accroupi.Width;
@@ -284,19 +284,19 @@ namespace jeu_xna
                 GameMain.LocalPlayer2.vie = 0;
             }
 
-            else if (keyboard.IsKeyDown(Keys.F3))
+            else if (keyboard.IsKeyDown(Keys.F3) && !GameMain.EndGame)
             {
                 GameMain.LocalPlayer1.energy = 100;
             }
 
-            else if (keyboard.IsKeyDown(Keys.F4))
+            else if (keyboard.IsKeyDown(Keys.F4) && !GameMain.EndGame)
             {
                 GameMain.LocalPlayer2.energy = 100;
             }
             #endregion
 
             #region Attaques
-            if ((keyboard.IsKeyDown(attaque1) && (can_attack || attack_temp != attaque1) && !is_attacked && !is_dead))
+            if ((keyboard.IsKeyDown(attaque1) && (can_attack || attack_temp != attaque1) && !is_attacked && !is_dead) && !is_accroupi && !GameMain.EndGame)
             {
                 if (attack_temp != attaque1)
                 {
@@ -310,7 +310,7 @@ namespace jeu_xna
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque2) && (can_attack || attack_temp != attaque2) && !is_attacked && !is_dead)
+            else if (keyboard.IsKeyDown(attaque2) && (can_attack || attack_temp != attaque2) && !is_attacked && !is_dead && !is_accroupi && !GameMain.EndGame)
             {
                 if (attack_temp != attaque2)
                 {
@@ -324,7 +324,7 @@ namespace jeu_xna
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead && energy != 0) //attaque la plus puissante, necessite enrgie maximale pour pouvoir l'utiliser 
+            else if (keyboard.IsKeyDown(attaque3) && (can_attack || attack_temp != attaque3) && !is_attacked && !is_dead && energy >= 25 && !is_accroupi && !GameMain.EndGame) //attaque la plus puissante, necessite enrgie maximale pour pouvoir l'utiliser 
             {
                 if (attack_temp != attaque3)
                 {
@@ -339,7 +339,7 @@ namespace jeu_xna
                 PrepareAttack();
             }
 
-            else if (keyboard.IsKeyDown(attaque4) && (can_attack || attack_temp != attaque4) && !is_attacked && !is_dead)
+            else if (keyboard.IsKeyDown(attaque4) && (can_attack || attack_temp != attaque4) && !is_attacked && !is_dead && !is_accroupi && !GameMain.EndGame)
             {
                 if (attack_temp != attaque4)
                 {
@@ -353,7 +353,6 @@ namespace jeu_xna
                 PrepareAttack();
             }
 
-            
             #endregion
 
             if (keyboard.IsKeyUp(gauche) && keyboard.IsKeyUp(droite) && keyboard.IsKeyUp(saut) && !is_dead)
@@ -400,6 +399,11 @@ namespace jeu_xna
                     can_jump = 0;
                     jump1 = false;
                 }
+            }
+
+            if (energy < 0)
+            {
+                energy = 0;
             }
 
             Saut(); //gestion du saut
@@ -542,11 +546,36 @@ namespace jeu_xna
         }
 
         //GESTION DU SAUT
-        private void Saut()
+        /*private void Saut()
         {
+            if (Hitbox.Y > texturecaracter.accroupi.Height +y && is_accroupi)
+            {
+                Hitbox.Y = y + (texturecaracter.accroupi.Height + y;200);
+            }
+
+            else if (Hitbox.Y > texturecaracter.personnage.Height + y && !is_accroupi)
+            {
+                Hitbox.Y = texturecaracter.personnage.Height + y;
+            }
+
+            if (Hitbox.Y > texturecaracter.accroupi.Height + 200 && is_accroupi)
+            {
+                small_jump = false;
+            }
+
             if (small_jump)
             {
-                Hitbox.X += small_jump_val;
+                if (Hitbox.Y > texturecaracter.accroupi.Height + 200) //&& is_accroupi)
+                {
+                    small_jump = false;
+                    Console.WriteLine("boom");
+                }
+
+                else
+                {
+                    Hitbox.X += small_jump_val;
+                    Console.WriteLine("patate");
+                }
             }
 
             if (is_jumping) //est en train de sauter
@@ -568,6 +597,76 @@ namespace jeu_xna
 
                 else 
                 { 
+                    if (small_jump)
+                    {
+                        jump_speed_initial = 0;
+                        jump_speed = 10;
+                    }
+
+                    else if (!small_jump)
+                    {
+                        jump_speed_initial = 3;
+                        jump_speed = 11;
+                    }
+
+                    if (Hitbox.Y < y - (texturecaracter.personnage.Height - 200))
+                    {
+                        jump_speed_initial += jump_speed;
+                        Hitbox.Y += jump_speed_initial;
+                    }
+
+                    else
+                    {
+                        Ressources.jump_end_sound.Play();
+                        KeyDown_up = false;
+                        jump_speed_initial = 20;
+                        jump_speed = 1;
+                        is_jumping = false;
+                        jump = false;
+                        small_jump = false;
+
+                        if (Hitbox.Y > texturecaracter.accroupi.Height + 200 && is_accroupi)
+                        {
+                            Hitbox.Y = texturecaracter.accroupi.Height + 200;
+                        }
+
+                        else
+                        {
+                            Hitbox.Y = y - (texturecaracter.personnage.Height - 200);
+                        }
+
+                        limit_jump = 20;
+                    }
+                }
+            }
+        }*/
+
+        private void Saut()
+        {
+            if (small_jump)
+            {
+                Hitbox.X += small_jump_val;
+            }
+
+            if (is_jumping) //est en train de sauter
+            {
+                if (!jump) //n'a pas atteint la hauteur maximale du saut
+                {
+
+                    if (Hitbox.Y > limit_jump)
+                    {
+                        jump_speed_initial -= jump_speed;
+                        Hitbox.Y -= jump_speed_initial;
+                    }
+
+                    else
+                    {
+                        jump = true;
+                    }
+                }
+
+                else
+                {
                     if (small_jump)
                     {
                         jump_speed_initial = 0;

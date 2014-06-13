@@ -25,7 +25,7 @@ namespace jeu_xna
         public static GameState CurrentGameState, temp;
         public static bool is_connected;
         public static Connexion connexion, victory;
-        public static string player_caracteristic, player, victoire_defaite, mail;
+        public static string player_caracteristic, player, victoire_defaite, mail, date_inscription;
         public static string[] string_board, string_board_bis;
         public static int nb_victory, nb_defaites;
 

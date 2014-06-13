@@ -16,6 +16,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <StartAction>Project</StartAction>
-    <StartArguments>2</StartArguments>
+    <StartArguments>1</StartArguments>
   </PropertyGroup>
 </Project>

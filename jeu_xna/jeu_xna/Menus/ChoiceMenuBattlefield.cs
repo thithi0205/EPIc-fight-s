@@ -25,7 +25,7 @@ namespace jeu_xna
         {
             blanck = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
             terrain1 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - 640) / 2, 100, Content.Load<Texture2D>(@"Sprites\Maps\map1"), blanck, 200, 120, "Western");
-            terrain2 = new RectangleMaker(terrain1.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map2"), blanck, 200, 120, "L'entre de Bouda");
+            terrain2 = new RectangleMaker(terrain1.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map2"), blanck, 200, 120, "L'antre de Bouda");
             terrain3 = new RectangleMaker(terrain2.x + 220, 100, Content.Load<Texture2D>(@"Sprites\Maps\map3"), blanck, 200, 120, "Le labo MTI");
             terrain4 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - 420) / 2, terrain1.RecBoarder.Width + 80, Content.Load<Texture2D>(@"Sprites\Maps\map4"), blanck, 200, 120, "Pique-nique");
             terrain5 = new RectangleMaker(terrain4.x + 220, terrain1.RecBoarder.Width + 80, Content.Load<Texture2D>(@"Sprites\Maps\map5"), blanck, 200, 120, "Code 666 EPITA");
