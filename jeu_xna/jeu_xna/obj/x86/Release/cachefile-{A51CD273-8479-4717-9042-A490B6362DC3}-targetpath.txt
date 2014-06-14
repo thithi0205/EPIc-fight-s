@@ -78,3 +78,4 @@ Content\profil_writer.xnb
 Content\Sounds\Musique\Son Game 1.xnb
 Content\Sounds\Musique\Son Game 1.wma
 Content\nom_personnage.xnb
+Content\connection_error.xnb

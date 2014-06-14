@@ -382,3 +382,4 @@ D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\game_over.xn
 D:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\profil_writer.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\profil_writer.xnb
 E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\nom_personnage.xnb
+E:\epita\projet\Soutenance2\jeu_xna\jeu_xna\bin\x86\Release\Content\connection_error.xnb

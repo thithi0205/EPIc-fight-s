@@ -15,7 +15,6 @@ namespace jeu_xna
         Commandes,
         Playing,
         Pause,
-        LocalNetworkChoice,
         EndGame,
         ProfilPlayer
     }

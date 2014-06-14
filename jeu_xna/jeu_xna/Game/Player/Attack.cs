@@ -57,7 +57,7 @@ namespace jeu_xna
 
                     else
                     {
-                        GameMain.LocalPlayer2.limit_jump = 300;
+                        GameMain.LocalPlayer2.limit_jump = 230;
                     }
 
                     GameMain.LocalPlayer2.small_jump = true;
@@ -111,7 +111,7 @@ namespace jeu_xna
 
                     else
                     {
-                        GameMain.LocalPlayer1.limit_jump = 300;
+                        GameMain.LocalPlayer1.limit_jump = 230;
                     }
 
                     GameMain.LocalPlayer1.small_jump = true;

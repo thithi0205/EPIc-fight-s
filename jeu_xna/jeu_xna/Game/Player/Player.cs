@@ -274,12 +274,12 @@ namespace jeu_xna
                 Hitbox.Y = y - (texturecaracter.personnage.Height - 200);
             }
 
-            if (keyboard.IsKeyDown(Keys.F1))
+            if (keyboard.IsKeyDown(Keys.F1) && !GameMain.EndGame)
             {
                 GameMain.LocalPlayer1.vie = 0;
             }
 
-            else if (keyboard.IsKeyDown(Keys.F2))
+            else if (keyboard.IsKeyDown(Keys.F2) && !GameMain.EndGame)
             {
                 GameMain.LocalPlayer2.vie = 0;
             }
@@ -546,101 +546,6 @@ namespace jeu_xna
         }
 
         //GESTION DU SAUT
-        /*private void Saut()
-        {
-            if (Hitbox.Y > texturecaracter.accroupi.Height +y && is_accroupi)
-            {
-                Hitbox.Y = y + (texturecaracter.accroupi.Height + y;200);
-            }
-
-            else if (Hitbox.Y > texturecaracter.personnage.Height + y && !is_accroupi)
-            {
-                Hitbox.Y = texturecaracter.personnage.Height + y;
-            }
-
-            if (Hitbox.Y > texturecaracter.accroupi.Height + 200 && is_accroupi)
-            {
-                small_jump = false;
-            }
-
-            if (small_jump)
-            {
-                if (Hitbox.Y > texturecaracter.accroupi.Height + 200) //&& is_accroupi)
-                {
-                    small_jump = false;
-                    Console.WriteLine("boom");
-                }
-
-                else
-                {
-                    Hitbox.X += small_jump_val;
-                    Console.WriteLine("patate");
-                }
-            }
-
-            if (is_jumping) //est en train de sauter
-            {  
-                if (!jump) //n'a pas atteint la hauteur maximale du saut
-                {
-                    
-                    if (Hitbox.Y > limit_jump) 
-                    {
-                        jump_speed_initial -= jump_speed;
-                        Hitbox.Y -= jump_speed_initial;
-                    }
-
-                    else
-                    {
-                        jump = true;    
-                    }
-                }
-
-                else 
-                { 
-                    if (small_jump)
-                    {
-                        jump_speed_initial = 0;
-                        jump_speed = 10;
-                    }
-
-                    else if (!small_jump)
-                    {
-                        jump_speed_initial = 3;
-                        jump_speed = 11;
-                    }
-
-                    if (Hitbox.Y < y - (texturecaracter.personnage.Height - 200))
-                    {
-                        jump_speed_initial += jump_speed;
-                        Hitbox.Y += jump_speed_initial;
-                    }
-
-                    else
-                    {
-                        Ressources.jump_end_sound.Play();
-                        KeyDown_up = false;
-                        jump_speed_initial = 20;
-                        jump_speed = 1;
-                        is_jumping = false;
-                        jump = false;
-                        small_jump = false;
-
-                        if (Hitbox.Y > texturecaracter.accroupi.Height + 200 && is_accroupi)
-                        {
-                            Hitbox.Y = texturecaracter.accroupi.Height + 200;
-                        }
-
-                        else
-                        {
-                            Hitbox.Y = y - (texturecaracter.personnage.Height - 200);
-                        }
-
-                        limit_jump = 20;
-                    }
-                }
-            }
-        }*/
-
         private void Saut()
         {
             if (small_jump)

@@ -21,9 +21,10 @@ namespace jeu_xna
         public static Thread thread_jeu;
 
         public static Texture2D background, epic_fight_s, banniere_couleur;
-        static SpriteFont team;
+        static SpriteFont team, error_connection;
 
         public static MouseState mouse;
+        public static bool connection_error;
 
         Song musique;
 
@@ -48,6 +49,7 @@ namespace jeu_xna
             Options.is_mainmenu = true;
             VarTemp.CurrentGameState = GameState.MainMenu;
             VarTemp.temp = GameState.MainMenu;
+            connection_error = false;
             IsMouseVisible = true;
             base.Initialize();
         }
@@ -59,6 +61,7 @@ namespace jeu_xna
             musique = Content.Load<Song>(@"Sounds\Musique\Son Game 1");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(musique);
+            error_connection = Content.Load<SpriteFont>("connection_error");
 
             //CHARGEMENT DES BOUTONS
             #region Load_Button
@@ -82,7 +85,6 @@ namespace jeu_xna
             epic_fight_s = Content.Load<Texture2D>(@"Sprites\MainMenu\banniere");
             team = Content.Load<SpriteFont>("team");
             Menu.LoadContent(Content);
-            LocalNetworkChoice.LoadContent(Content);
 
             if (Program.test.Length == 0 || Convert.ToInt32(Program.test[0]) == 0)
             {
@@ -115,6 +117,7 @@ namespace jeu_xna
                         VarTemp.is_connected = false;
                         VarTemp.connexion = null;
                         VarTemp.victory = null;
+                        connection_error = true;
                     }
                 }
 
@@ -123,6 +126,7 @@ namespace jeu_xna
                     VarTemp.is_connected = false;
                     VarTemp.connexion = null;
                     VarTemp.victory = null;
+                    connection_error = true;
                 }
             }
 
@@ -200,10 +204,6 @@ namespace jeu_xna
             profil.Update(mouse);
             #endregion
 
-            LocalNetworkChoice.local.Update(mouse);
-            LocalNetworkChoice.network.Update(mouse);
-            LocalNetworkChoice.retour.Update(mouse);
-
             switch (VarTemp.CurrentGameState)
             {
                 case GameState.MainMenu:
@@ -211,7 +211,7 @@ namespace jeu_xna
                     #region MainMenu update
                     if (play.isClicked && !ChoiceMenuCaracter.was_cliqued)
                     {
-                        VarTemp.CurrentGameState = GameState.LocalNetworkChoice;
+                        VarTemp.CurrentGameState = GameState.ChoiceMenuCaracter;
                         ChoiceMenuCaracter.was_cliqued = true;
                     }
 
@@ -258,10 +258,6 @@ namespace jeu_xna
                     thread_jeu.Start();
                     IsMouseVisible = false;
                     Program.thread_menu.Abort();
-                    break;
-
-                case GameState.LocalNetworkChoice:
-                    LocalNetworkChoice.Update();
                     break;
 
                 case GameState.ProfilPlayer:
@@ -315,7 +311,12 @@ namespace jeu_xna
                         profil.Draw(spriteBatch);
                     }
 
-                    spriteBatch.DrawString(team, "By Ubidah !", new Vector2(730, 580), Color.Black);
+                    if (connection_error)
+                    {
+                        spriteBatch.DrawString(error_connection, "Erreur de connexion", new Vector2((graphics.GraphicsDevice.Viewport.Width - error_connection.MeasureString("Erreur de connexion").Length()) / 2, quitter.position.Y + 60), Color.White);
+                    }
+
+                    spriteBatch.DrawString(team, "Ubidah!", new Vector2(710, 570), new Color(31, 31, 31));
                     #endregion
                     break;
 
@@ -329,10 +330,6 @@ namespace jeu_xna
 
                 case GameState.ChoiceMenuBattlefield:
                     ChoiceMenuBattlefield.Draw(spriteBatch);
-                    break;
-
-                case GameState.LocalNetworkChoice:
-                    LocalNetworkChoice.Draw(spriteBatch);
                     break;
 
                 case GameState.ProfilPlayer:

@@ -287,7 +287,7 @@ namespace jeu_xna
 
                         if (LocalPlayer1.win)
                         {
-                            spriteBatch.DrawString(game_over, LocalPlayer1.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer1.name + " wins !").Length()) / 2, ((480 - game_over.MeasureString(LocalPlayer1.name + " wins !").Y) / 2) - 50), new Color(146, 22, 22));
+                            spriteBatch.DrawString(game_over, LocalPlayer1.name + " gagne !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer1.name + " gagne !").Length()) / 2, ((480 - game_over.MeasureString(LocalPlayer1.name + " wins !").Y) / 2) - 50), new Color(146, 22, 22));
 
                             try
                             {
@@ -295,7 +295,7 @@ namespace jeu_xna
                                 {
                                     send_once = false;
                                     VarTemp.victory = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/victory.php");
-                                    VarTemp.victoire_defaite = VarTemp.victory.Connect("victoire");
+                                    VarTemp.victoire_defaite = VarTemp.victory.Connect("victoire:" + LocalPlayer2.name);
                                     VarTemp.string_board_bis = VarTemp.victoire_defaite.Split(new Char[] { ':' });
                                     VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board_bis[0]);
                                     VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board_bis[1]);
@@ -312,19 +312,19 @@ namespace jeu_xna
                             {
                                 if (can_display_score)
                                 {
-                                    spriteBatch.DrawString(game_over, "Number of victories : " + VarTemp.nb_victory + "\nNumber of defeats : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Number of victories : " + VarTemp.nb_victory).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                    spriteBatch.DrawString(game_over, "Nombre de victoires : " + VarTemp.nb_victory + "\nNombre de defaites : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Nombre de victoires : " + VarTemp.nb_victory + "\nNombre de defaites : " + VarTemp.nb_defaites).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
                                 }
 
                                 else
                                 {
-                                    spriteBatch.DrawString(game_over, "Connection error", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Connection error").Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                    spriteBatch.DrawString(game_over, "Erreur de connexion", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Erreur de connexion").Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
                                 }
                             }
                         }
 
                         else if (LocalPlayer2.win)
                         {
-                            spriteBatch.DrawString(game_over, LocalPlayer2.name + " wins !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer2.name + " wins !").Length()) / 2, ((480 - game_over.MeasureString(LocalPlayer2.name + " wins !").Y) / 2) - 50), new Color(146, 22, 22));
+                            spriteBatch.DrawString(game_over, LocalPlayer2.name + " gagne !", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString(LocalPlayer2.name + " gagne !").Length()) / 2, ((480 - game_over.MeasureString(LocalPlayer2.name + " gagne !").Y) / 2) - 50), new Color(146, 22, 22));
 
                             try
                             {
@@ -332,7 +332,7 @@ namespace jeu_xna
                                 {
                                     send_once = false;
                                     VarTemp.victory = new Connexion(Convert.ToInt32(Program.test[0]), "http://epic-fights.sebb-dev.org/launcher/victory.php");
-                                    VarTemp.victoire_defaite = VarTemp.victory.Connect("defaite");
+                                    VarTemp.victoire_defaite = VarTemp.victory.Connect("defaite:" + LocalPlayer2.name);
                                     VarTemp.string_board_bis = VarTemp.victoire_defaite.Split(new Char[] { ':' });
                                     VarTemp.nb_victory = Convert.ToInt32(VarTemp.string_board_bis[0]);
                                     VarTemp.nb_defaites = Convert.ToInt32(VarTemp.string_board_bis[1]);
@@ -348,12 +348,12 @@ namespace jeu_xna
                             {
                                 if (can_display_score)
                                 {
-                                    spriteBatch.DrawString(game_over, "Number of victories : " + VarTemp.nb_victory + "\nNumber of defeats : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Number of victories : " + VarTemp.nb_victory).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                    spriteBatch.DrawString(game_over, "Nombre de victoires : " + VarTemp.nb_victory + "\nNombre de defaites : " + VarTemp.nb_defaites, new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Nombre de victoires : " + VarTemp.nb_victory + "\nNombre de defaites : " + VarTemp.nb_defaites).Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
                                 }
 
                                 else
                                 {
-                                    spriteBatch.DrawString(game_over, "Connection error", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Connection error").Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
+                                    spriteBatch.DrawString(game_over, "Erreur de connexion", new Vector2((Game1.graphics1.GraphicsDevice.Viewport.Width - game_over.MeasureString("Erreur de connexion").Length()) / 2, menu_principal_fin.position.Y + 50), new Color(146, 22, 22));
                                 }
                             }
                         }
