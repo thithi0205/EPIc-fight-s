@@ -652,7 +652,7 @@ namespace jeu_xna
                         {
                             //spriteBatch.Draw(BlankTexture, Hitbox, Color.Red);
                             //spriteBatch.Draw(BlankTexture, attaque, Color.Azure);
-                            spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * texturecaracter.largeur, 0, 95, texturecaracter.personnage.Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
+                            spriteBatch.Draw(Joueur, Hitbox, new Rectangle((Frame - 1) * texturecaracter.largeur, 0, texturecaracter.largeur, texturecaracter.personnage.Height), Color.White, 0f, Vector2.Zero, Effect, 0f);
                         }
 
                         if (win)

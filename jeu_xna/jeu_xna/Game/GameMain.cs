@@ -182,7 +182,8 @@ namespace jeu_xna
             //DEBUGGING
             
             #region Debuging
-           /* Console.Clear();
+            /*Console.Clear();
+            Console.WriteLine(LocalPlayer1.texturecaracter.personnage.Width);
             Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("joueur 1 : x = " + LocalPlayer1.Hitbox.X + " ; y = " + LocalPlayer1.Hitbox.Y);
             Console.WriteLine("joueur 2 : x = " + LocalPlayer2.Hitbox.X + " ; y = " + LocalPlayer2.Hitbox.Y + "\n");

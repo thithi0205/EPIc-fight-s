@@ -27,11 +27,13 @@ namespace jeu_xna
             {
                 VarTemp.CurrentGameState = GameState.MainMenu;
                 ChoiceMenuCaracter.was_cliqued = true;
+                Options.was_cliqued = true;
             }
 
             else if (mouse.LeftButton == ButtonState.Released)
             {
                 ChoiceMenuCaracter.was_cliqued = false;
+                Options.was_cliqued = false;
             }
         }
 

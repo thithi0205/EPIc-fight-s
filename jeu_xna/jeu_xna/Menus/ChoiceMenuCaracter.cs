@@ -12,7 +12,7 @@ namespace jeu_xna
     public class ChoiceMenuCaracter
     {
         static Texture2D BlankTexture;
-        public static RectangleMaker caracter1, caracter2;
+        public static RectangleMaker caracter1, caracter2, caracter3;
         public static int player;
         public static MenuButton terrain, retour;
         public static bool was_cliqued;
@@ -27,8 +27,9 @@ namespace jeu_xna
         public static void LoadContent(ContentManager Content)
         {
             BlankTexture = Content.Load<Texture2D>(@"Sprites\Personnages\BlankTexture");
-            caracter1 = new RectangleMaker(50, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), BlankTexture, 100, 100, "Kaktus");
-            caracter2 = new RectangleMaker(caracter1.RecBoarder.Width + caracter1.RecBoarder.X + 30, 100, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage2\identité2"), BlankTexture, 100, 100, "Brutus");
+            caracter1 = new RectangleMaker((MainMenu.graphics.GraphicsDevice.Viewport.Width - (2 * 200) - 100) / 2, ((MainMenu.graphics.GraphicsDevice.Viewport.Height - 100) / 2) - 50, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage1\identité1"), BlankTexture, 100, 100, "Kaktus");
+            caracter2 = new RectangleMaker(caracter1.x + 200, caracter1.y, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage2\identité2"), BlankTexture, 100, 100, "Brutus");
+            caracter3 = new RectangleMaker(caracter2.x + 200, caracter1.y, Content.Load<Texture2D>(@"Sprites\Personnages\Personnage3\identité3"), BlankTexture, 100, 100, "Ballus");
             terrain = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\bouton_terrain"), new Vector2(600, 500));
             retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(50, 500));
             name_caracter = Content.Load<SpriteFont>("nom_personnage");
@@ -51,6 +52,13 @@ namespace jeu_xna
                     player = 2;
                     was_cliqued = true;
                 }
+
+                else if (caracter3.is_clicked && !was_cliqued)
+                {
+                    GameMain.personnage_choisi1 = 2;
+                    player = 2;
+                    was_cliqued = true;
+                }
             }
 
             else if (player == 2)
@@ -65,6 +73,13 @@ namespace jeu_xna
                 else if (caracter2.is_clicked && !was_cliqued)
                 {
                     GameMain.personnage_choisi2 = 1;
+                    player = 3;
+                    was_cliqued = true;
+                }
+
+                else if (caracter3.is_clicked && !was_cliqued)
+                {
+                    GameMain.personnage_choisi2 = 2;
                     player = 3;
                     was_cliqued = true;
                 }
@@ -102,6 +117,7 @@ namespace jeu_xna
             Menu.Draw(spriteBatch);
             caracter1.draw(spriteBatch, name_caracter);
             caracter2.draw(spriteBatch, name_caracter);
+            caracter3.draw(spriteBatch, name_caracter);
 
             if (player == 2)
             {
@@ -123,8 +139,8 @@ namespace jeu_xna
 
     public class RectangleMaker
     {
-        int BoarderOffSet, y;
-        public int x, width, heigh;
+        int BoarderOffSet;
+        public int x, y, width, heigh;
         public bool is_clicked;
         Texture2D caracter, BlankTexture;
         Rectangle rectangle, background;

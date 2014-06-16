@@ -156,6 +156,7 @@ namespace jeu_xna
 
             ChoiceMenuCaracter.caracter1.Update(mouse);
             ChoiceMenuCaracter.caracter2.Update(mouse);
+            ChoiceMenuCaracter.caracter3.Update(mouse);
             ChoiceMenuCaracter.retour.Update(mouse);
             ChoiceMenuCaracter.terrain.Update(mouse);
 
@@ -175,10 +176,10 @@ namespace jeu_xna
             //DEBUGgING
             
             #region Debugging
-            Console.Clear();
+            /*Console.Clear();
             Console.WriteLine(VarTemp.player);
-            //Console.WriteLine("mail : " + VarTemp.string_board[1]);
-            /*Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
+            Console.WriteLine("mail : " + VarTemp.string_board[1]);
+            Console.WriteLine("mouse : x = " + mouse.X + " ; y = " + mouse.Y + "\n");
             Console.WriteLine("volume musique : " + Options.mediaplayer_volume + "\n");
             Console.WriteLine("volume bruitages : " + Options.bruitage_volume + "\n");
             if (VarTemp.CurrentGameState == GameState.MainMenu)
@@ -221,7 +222,7 @@ namespace jeu_xna
                         ChoiceMenuCaracter.was_cliqued = true;
                     }
 
-                    else if (profil.isClicked && !ChoiceMenuCaracter.was_cliqued)
+                    else if (profil.isClicked && !Options.was_cliqued)
                     {
                         VarTemp.CurrentGameState = GameState.ProfilPlayer;
                         ChoiceMenuCaracter.was_cliqued = true;
@@ -236,6 +237,7 @@ namespace jeu_xna
                     else if (mouse.LeftButton == ButtonState.Released)
                     {
                         ChoiceMenuCaracter.was_cliqued = false;
+                        Options.was_cliqued = false;
                     }
                     #endregion
                     break;

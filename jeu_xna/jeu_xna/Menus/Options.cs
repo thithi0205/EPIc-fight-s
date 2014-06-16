@@ -17,8 +17,8 @@ namespace jeu_xna
         public static bool was_cliqued, is_mainmenu;
         public static SoundEffect test_volume_bruitage;
         public static float mediaplayer_volume, bruitage_volume;
-        public static Texture2D volume, volume_musique, volume_bruitage;
-        public static SpriteFont volume_musique_affichage, options, volume_;
+        public static Texture2D volume, volume_bruitage;
+        public static SpriteFont volume_musique_affichage, options, volume_, volume_musique;
 
         public static void Initialise()
         {
@@ -33,9 +33,9 @@ namespace jeu_xna
             moins_bruitages = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\-"), new Vector2(250, 300));
             bouton_retour = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_retour"), new Vector2(20, 520));
             bouton_commande = new MenuButton(Content.Load<Texture2D>(@"Sprites\MainMenu\Options\bouton_commandes"), new Vector2(20, 380));
-            test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump1");
+            test_volume_bruitage = Content.Load<SoundEffect>(@"Sounds\Personnage\Personnage1\jump");
             volume = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume");
-            volume_musique = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_musique");
+            volume_musique = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_musique");
             volume_bruitage = Content.Load<Texture2D>(@"Sprites\MainMenu\Options\volume_bruitages");
             volume_musique_affichage = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\volume_musique");
             options = Content.Load<SpriteFont>(@"Sprites\MainMenu\Options\Font\pause");
@@ -59,6 +59,8 @@ namespace jeu_xna
                 {
                     VarTemp.CurrentGameState = GameState.Pause;
                 }
+
+                was_cliqued = true;
             }
 
             else if (plus_musique.isClicked && !was_cliqued)
@@ -119,6 +121,9 @@ namespace jeu_xna
             Menu.Draw(spriteBatch);
 
             spriteBatch.DrawString(volume_, "Volume :", new Vector2(30, 160), Color.White);
+            spriteBatch.DrawString(volume_musique, "Musique", new Vector2(plus_musique.position.X + 140, 135), Color.White);
+            spriteBatch.DrawString(volume_musique, "Bruitages", new Vector2(plus_bruitages.position.X + 140, 205), Color.White);
+
             if (VarTemp.temp == GameState.MainMenu)
             {
                 spriteBatch.DrawString(options, "Options", new Vector2((MainMenu.graphics.GraphicsDevice.Viewport.Width - options.MeasureString("Options").Length()) / 2, 0), Color.White); 

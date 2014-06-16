@@ -3,7 +3,7 @@ Content\Sprites\MainMenu\Options\+.xnb
 Content\Sprites\MainMenu\Options\-.xnb
 Content\Sprites\Personnages\BlankTexture.xnb
 Content\Sprites\Personnages\Personnage1\identité1.xnb
-Content\Sprites\Personnages\Personnage1\personnage1.xnb
+Content\Sprites\Personnages\Personnage1\personnage_1.xnb
 Content\Sprites\Game\ready.xnb
 Content\Sprites\Game\fight.xnb
 Content\Sprites\Personnages\Personnage1\attaque_1.xnb
@@ -45,14 +45,23 @@ Content\Sprites\Maps\map4.xnb
 Content\Sprites\Maps\map5.xnb
 Content\Sprites\Personnages\Personnage2\attaque_2.xnb
 Content\Sprites\MainMenu\profil.xnb
-Content\Sounds\Personnage\Personnage1\jump1.xnb
+Content\Sprites\Personnages\Personnage3\accroupi.xnb
+Content\Sprites\Personnages\Personnage3\attaque_1.xnb
+Content\Sprites\Personnages\Personnage3\attaque_2.xnb
+Content\Sprites\Personnages\Personnage3\attaque_3.xnb
+Content\Sprites\Personnages\Personnage3\attaque_4.xnb
+Content\Sprites\Personnages\Personnage3\identité3.xnb
+Content\Sprites\Personnages\Personnage3\mort.xnb
+Content\Sprites\Personnages\Personnage3\victoire.xnb
+Content\Sprites\Personnages\Personnage3\personnage_3.xnb
+Content\Sounds\Personnage\Personnage1\jump.xnb
 Content\Sounds\Personnage\step1.xnb
 Content\Sounds\Personnage\jump_end.xnb
 Content\Sounds\Personnage\Personnage1\attaque1.xnb
 Content\Sounds\Personnage\Personnage1\attaque2.xnb
 Content\Sounds\Personnage\Personnage1\attaque3.xnb
 Content\Sounds\Personnage\Personnage1\attaque4.xnb
-Content\Sounds\Personnage\Personnage1\death1.xnb
+Content\Sounds\Personnage\Personnage1\death.xnb
 Content\Sounds\Personnage\Personnage1\pain.xnb
 Content\Sounds\Personnage\Personnage2\attaque1.xnb
 Content\Sounds\Personnage\Personnage2\attaque2.xnb
@@ -63,6 +72,13 @@ Content\Sounds\Personnage\Personnage2\jump.xnb
 Content\Sounds\Personnage\Personnage2\pain.xnb
 Content\Sounds\win1.xnb
 Content\Sounds\win2.xnb
+Content\Sounds\Personnage\Personnage3\attaque1.xnb
+Content\Sounds\Personnage\Personnage3\attaque2.xnb
+Content\Sounds\Personnage\Personnage3\attaque3.xnb
+Content\Sounds\Personnage\Personnage3\attaque4.xnb
+Content\Sounds\Personnage\Personnage3\death.xnb
+Content\Sounds\Personnage\Personnage3\jump.xnb
+Content\Sounds\Personnage\Personnage3\pain.xnb
 Content\Sprites\MainMenu\Options\Font\volume_musique.xnb
 Content\chronomètre.xnb
 Content\display_name.xnb
@@ -75,7 +91,7 @@ Content\Sprites\Personnages\caracter.xnb
 Content\Sprites\MainMenu\Options\Font\volume_.xnb
 Content\game_over.xnb
 Content\profil_writer.xnb
-Content\Sounds\Musique\Son Game 1.xnb
 Content\nom_personnage.xnb
 Content\connection_error.xnb
+Content\Sounds\Musique\Son Game 1.xnb
 Content\Sounds\Musique\Son Game 1.wma

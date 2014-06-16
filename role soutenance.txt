@@ -1,0 +1,22 @@
+francais
+
+I) corentin
+II) thibault
+III) a) Sebastien
+     b) Sebastien
+     c) thibault
+     d) corentin
+IV) sebastien
+V) Thibault(jeu), Sebastien(web)
+VI) corentin
+
+
+anglais
+
+I) corentin
+II) a) sebastien
+    b) thibault
+    c) corentin
+IV) sebastien
+V) thibault(game), sebastien(website)
+VI) corentin

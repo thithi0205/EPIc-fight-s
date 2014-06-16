@@ -49,8 +49,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sounds\Personnage\Personnage1\jump1.wav">
-      <Name>jump1</Name>
+    <Compile Include="Sounds\Personnage\Personnage1\jump.wav">
+      <Name>jump</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
@@ -135,8 +135,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\Personnages\Personnage1\personnage1.png">
-      <Name>personnage1</Name>
+    <Compile Include="Sprites\Personnages\Personnage1\personnage_1.png">
+      <Name>personnage_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -324,8 +324,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="Sounds\Personnage\Personnage1\death1.wav">
-      <Name>death1</Name>
+    <Compile Include="Sounds\Personnage\Personnage1\death.wav">
+      <Name>death</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
@@ -543,6 +543,43 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sounds\Personnage\Personnage3\attaque1.wav">
+      <Name>attaque1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Personnage\Personnage3\attaque2.wav">
+      <Name>attaque2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Personnage\Personnage3\attaque3.wav">
+      <Name>attaque3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Personnage\Personnage3\attaque4.wav">
+      <Name>attaque4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Personnage\Personnage3\death.wav">
+      <Name>death</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Personnage\Personnage3\jump.wav">
+      <Name>jump</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\Personnage\Personnage3\pain.wav">
+      <Name>pain</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Sprites\Personnages\Personnage3\accroupi.png">
       <Name>accroupi</Name>
       <Importer>TextureImporter</Importer>
@@ -578,11 +615,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Sprites\Personnages\Personnage3\personnage_3.png">
-      <Name>personnage_3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Sprites\Personnages\Personnage3\victoire.png">
       <Name>victoire</Name>
       <Importer>TextureImporter</Importer>
@@ -590,40 +622,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sounds\Personnage\Personnage3\attaque1.wav">
-      <Name>attaque1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Sounds\Personnage\Personnage3\attaque2.wav">
-      <Name>attaque2</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Sounds\Personnage\Personnage3\attaque3.wav">
-      <Name>attaque3</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Sounds\Personnage\Personnage3\attaque4.wav">
-      <Name>attaque4</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Sounds\Personnage\Personnage3\death.wav">
-      <Name>death</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Sounds\Personnage\Personnage3\jump.wav">
-      <Name>jump</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Sounds\Personnage\Personnage3\pain.wav">
-      <Name>pain</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
+    <Compile Include="Sprites\Personnages\Personnage3\personnage_3.png">
+      <Name>personnage_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
